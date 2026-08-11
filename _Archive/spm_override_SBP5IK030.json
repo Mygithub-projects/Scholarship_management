@@ -1,0 +1,17 @@
+{
+  "gpScore": 5,
+  "subjects": [
+    {
+      "subject": "Bahasa Melayu",
+      "grade": "A"
+    },
+    {
+      "subject": "Bahasa Inggeris",
+      "grade": "D"
+    },
+    {
+      "subject": "Pendidikan Islam",
+      "grade": "D"
+    }
+  ]
+}

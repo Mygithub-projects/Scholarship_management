@@ -1,0 +1,50 @@
+{
+  "gpScore": 0.7,
+  "subjects": [
+    {
+      "subject": "Bahasa Melayu",
+      "grade": "A"
+    },
+    {
+      "subject": "Bahasa Inggeris",
+      "grade": "A+"
+    },
+    {
+      "subject": "Pendidikan Islam",
+      "grade": "A+"
+    },
+    {
+      "subject": "Sejarah",
+      "grade": "A"
+    },
+    {
+      "subject": "Matematik",
+      "grade": "A+"
+    },
+    {
+      "subject": "Matematik Tambahan",
+      "grade": "A+"
+    },
+    {
+      "subject": "Fizik",
+      "grade": "A+"
+    },
+    {
+      "subject": "Kimia",
+      "grade": "A"
+    },
+    {
+      "subject": "Bahasa Arab",
+      "grade": "A-"
+    },
+    {
+      "subject": "Pendidikan Syariah Islamiah",
+      "grade": "A-"
+    }
+  ],
+  "bidang": "",
+  "iptKat": "",
+  "iptNama": "",
+  "kos": "",
+  "useHolland": true
+}

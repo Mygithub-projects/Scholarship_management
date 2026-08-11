@@ -1,0 +1,2093 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Portal Pelajar — Sistem Padanan Biasiswa</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  /* DELIMa 3.0 Colour System */
+  --primary:#7239EA;--primary-dark:#5014D0;--primary-light:#F5F0FF;
+  --teal:#00BCD4;--teal-light:#E0F7FA;
+  --success:#17C653;--success-light:#DFFFEA;
+  --danger:#F8285A;--danger-light:#FFEEF3;
+  --warning:#F6C000;--warning-light:#FFF8DD;
+  --info:#00BCD4;--info-light:#E0F7FA;
+  --secondary:#A1A5B7;--body-color:#4B4B4B;--heading-color:#181C32;
+  --border:#F1F1F4;--bg:#F9FAFB;--white:#FFFFFF;--navy:#181C32;
+  --purple-light:#F5F0FF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',Helvetica,Arial,sans-serif;background:var(--bg);min-height:100vh;color:var(--body-color);font-size:14px;letter-spacing:.01rem;line-height:1.45}
+
+/* Page transition */
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.page-enter{animation:fadeInUp .35s ease both}
+
+/* ═══════════════════════════════ PAGE 1: DELIMA LANDING ═══════════════════════════════ */
+#page-login{
+  display:flex;flex-direction:column;min-height:100vh;background:var(--bg);
+}
+.delima-landing{
+  flex:1;display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 44px);
+}
+.delima-left{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:60px 64px 40px;
+}
+.delima-title{
+  font-size:clamp(32px,3.8vw,52px);font-weight:800;
+  color:var(--navy);line-height:1.15;margin-bottom:16px;letter-spacing:-.5px;
+}
+.delima-subtitle{
+  font-size:15px;color:var(--secondary);font-weight:400;margin-bottom:40px;
+}
+.delima-login-btn{
+  display:inline-block;background:var(--primary);color:#fff;
+  font-family:'Inter',sans-serif;font-size:14px;font-weight:600;
+  padding:13px 32px;border-radius:12px;border:none;cursor:pointer;
+  transition:background .2s,opacity .2s,box-shadow .2s;
+  opacity:.4;pointer-events:none;box-shadow:0 4px 14px rgba(114,57,234,.3);
+}
+.delima-login-btn.active{opacity:1;pointer-events:auto;}
+.delima-login-btn.active:hover{background:var(--primary-dark);box-shadow:0 6px 20px rgba(114,57,234,.45);}
+.delima-agree-row{
+  display:flex;align-items:center;gap:10px;margin-top:20px;font-size:13px;color:#555;
+}
+.delima-agree-row input[type=checkbox]{
+  width:16px;height:16px;accent-color:var(--primary);cursor:pointer;flex-shrink:0;
+}
+.delima-agree-row a{color:var(--primary);text-decoration:underline;cursor:pointer;}
+.delima-footer{
+  padding:12px 64px;font-size:12px;color:var(--secondary);border-top:1px solid var(--border);background:var(--white);
+}
+/* Right side — DELIMa 3.0 purple gradient panel */
+.delima-right{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#4A1D96 0%,#7239EA 55%,#9B6DFF 100%);
+  display:flex;align-items:center;justify-content:center;
+}
+.delima-right::before{
+  content:'';position:absolute;width:500px;height:500px;border-radius:50%;
+  background:rgba(255,255,255,.06);top:-100px;right:-120px;
+}
+.delima-right::after{
+  content:'';position:absolute;width:350px;height:350px;border-radius:50%;
+  background:rgba(255,255,255,.06);bottom:-80px;left:-60px;
+}
+.delima-graphic{
+  position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:32px;padding:40px;
+}
+.delima-graphic-title{
+  font-size:28px;font-weight:800;color:#fff;text-align:center;line-height:1.3;
+}
+.delima-graphic-sub{
+  font-size:14px;color:rgba(255,255,255,.75);text-align:center;max-width:300px;line-height:1.7;
+}
+.delima-feat-list{
+  display:flex;flex-direction:column;gap:14px;width:100%;max-width:320px;
+}
+.delima-feat-item{
+  display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.12);
+  border-radius:12px;padding:12px 16px;border:1px solid rgba(255,255,255,.15);
+}
+.delima-feat-icon{font-size:20px;flex-shrink:0;}
+.delima-feat-text{font-size:13px;color:#fff;font-weight:500;}
+/* legacy — hide old graphic elements */
+.delima-rect,.delima-circle,.delima-logo-text,.delima-logo-dots,
+.delima-dot-blue,.delima-dot-yellow{display:none!important;}
+
+/* ── Login modals ── */
+.delima-overlay{
+  display:flex;position:fixed;inset:0;background:rgba(0,0,0,0);
+  z-index:9999;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;visibility:hidden;
+  backdrop-filter:blur(0px);-webkit-backdrop-filter:blur(0px);
+  transition:opacity .55s ease,backdrop-filter .55s ease,-webkit-backdrop-filter .55s ease,background .55s ease,visibility 0s linear .55s;
+}
+.delima-overlay.show{
+  opacity:1;pointer-events:auto;visibility:visible;
+  background:rgba(24,28,50,.5);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  transition:opacity .55s ease,backdrop-filter .55s ease,-webkit-backdrop-filter .55s ease,background .55s ease,visibility 0s linear 0s;
+}
+.delima-modal{
+  background:#fff;border-radius:20px;padding:40px 44px;width:100%;max-width:420px;
+  box-shadow:0 8px 40px rgba(114,57,234,.15);font-family:'Inter',sans-serif;
+  opacity:0;transform:translateY(16px);
+  transition:opacity .4s ease,transform .4s ease;
+}
+.delima-overlay.show .delima-modal{opacity:1;transform:translateY(0);}
+.delima-modal-logo{display:flex;align-items:center;gap:8px;margin-bottom:24px;}
+.delima-modal-logo-g{width:28px;height:28px;}
+.delima-modal h2{font-size:22px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.delima-modal-sub{font-size:13px;color:var(--secondary);margin-bottom:24px;}
+.delima-modal-sub a{color:var(--primary);text-decoration:none;}
+.delima-modal-field{position:relative;margin-bottom:8px;}
+.delima-modal-field input{
+  width:100%;padding:16px 14px 6px;border:1.5px solid var(--border);border-radius:12px;
+  font-family:'Inter',sans-serif;font-size:15px;color:var(--navy);outline:none;
+  transition:border .15s;background:#fff;
+}
+.delima-modal-field input:focus{border-color:var(--primary);border-width:2px;}
+.delima-modal-field label{
+  position:absolute;left:14px;top:50%;transform:translateY(-50%);
+  font-size:15px;color:var(--secondary);pointer-events:none;transition:.15s;
+}
+.delima-modal-field input:focus ~ label,
+.delima-modal-field input:not(:placeholder-shown) ~ label{
+  top:10px;font-size:10px;color:var(--primary);
+}
+.delima-modal-forgot{
+  font-size:13px;color:var(--primary);font-weight:500;cursor:pointer;
+  margin-bottom:24px;display:inline-block;
+}
+.delima-modal-actions{display:flex;justify-content:space-between;align-items:center;margin-top:28px;}
+.delima-modal-actions .txt-btn{
+  font-size:13px;color:var(--primary);font-weight:600;border:none;
+  background:none;cursor:pointer;padding:10px 12px;border-radius:10px;font-family:'Inter',sans-serif;
+}
+.delima-modal-actions .txt-btn:hover{background:var(--primary-light);}
+.delima-modal-actions .next-btn{
+  background:var(--primary);color:#fff;border:none;border-radius:12px;
+  padding:10px 28px;font-size:14px;font-weight:600;cursor:pointer;
+  font-family:'Inter',sans-serif;transition:background .2s,box-shadow .2s;
+  box-shadow:0 4px 14px rgba(114,57,234,.3);
+}
+.delima-modal-actions .next-btn:hover{background:var(--primary-dark);}
+.delima-modal-email-chip{
+  display:flex;align-items:center;gap:10px;border:1.5px solid var(--border);
+  border-radius:20px;padding:5px 14px 5px 5px;margin-bottom:20px;width:fit-content;
+}
+.delima-modal-email-chip .chip-avatar{
+  width:28px;height:28px;border-radius:50%;background:var(--primary);
+  display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;
+}
+.delima-modal-email-chip .chip-email{font-size:14px;color:var(--navy);}
+#delima-login-error{display:none;margin-top:10px;font-size:13px;color:var(--danger);}
+
+/* ═══════════════════════════════ PAGE 2: DASHBOARD ═════════════════════════ */
+#page-dashboard{display:none;min-height:100vh}
+/* ── DELIMa 3.0 Nav Bar ── */
+.dash-nav{
+  background:var(--white);display:flex;align-items:center;height:64px;
+  border-bottom:1px solid var(--border);box-shadow:0 1px 8px rgba(0,0,0,.05);
+  padding:0 28px;gap:24px;position:sticky;top:0;z-index:100;
+}
+.dash-nav-logo{display:flex;align-items:center;min-width:140px}
+.dash-nav-logo img{height:36px;width:auto;display:block}
+.dash-nav-menu{display:flex;align-items:center;gap:4px;flex:1}
+.dash-nav-item{
+  padding:8px 16px;border-radius:10px;font-size:13px;font-weight:500;
+  color:var(--secondary);cursor:default;transition:background .15s,color .15s;
+}
+.dash-nav-item.active,.dash-nav-item:hover{
+  background:var(--primary-light);color:var(--primary);font-weight:600;
+}
+.dash-nav-right{display:flex;align-items:center;gap:12px}
+.dash-nav-avatar{
+  width:34px;height:34px;border-radius:50%;background:var(--primary);
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;color:#fff;
+}
+/* ── DELIMa 3.0 Profile Banner ── */
+.dash-banner{
+  background:linear-gradient(135deg,#4A1D96 0%,#7239EA 60%,#9B6DFF 100%);
+  padding:28px 40px;display:flex;align-items:center;gap:24px;
+  position:relative;overflow:hidden;
+}
+.dash-banner::after{
+  content:'';position:absolute;width:320px;height:320px;border-radius:50%;
+  background:rgba(255,255,255,.06);right:-60px;top:-100px;pointer-events:none;
+}
+.dash-banner-avatar{
+  width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.2);
+  border:3px solid rgba(255,255,255,.45);
+  display:flex;align-items:center;justify-content:center;
+  font-size:30px;font-weight:700;color:#fff;flex-shrink:0;z-index:1;
+}
+.dash-banner-info{flex:1;z-index:1}
+.dash-banner-greeting{font-size:13px;color:rgba(255,255,255,.75);font-weight:400;margin-bottom:4px}
+.dash-banner-name{font-size:22px;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.2}
+.dash-banner-meta{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.8);flex-wrap:wrap}
+/* keep .user-avatar for any leftover refs */
+.user-avatar{
+  width:36px;height:36px;border-radius:50%;background:var(--primary);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;color:#fff;
+}
+.user-info{text-align:right}
+.user-info .user-name{font-size:13px;font-weight:600;color:var(--navy)}
+.user-info .user-id{font-size:11px;color:var(--secondary)}
+.logout-btn{
+  background:var(--danger-light);border:none;color:var(--danger);
+  padding:7px 16px;border-radius:10px;cursor:pointer;font-family:'Inter',sans-serif;
+  font-size:12px;font-weight:600;margin-left:4px;transition:background .2s;
+}
+.logout-btn:hover{background:#ffd0da;}
+
+.dash-layout{
+  max-width:1440px;margin:0 auto;padding:24px;
+  display:grid;grid-template-columns:260px 1fr 260px;gap:20px;align-items:start;
+}
+.dash-content{
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;
+}
+
+/* DELIMa 3.0 profile card */
+.profile-card-delima{
+  border-radius:20px;overflow:hidden;
+  box-shadow:0 4px 16px rgba(114,57,234,.12);
+  margin-bottom:16px;
+}
+.profile-card-top{
+  background:linear-gradient(135deg,#4A1D96 0%,#7239EA 100%);
+  padding:14px 16px 10px;
+  font-size:13px;font-weight:600;color:#fff;text-align:center;
+}
+.profile-card-bot{
+  background:linear-gradient(135deg,#7239EA 0%,#9B6DFF 100%);
+  padding:14px 16px 18px;
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+}
+.profile-card-avatar{
+  width:70px;height:70px;border-radius:50%;
+  background:rgba(255,255,255,.2);
+  border:3px solid rgba(255,255,255,.5);
+  display:flex;align-items:center;justify-content:center;
+  font-size:26px;font-weight:700;color:#fff;flex-shrink:0;
+}
+.profile-card-name{font-size:14px;font-weight:700;color:#fff;text-align:center;line-height:1.3;}
+.profile-card-school{font-size:11px;color:rgba(255,255,255,.8);text-align:center;line-height:1.4;}
+
+/* Side panels */
+.side-panel{border-radius:20px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.side-panel-header{
+  padding:14px 16px;font-size:13px;font-weight:700;letter-spacing:.2px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.side-panel-body{padding:10px 12px;display:flex;flex-direction:column;gap:8px;background:var(--white)}
+.side-item{
+  border-radius:12px;padding:10px 12px;font-size:12px;line-height:1.5;cursor:default;
+}
+.side-item-title{font-weight:700;font-size:12px;margin-bottom:2px}
+.side-item-sub{font-size:11px;opacity:.75}
+.side-item-date{font-size:10px;font-weight:600;opacity:.6;margin-top:4px}
+/* Left panel — purple theme */
+.panel-left .side-panel-header{background:linear-gradient(135deg,#4A1D96,#7239EA);color:#fff}
+.panel-left{background:var(--white)}
+.panel-left .side-item{background:var(--primary-light);border-left:3px solid var(--primary);color:var(--body-color)}
+/* Right panel — teal theme */
+.panel-right .side-panel-header{background:linear-gradient(135deg,#00838F,#00BCD4);color:#fff}
+.panel-right{background:var(--white)}
+.panel-right .side-item{background:var(--teal-light);border-left:3px solid var(--teal);color:var(--body-color)}
+.panel-badge{font-size:10px;background:rgba(255,255,255,.25);border-radius:20px;padding:2px 8px;font-weight:600}
+
+/* Cards */
+.card{
+  background:var(--white);border-radius:20px;padding:24px;
+  box-shadow:0 4px 16px rgba(0,0,0,.04);border:1px solid var(--border);
+}
+.card-header{display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.card-icon{width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.card-title{font-size:14px;font-weight:700;color:var(--navy)}
+.card-sub{font-size:12px;color:var(--secondary);margin-top:1px}
+
+/* .profile-hero removed — replaced by .dash-banner above the grid */
+.profile-avatar-big{
+  width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.2);
+  border:3px solid rgba(255,255,255,.4);
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;font-weight:700;flex-shrink:0;z-index:1;
+}
+.profile-meta h2{font-size:22px;font-weight:700;margin-bottom:6px;z-index:1;position:relative;}
+.meta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;z-index:1;position:relative;}
+.meta-chip{
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);
+  padding:3px 12px;border-radius:20px;font-size:12px;font-weight:500;
+}
+
+/* Stats strip */
+.stat-strip{
+  grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+}
+.stat-box{
+  background:var(--white);border-radius:20px;padding:18px 20px;
+  box-shadow:0 4px 16px rgba(0,0,0,.04);border:1px solid var(--border);text-align:center;
+}
+.stat-num{font-size:28px;font-weight:700;color:var(--primary);line-height:1.1}
+.stat-lbl{font-size:12px;color:var(--secondary);margin-top:4px}
+
+/* SPM Grades */
+.grade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.grade-cell{background:var(--bg);border-radius:9px;padding:10px 8px;text-align:center;border:1px solid var(--border)}
+.grade-cell .subj{font-size:10px;color:var(--secondary);font-weight:500;margin-bottom:4px}
+.grade-cell .grd{font-size:18px;font-weight:700;color:var(--navy)}
+.grade-cell.Ap,.grade-cell.A{background:var(--success-light);border-color:#A5D6A7}.grade-cell.Ap .grd,.grade-cell.A .grd{color:var(--success)}
+.grade-cell.Am,.grade-cell.Bp{background:#E3F2FD;border-color:#90CAF9}.grade-cell.Am .grd,.grade-cell.Bp .grd{color:var(--primary)}
+.grade-cell.B{background:var(--info-light);border-color:#80CBC4}.grade-cell.B .grd{color:var(--info)}
+.grade-cell.Cp,.grade-cell.C{background:var(--warning-light);border-color:#FFE082}.grade-cell.Cp .grd,.grade-cell.C .grd{color:var(--warning)}
+.grade-cell.D{background:#FFF3E0;border-color:#FFCC80}.grade-cell.D .grd{color:var(--warning)}
+.grade-cell.E{background:var(--danger-light);border-color:#EF9A9A}.grade-cell.E .grd{color:var(--danger)}
+.grade-cell.G{background:var(--bg);border-color:var(--border)}.grade-cell.G .grd{color:var(--secondary)}
+.gp-bar-wrap{margin-top:14px;background:var(--border);border-radius:99px;height:10px;overflow:hidden}
+.gp-bar{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--success),var(--primary));transition:width .8s ease}
+
+/* RIASEC */
+.riasec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.riasec-box{border-radius:10px;padding:14px 10px;text-align:center;border:2px solid transparent}
+.riasec-box.top{border-width:2px}
+.riasec-code{font-size:22px;font-weight:800;margin-bottom:2px}
+.riasec-name{font-size:10px;font-weight:600;opacity:.85;margin-bottom:8px}
+.riasec-score{font-size:12px;font-weight:500}
+.r-R{background:var(--warning-light);color:var(--warning)}.r-R.top{border-color:var(--warning)}
+.r-I{background:var(--success-light);color:var(--success)}.r-I.top{border-color:var(--success)}
+.r-A{background:var(--purple-light);color:var(--purple)}.r-A.top{border-color:var(--purple)}
+.r-S{background:#E3F2FD;color:var(--primary)}.r-S.top{border-color:var(--primary)}
+.r-E{background:var(--danger-light);color:var(--danger)}.r-E.top{border-color:var(--danger)}
+.r-K{background:var(--info-light);color:var(--info)}.r-K.top{border-color:var(--info)}
+
+/* PAJSK */
+.pajsk-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border)}
+.pajsk-row:last-child{border-bottom:none}
+.pajsk-key{font-size:13px;color:var(--body-color);font-weight:500}
+.pajsk-val{font-size:13px;color:var(--navy);font-weight:600;text-align:right;max-width:60%}
+.leadership-badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700}
+.badge-high{background:var(--success-light);color:var(--success)}
+.badge-medium{background:var(--warning-light);color:var(--warning)}
+.badge-basic{background:var(--bg);color:var(--secondary)}
+
+/* Achievements */
+.ach-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.ach-list li{background:var(--info-light);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--body-color);border-left:3px solid var(--info)}
+
+/* Loading — DELIMa triple-ring spinner */
+#loading-overlay{
+  display:none;position:fixed;inset:0;background:rgba(255,255,255,.85);
+  z-index:999;align-items:center;justify-content:center;flex-direction:column;gap:16px;
+}
+.spinner{position:relative;width:48px;height:48px}
+.spinner .effect-1,.spinner .effect-2,.spinner .effect-3{
+  position:absolute;width:100%;height:100%;border-radius:50%;
+  border:3px solid transparent;border-left:3px solid var(--purple);box-sizing:border-box;
+}
+.spinner .effect-1{animation:delima-rotate 1s ease infinite}
+.spinner .effect-2{animation:delima-rotate-op 1s ease infinite .1s}
+.spinner .effect-3{animation:delima-rotate-op 1s ease infinite .2s}
+@keyframes delima-rotate{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+@keyframes delima-rotate-op{0%{transform:rotate(0);opacity:.1}100%{transform:rotate(360deg);opacity:1}}
+.loading-text{font-size:14px;color:var(--body-color);font-weight:500}
+
+/* ══════ MATCHING SECTION ══════ */
+.match-section{grid-column:1/-1;margin-top:8px}
+.match-loading{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;gap:16px}
+.match-spinner{position:relative;width:52px;height:52px}
+.match-spinner .effect-1,.match-spinner .effect-2,.match-spinner .effect-3{
+  position:absolute;width:100%;height:100%;border-radius:50%;
+  border:3px solid transparent;border-left:3px solid var(--primary);box-sizing:border-box;
+}
+.match-spinner .effect-1{animation:delima-rotate 1s ease infinite}
+.match-spinner .effect-2{animation:delima-rotate-op 1s ease infinite .1s}
+.match-spinner .effect-3{animation:delima-rotate-op 1s ease infinite .2s}
+.match-loading-text{font-size:14px;color:var(--body-color);font-weight:500}
+.match-loading-sub{font-size:12px;color:var(--secondary)}
+
+/* ══════ REPORT SECTION ══════ */
+.report-section{margin-top:20px}
+.lang-tabs{display:flex;gap:0;margin-bottom:0;border-bottom:2px solid #E2E8F0}
+.lang-tab{padding:10px 24px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;background:none;border:none;cursor:pointer;color:var(--secondary);border-bottom:2px solid transparent;margin-bottom:-2px;transition:.2s}
+.lang-tab.active{color:#1A56DB;border-bottom-color:#1A56DB}
+.lang-tab:hover{color:#1A56DB}
+.report-body{padding:20px 0}
+.report-intro{font-size:14px;color:#374151;line-height:1.7;margin-bottom:20px;padding:16px;background:#F8FAFC;border-radius:8px;border-left:4px solid #1A56DB}
+.report-match{background:#fff;border:1px solid #E5E7EB;border-radius:10px;padding:16px 20px;margin-bottom:12px}
+.report-match-header{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.report-rank{width:28px;height:28px;border-radius:50%;background:#0F2057;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.report-match-name{font-size:14px;font-weight:700;color:#0F2057}
+.report-match-reason{font-size:13px;color:#374151;line-height:1.7}
+.report-advice{background:#ECFDF5;border:1px solid #6EE7B7;border-radius:10px;padding:16px 20px;margin-top:16px}
+.report-advice-title{font-size:13px;font-weight:700;color:#065F46;margin-bottom:6px}
+.report-advice-text{font-size:13px;color:#374151;line-height:1.7}
+.report-closing{font-size:13px;color:var(--secondary);font-style:italic;margin-top:16px;text-align:center;padding:12px}
+
+/* Match results table */
+.match-table-wrap{overflow-x:auto;margin-top:14px}
+.match-table{width:100%;border-collapse:collapse;font-size:13px}
+.match-table th{background:var(--navy);color:#fff;padding:10px 14px;text-align:left;font-weight:600}
+.match-table td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:middle;color:var(--body-color)}
+.match-table tr:hover td{background:var(--primary-light)}
+.sc-bar-wrap{background:var(--border);border-radius:100px;height:6px;width:70px;display:inline-block;vertical-align:middle;margin-left:6px}
+.sc-bar{height:6px;border-radius:100px;background:linear-gradient(90deg,var(--primary),var(--success))}
+.elig-yes{color:var(--success);font-weight:600}
+.elig-no{color:var(--danger)}
+.fc{display:inline-block;padding:2px 7px;border-radius:20px;font-size:10px;margin:1px}
+.fc-a{background:#E3F2FD;color:var(--primary)}
+.fc-p{background:var(--success-light);color:var(--success)}
+.fc-ps{background:var(--purple-light);color:var(--purple)}
+.fc-as{background:var(--warning-light);color:var(--warning)}
+.fc-i{background:var(--danger-light);color:var(--danger)}
+
+
+@media(max-width:1100px){
+  .dash-layout{grid-template-columns:1fr;gap:16px}
+  .panel-left,.panel-right{display:none}
+}
+@media(max-width:700px){
+  .dash-content{grid-template-columns:1fr}
+  .stat-strip{grid-template-columns:repeat(2,1fr)}
+  .grade-grid{grid-template-columns:repeat(3,1fr)}
+  .dash-nav-menu{display:none}
+  .dash-nav-logo{min-width:unset}
+  .dash-banner{flex-direction:column;text-align:center;padding:20px}
+}
+
+/* ═══════════════════════════════ PAGE 1.5: SPM INPUT ═══════════════════════════════ */
+#page-spm-input{display:none;flex-direction:column;min-height:100vh;background:var(--bg)}
+.spm-body{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:36px 16px 48px;}
+.spm-card{background:var(--white);border-radius:24px;box-shadow:0 4px 20px rgba(0,0,0,.06);padding:36px 40px;width:100%;max-width:860px;border:1px solid var(--border)}
+.spm-card-title{font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+.spm-card-sub{font-size:.83rem;color:var(--secondary);margin-bottom:24px}
+.spm-count-row{display:flex;align-items:center;gap:16px;margin-bottom:28px;flex-wrap:wrap}
+.spm-count-row label{font-weight:600;font-size:.875rem;color:var(--body-color);white-space:nowrap}
+.spm-count-input{width:80px;padding:8px 12px;border:1.5px solid var(--border);border-radius:10px;font-family:inherit;font-size:.95rem;text-align:center;outline:none;transition:border .2s}
+.spm-count-input:focus{border-color:var(--primary)}
+.spm-jana-btn{padding:9px 24px;background:var(--primary);color:#fff;border:none;border-radius:10px;font-family:inherit;font-size:.875rem;font-weight:600;cursor:pointer;transition:background .2s;box-shadow:0 4px 12px rgba(114,57,234,.25)}
+.spm-jana-btn:hover{background:var(--primary-dark)}
+.spm-table-wrap{overflow-x:auto;margin-bottom:28px}
+.spm-table{width:100%;border-collapse:collapse;font-size:.86rem}
+.spm-table th{background:var(--navy);color:#fff;padding:10px 12px;text-align:left;font-weight:600;letter-spacing:.03em}
+.spm-table th:first-child{border-radius:10px 0 0 0}
+.spm-table th:last-child{border-radius:0 10px 0 0}
+.spm-table td{padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:middle}
+.spm-table tr:hover td{background:var(--primary-light)}
+.spm-table .no-col{width:44px;text-align:center;color:var(--secondary);font-weight:600}
+.spm-subj-wrap{position:relative}
+.spm-subj-input{width:100%;padding:7px 10px;border:1.5px solid var(--border);border-radius:8px;font-family:inherit;font-size:.84rem;outline:none;cursor:pointer;background:#fff;transition:border .2s}
+.spm-subj-input:focus{border-color:var(--primary)}
+.spm-dropdown{position:absolute;top:calc(100% + 4px);left:0;right:0;max-height:200px;overflow-y:auto;background:#fff;border:1.5px solid var(--primary);border-radius:12px;z-index:999;box-shadow:0 8px 24px rgba(114,57,234,.15);display:none}
+.spm-dropdown.open{display:block}
+.spm-dropdown-item{padding:8px 12px;cursor:pointer;font-size:.83rem;transition:background .15s}
+.spm-dropdown-item:hover,.spm-dropdown-item.active{background:var(--primary-light);color:var(--primary-dark)}
+.spm-grade-sel{padding:7px 8px;border:1.5px solid var(--border);border-radius:8px;font-family:inherit;font-size:.84rem;outline:none;background:#fff;cursor:pointer;min-width:90px;transition:border .2s}
+.spm-grade-sel:focus{border-color:var(--primary)}
+.spm-submit-row{display:flex;justify-content:flex-end;gap:12px}
+.spm-submit-btn{padding:11px 32px;background:var(--primary);color:#fff;border:none;border-radius:12px;font-family:inherit;font-size:.95rem;font-weight:700;cursor:pointer;transition:background .2s,box-shadow .2s;box-shadow:0 4px 14px rgba(114,57,234,.3)}
+.spm-submit-btn:hover{background:var(--primary-dark);box-shadow:0 6px 20px rgba(114,57,234,.4)}
+.spm-submit-btn:disabled{background:var(--secondary);cursor:not-allowed;box-shadow:none}
+.spm-hint{font-size:.78rem;color:var(--secondary);margin-top:6px}
+
+/* ═══════════════════════════════ GLOBAL NAV ═══════════════════════════════ */
+#g-nav{
+  display:none;
+  position:sticky;top:0;z-index:1000;
+  background:var(--white);border-bottom:1px solid var(--border);
+  display:flex;align-items:center;height:64px;padding:0 40px;
+  box-shadow:0 1px 8px rgba(0,0,0,.05);
+}
+.gnav-logo{display:flex;align-items:center;flex-shrink:0;flex:1}
+.gnav-logo img{height:36px;width:auto}
+.gnav-lang{position:relative;flex-shrink:0;margin-right:12px}
+.gnav-globe-btn{
+  background:none;border:1.5px solid var(--border);border-radius:50%;
+  width:38px;height:38px;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:border-color .2s,background .2s;
+}
+.gnav-globe-btn:hover{border-color:var(--primary);background:var(--primary-light)}
+.gnav-globe-btn svg{width:20px;height:20px;color:var(--secondary)}
+.gnav-lang-drop{
+  display:none;position:absolute;right:0;top:46px;
+  background:var(--white);border:1px solid var(--border);border-radius:12px;
+  box-shadow:0 8px 24px rgba(0,0,0,.1);min-width:160px;overflow:hidden;z-index:200;
+}
+.gnav-lang-drop.open{display:block}
+.gnav-lang-opt{
+  padding:11px 16px;font-size:13px;font-weight:500;color:var(--navy);
+  cursor:pointer;transition:background .15s;display:flex;align-items:center;gap:8px;
+}
+.gnav-lang-opt:hover{background:var(--primary-light);color:var(--primary)}
+.gnav-lang-opt.active{color:var(--primary);font-weight:700}
+.gnav-lang-sep{display:none}
+.gnav-login-btn{
+  display:flex;align-items:center;gap:10px;
+  background:var(--primary);color:#fff;border:none;border-radius:24px;
+  padding:10px 22px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;
+  cursor:pointer;box-shadow:0 4px 14px rgba(114,57,234,.35);transition:background .2s,transform .15s;
+}
+.gnav-login-btn:hover{background:var(--primary-dark);transform:translateY(-1px)}
+/* Bottom nav (phone only) */
+.dash-phone-nav{display:none}
+.dash-phone-nav-item{
+  flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;
+  font-size:9px;font-weight:600;color:var(--secondary);cursor:default;
+}
+.dash-phone-nav-item.active{color:var(--primary)}
+.dash-phone-nav-item svg{width:20px;height:20px}
+/* ── Mobile responsive (real phone) ── */
+@media(max-width:520px){
+  /* Login page */
+  #g-nav{padding:0 16px;height:56px}
+  .gnav-login-btn span{display:none}
+  .gnav-login-btn{padding:8px 12px}
+  .landing-hero{padding:40px 20px 32px}
+  .landing-hero h1{font-size:26px}
+  .landing-hero p{font-size:13px}
+  .landing-preview{display:none}
+  /* Dashboard nav */
+  .dash-nav{height:52px;padding:0 14px}
+  .dash-nav-logo img{height:28px}
+  .view-toggle{display:none}
+  /* Banner */
+  .dash-banner{padding:18px 16px;gap:14px}
+  .dash-banner-avatar{width:54px;height:54px;font-size:20px}
+  .dash-banner-name{font-size:16px}
+  .dash-banner-greeting{font-size:11px}
+  .dash-banner-meta{font-size:10px}
+  /* Layout */
+  .dash-layout{grid-template-columns:1fr!important;padding:12px;gap:12px}
+  .panel-left,.panel-right{display:none!important}
+  .dash-content{grid-template-columns:1fr!important;gap:12px}
+  .stat-strip{grid-template-columns:repeat(2,1fr)!important;gap:8px}
+  .stat-box{padding:12px 14px;border-radius:14px}
+  .stat-num{font-size:22px}
+  .stat-lbl{font-size:10px}
+  .card{padding:16px;border-radius:16px}
+  .grade-grid{grid-template-columns:repeat(3,1fr)!important}
+  .grade-cell{padding:7px 4px;font-size:10px}
+  .logout-btn{padding:5px 10px;font-size:11px}
+  .dash-nav-avatar{width:28px;height:28px;font-size:11px}
+  /* Bottom nav */
+  .dash-phone-nav{
+    display:flex!important;position:sticky;bottom:0;z-index:10;
+    background:#fff;border-top:1px solid var(--border);padding:8px 0 10px;
+  }
+}
+.gnav-login-btn .g-icon{
+  width:28px;height:28px;border-radius:50%;background:#fff;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.gnav-login-btn .g-icon svg{width:18px;height:18px}
+.spm-header{display:none!important}
+/* Landing hero */
+.landing-hero{
+  max-width:860px;margin:0 auto;padding:80px 40px 60px;text-align:center;
+}
+.landing-hero h1{
+  font-size:clamp(36px,5vw,60px);font-weight:800;color:var(--navy);
+  line-height:1.15;margin-bottom:20px;
+}
+.landing-hero p{
+  font-size:16px;color:var(--secondary);max-width:640px;margin:0 auto 36px;line-height:1.7;
+}
+.landing-agree{display:flex;align-items:center;gap:8px;justify-content:center;margin-bottom:16px;font-size:13px;color:var(--secondary)}
+.landing-agree a{color:var(--primary);text-decoration:underline;cursor:pointer}
+.landing-hero-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--primary);color:#fff;border:none;border-radius:24px;
+  padding:14px 32px;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;
+  cursor:pointer;box-shadow:0 6px 20px rgba(114,57,234,.35);transition:background .2s,transform .15s;
+  opacity:.4;pointer-events:none;
+}
+.landing-hero-btn.enabled{opacity:1;pointer-events:auto}
+.landing-hero-btn .g-icon{width:30px;height:30px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.landing-hero-btn .g-icon svg{width:20px;height:20px}
+.landing-hero-btn:hover.enabled,.landing-hero-btn.enabled:hover{background:var(--primary-dark);transform:translateY(-2px)}
+.landing-preview{
+  background:linear-gradient(180deg,#EDE9FF 0%,#D8CFFF 100%);
+  padding:48px 40px 0;text-align:center;overflow:hidden;
+}
+.landing-preview-inner{
+  max-width:900px;margin:0 auto;
+  background:var(--white);border-radius:16px 16px 0 0;
+  box-shadow:0 -4px 32px rgba(114,57,234,.15);overflow:hidden;
+}
+.preview-bar{
+  background:var(--white);padding:10px 16px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:8px;
+}
+.preview-dot{width:10px;height:10px;border-radius:50%}
+.preview-bar-url{flex:1;background:var(--bg);border-radius:6px;padding:5px 12px;font-size:11px;color:var(--secondary);margin:0 8px}
+.preview-content{padding:0}
+.preview-nav{background:var(--white);border-bottom:1px solid var(--border);padding:8px 16px;display:flex;align-items:center;gap:12px}
+.preview-nav img{height:22px}
+.preview-banner{
+  background:linear-gradient(135deg,#4A1D96,#7239EA,#9B6DFF);
+  padding:16px 20px;display:flex;align-items:center;gap:14px;
+}
+.preview-avatar{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff}
+.preview-name{font-size:13px;font-weight:700;color:#fff}
+.preview-sub{font-size:10px;color:rgba(255,255,255,.75)}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ GLOBAL NAV (all pages) ═══════════════════ -->
+<nav id="g-nav">
+  <div class="gnav-logo">
+    <img src="logo.png" alt="DELIMa">
+  </div>
+  <div class="gnav-lang" id="gnav-lang-wrap">
+    <button class="gnav-globe-btn" onclick="toggleLangDrop('gnav-lang-drop')" title="Tukar Bahasa">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    </button>
+    <div class="gnav-lang-drop" id="gnav-lang-drop">
+      <div class="gnav-lang-opt active" id="btn-lang-ms" onclick="setLang('ms')">🇲🇾 Bahasa Melayu</div>
+      <div class="gnav-lang-opt" id="btn-lang-en" onclick="setLang('en')">🇬🇧 Bahasa Inggeris</div>
+    </div>
+  </div>
+  <button class="gnav-login-btn" id="gnav-login-btn" onclick="showEmailModal()">
+    <span class="g-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
+        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+      </svg>
+    </span>
+    <span data-ms="Log Masuk ke DELIMa" data-en="Log in to DELIMa">Log Masuk ke DELIMa</span>
+  </button>
+</nav>
+
+<!-- LOADING OVERLAY -->
+<div id="loading-overlay" style="display:none;flex-direction:column">
+  <div class="spinner">
+    <div class="effect-1"></div>
+    <div class="effect-2"></div>
+    <div class="effect-3"></div>
+  </div>
+  <div class="loading-text" id="loading-text">Mengesahkan maklumat…</div>
+</div>
+
+<!-- ════════════════════ PAGE 1: DELIMA LANDING ════════════════════ -->
+<div id="page-login">
+  <!-- HERO -->
+  <div class="landing-hero">
+    <h1 id="landing-h1">Peneraju generasi digital<br>untuk pendidikan berkualiti</h1>
+    <p id="landing-p">Digital Education Learning Initiative Malaysia (DELIMa) adalah platform pembelajaran digital rasmi Kementerian Pendidikan yang dibangunkan khusus untuk merevolusi pendidikan berteraskan teknologi AI.</p>
+    <div class="landing-agree">
+      <input type="checkbox" id="agree-chk" onchange="toggleLoginBtn()">
+      <label for="agree-chk" id="delima-agree-lbl">Saya Bersetuju dengan <a>terma dan syarat</a></label>
+    </div>
+    <button class="landing-hero-btn" id="delima-login-btn" onclick="showEmailModal()">
+      <span class="g-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+      </span>
+      <span data-ms="Log Masuk ke DELIMa" data-en="Log in to DELIMa">Log Masuk ke DELIMa</span>
+    </button>
+  </div>
+  <!-- PREVIEW SECTION -->
+  <div class="landing-preview">
+    <div class="landing-preview-inner">
+      <!-- Browser chrome -->
+      <div class="preview-bar">
+        <div class="preview-dot" style="background:#FF5F57"></div>
+        <div class="preview-dot" style="background:#FFBD2E"></div>
+        <div class="preview-dot" style="background:#28CA42"></div>
+        <div class="preview-bar-url">portal.delima.edu.my · Sistem Padanan Biasiswa</div>
+      </div>
+      <!-- Mock nav -->
+      <div class="preview-nav" style="justify-content:space-between">
+        <img src="logo.png" alt="DELIMa">
+        <div style="display:flex;gap:16px;font-size:10px;color:#6B7280;align-items:center">
+          <span style="color:#7239EA;font-weight:600;border-bottom:2px solid #7239EA;padding-bottom:2px">Padanan Biasiswa</span>
+          <span>Profil Holland</span>
+          <span>Laporan PDF</span>
+        </div>
+        <div style="width:26px;height:26px;border-radius:50%;background:#7239EA;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;font-weight:700">P</div>
+      </div>
+      <!-- Mock purple banner -->
+      <div class="preview-banner">
+        <div class="preview-avatar">🎓</div>
+        <div>
+          <div style="font-size:9px;color:rgba(255,255,255,.7);margin-bottom:2px">Selamat Datang, Pelajar DELIMa</div>
+          <div class="preview-name">PELAJAR SEKOLAH BERASRAMA PENUH</div>
+          <div class="preview-sub">📍 Sekolah Berasrama Penuh &nbsp;|&nbsp; ✉ pelajar@moe-dl.edu.my</div>
+        </div>
+      </div>
+      <!-- Mock content cards -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:12px;background:#F9FAFB">
+        <div style="background:#fff;border-radius:8px;padding:10px;border:1px solid #F1F1F4">
+          <div style="font-size:8px;color:#A1A5B7;margin-bottom:4px">Padanan Teratas</div>
+          <div style="font-size:10px;font-weight:700;color:#181C32">Biasiswa JPA</div>
+          <div style="font-size:8px;color:#17C653;margin-top:2px">● Layak</div>
+        </div>
+        <div style="background:#fff;border-radius:8px;padding:10px;border:1px solid #F1F1F4">
+          <div style="font-size:8px;color:#A1A5B7;margin-bottom:4px">Profil Holland</div>
+          <div style="font-size:10px;font-weight:700;color:#181C32">Investigatif (I)</div>
+          <div style="font-size:8px;color:#7239EA;margin-top:2px">● Sains & Teknologi</div>
+        </div>
+        <div style="background:#fff;border-radius:8px;padding:10px;border:1px solid #F1F1F4">
+          <div style="font-size:8px;color:#A1A5B7;margin-bottom:4px">Laporan PDF</div>
+          <div style="font-size:10px;font-weight:700;color:#181C32">Sedia Dimuat Turun</div>
+          <div style="font-size:8px;color:#00BCD4;margin-top:2px">● Jana Laporan</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="delima-footer" id="delima-footer-txt">© 2026 Kementerian Pendidikan Malaysia (KPM). Hak Cipta Terpelihara</div>
+</div>
+
+<!-- ── MODAL 1: Email ── -->
+<div class="delima-overlay" id="modal-email">
+  <div class="delima-modal">
+    <div class="delima-modal-logo">
+      <svg class="delima-modal-logo-g" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+      <span style="font-size:18px;font-weight:500;color:#202124">Sign in with Google</span>
+    </div>
+    <h2>Sign in</h2>
+    <div class="delima-modal-sub">to continue to <a>delima.edu.my</a></div>
+    <div class="delima-modal-field">
+      <input type="email" id="modal-email-inp" placeholder=" " autocomplete="email"
+        onkeydown="if(event.key==='Enter') nextToPassword()">
+      <label>Email or phone</label>
+    </div>
+    <div class="delima-modal-forgot" onclick="">Forgot email?</div>
+    <div style="font-size:12px;color:#5F6368;margin-bottom:8px">
+      To continue, Google will share your name, email address, language preference and profile picture with delima.edu.my.
+    </div>
+    <div id="delima-login-error"></div>
+    <div class="delima-modal-actions">
+      <button class="txt-btn" onclick="closeModals()">Cancel</button>
+      <button class="next-btn" onclick="nextToPassword()">Next</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── MODAL 2: Password ── -->
+<div class="delima-overlay" id="modal-password">
+  <div class="delima-modal">
+    <div class="delima-modal-logo">
+      <svg class="delima-modal-logo-g" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+      <span style="font-size:18px;font-weight:500;color:#202124">Sign in with Google</span>
+    </div>
+    <h2>Welcome</h2>
+    <div class="delima-modal-email-chip">
+      <div class="chip-avatar" id="chip-avatar">A</div>
+      <div class="chip-email" id="chip-email">—</div>
+    </div>
+    <div class="delima-modal-field">
+      <input type="password" id="modal-pw-inp" placeholder=" " autocomplete="current-password"
+        onkeydown="if(event.key==='Enter') doLogin()">
+      <label>Enter your password</label>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin:10px 0 16px">
+      <input type="checkbox" id="show-pw-chk" onchange="togglePwVisibility()" style="cursor:pointer;accent-color:#1A73E8">
+      <label for="show-pw-chk" style="font-size:14px;color:#202124;cursor:pointer">Show password</label>
+    </div>
+    <div style="font-size:12px;color:#5F6368;margin-bottom:8px">
+      To continue, Google will share your name, email address, language preference and profile picture with delima.edu.my.
+    </div>
+    <div id="delima-pw-error" style="display:none;font-size:13px;color:#D93025;margin-top:6px"></div>
+    <div class="delima-modal-actions">
+      <button class="txt-btn" onclick="">Forgot password?</button>
+      <button class="next-btn" onclick="doLogin()">Next</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ PAGE 1.5: SPM INPUT ════════════════════ -->
+<div id="page-spm-input">
+  <header class="spm-header">
+    <img src="logo.png" alt="DELIMa" class="spm-header-logo">
+    <div class="spm-header-text">
+      <h1>Kementerian Pendidikan Malaysia</h1>
+      <p>Sistem Padanan Biasiswa Berkuasa AI — Portal Pelajar SPM</p>
+    </div>
+  </header>
+  <div class="spm-body">
+    <div class="spm-card">
+      <div class="spm-card-title" id="spm-card-title">Keputusan SPM Anda</div>
+      <div class="spm-card-sub" id="spm-card-sub">Masukkan bilangan mata pelajaran yang anda ambil, kemudian isi subjek dan gred untuk setiap satu.</div>
+      <div class="spm-count-row">
+        <label for="spm-num-subj" id="spm-num-lbl">Bilangan mata pelajaran:</label>
+        <input type="number" id="spm-num-subj" class="spm-count-input" min="1" max="15" value="8">
+        <button class="spm-jana-btn" id="spm-jana-btn" onclick="janaJadual()">Jana Jadual</button>
+      </div>
+      <div class="spm-table-wrap" id="spm-table-wrap" style="display:none">
+        <table class="spm-table">
+          <thead>
+            <tr><th class="no-col">#</th><th>Mata Pelajaran</th><th>Gred</th></tr>
+          </thead>
+          <tbody id="spm-tbody"></tbody>
+        </table>
+        <p class="spm-hint" id="spm-hint">* Taip untuk cari subjek dalam senarai. Pilih gred untuk setiap subjek.</p>
+      </div>
+      <div class="spm-submit-row">
+        <button class="spm-submit-btn" id="spm-submit-btn" onclick="submitSpm()" style="display:none">Teruskan ke Dashboard →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ PAGE 2: DASHBOARD ════════════════════ -->
+<div id="page-dashboard">
+  <!-- NAV BAR — DELIMa 3.0 style -->
+  <div class="dash-nav">
+    <div class="dash-nav-logo">
+      <img src="logo.png" alt="DELIMa">
+    </div>
+    <div class="dash-nav-right" style="flex:1;justify-content:flex-end">
+      <div class="gnav-lang">
+        <button class="gnav-globe-btn" onclick="toggleLangDrop('dash-lang-drop')" title="Tukar Bahasa">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </button>
+        <div class="gnav-lang-drop" id="dash-lang-drop">
+          <div class="gnav-lang-opt active" id="tb-lang-ms" onclick="setLang('ms')">🇲🇾 Bahasa Melayu</div>
+          <div class="gnav-lang-opt" id="tb-lang-en" onclick="setLang('en')">🇬🇧 Bahasa Inggeris</div>
+        </div>
+      </div>
+      <div class="dash-nav-avatar" id="dash-avatar">P</div>
+      <button class="logout-btn" id="logout-btn" onclick="doLogout()" data-ms="Log Keluar" data-en="Logout">Log Keluar</button>
+    </div>
+  </div>
+  <!-- PROFILE BANNER — DELIMa 3.0 purple gradient -->
+  <div class="dash-banner">
+    <div class="dash-banner-avatar" id="dash-banner-avatar">P</div>
+    <div class="dash-banner-info">
+      <div class="dash-banner-greeting" id="dash-banner-greeting">Selamat Datang</div>
+      <div class="dash-banner-name" id="dash-username">—</div>
+      <div class="dash-banner-meta">
+        <span>🎓</span>
+        <span id="dash-userid">—</span>
+        <span style="margin-left:8px">📍</span>
+        <span>Sekolah Berasrama Penuh Integrasi Kuantan</span>
+      </div>
+    </div>
+  </div>
+  <div class="dash-layout">
+    <!-- PROFILE CARD DELIMa-style -->
+    <div style="display:flex;flex-direction:column">
+      <div class="profile-card-delima">
+        <div class="profile-card-top" data-ms="Salam Sejahtera Pelajar" data-en="Welcome, Student">Salam Sejahtera Pelajar</div>
+        <div class="profile-card-bot">
+          <div class="profile-card-avatar" id="side-avatar">P</div>
+          <div class="profile-card-name" id="side-name">—</div>
+          <div class="profile-card-school">SEKOLAH BERASRAMA PENUH<br>IBNU KHALDUN</div>
+        </div>
+      </div>
+
+    <!-- LEFT PANEL — Info Biasiswa -->
+    <div class="side-panel panel-left">
+      <div class="side-panel-header">
+        <span data-ms="📄 Info Biasiswa" data-en="📄 Scholarship Info">&#128196; Info Biasiswa</span>
+        <span class="panel-badge" data-ms="Terkini" data-en="Latest">Terkini</span>
+      </div>
+      <div class="side-panel-body" id="scholarship-news-body">
+        <div style="text-align:center;padding:20px;color:var(--secondary);font-size:.8rem">Memuatkan...</div>
+      </div>
+    </div>
+    </div><!-- end left column wrapper -->
+
+    <!-- MAIN CONTENT + MATCHING (same column) -->
+    <div style="display:flex;flex-direction:column;gap:20px;min-width:0">
+      <div class="dash-content" id="dash-content"></div>
+      <!-- STATUS LEPAS SPM CARD -->
+      <div class="card" id="status-card" style="display:none">
+        <div class="card-header">
+          <div class="card-icon" style="background:#F0FDF4">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <div>
+            <div class="card-title" data-ms="Status Lepas SPM" data-en="Post-SPM Status">Status Lepas SPM</div>
+            <div class="card-sub" data-ms="Kemaskini status anda — IPT, bidang, dan biasiswa yang diperoleh" data-en="Update your status — university, field of study, and scholarship received">Kemaskini status anda — IPT, bidang, dan biasiswa yang diperoleh</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <!-- STEP 1: Soalan utama -->
+          <div>
+            <div id="enroll-question" style="font-size:12px;font-weight:700;color:#374151;margin-bottom:8px"
+              data-ms="Adakah anda sudah menyambung pengajian selepas SPM?"
+              data-en="Have you continued your studies after SPM?">Adakah anda sudah menyambung pengajian selepas SPM?</div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <button onclick="setEnroll('ya')" id="btn-enroll-ya"
+                data-ms="🎓 Ya, Sudah" data-en="🎓 Yes, I Have"
+                style="padding:10px 20px;border:2px solid #E2E8F0;border-radius:10px;background:#fff;
+                       font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;cursor:pointer;color:#374151;transition:all .2s">
+                🎓 Ya, Sudah
+              </button>
+              <button onclick="setEnroll('belum')" id="btn-enroll-belum"
+                data-ms="📚 Belum Lagi" data-en="📚 Not Yet"
+                style="padding:10px 20px;border:2px solid #E2E8F0;border-radius:10px;background:#fff;
+                       font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;cursor:pointer;color:#374151;transition:all .2s">
+                📚 Belum Lagi
+              </button>
+              <button onclick="setEnroll('bekerja')" id="btn-enroll-bekerja"
+                data-ms="💼 Sudah Bekerja" data-en="💼 Already Working"
+                style="padding:10px 20px;border:2px solid #E2E8F0;border-radius:10px;background:#fff;
+                       font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;cursor:pointer;color:#374151;transition:all .2s">
+                💼 Sudah Bekerja
+              </button>
+            </div>
+          </div>
+
+          <!-- PATH: BEKERJA -->
+          <div id="path-bekerja" style="display:none;padding:14px 16px;background:#F8FAFC;border-radius:10px;border:1px solid #E2E8F0;font-size:13px;color:#374151"
+            data-ms="💼 Tahniah! Semoga berjaya dalam kerjaya anda."
+            data-en="💼 Congratulations! Wishing you success in your career.">
+            💼 Tahniah! Semoga berjaya dalam kerjaya anda.
+          </div>
+
+          <!-- PATH: BELUM -->
+          <div id="path-belum" style="display:none;border-top:1px solid #F1F5F9;padding-top:14px">
+            <div id="belum-match-lbl" style="font-size:12px;font-weight:700;color:#374151;margin-bottom:8px"
+              data-ms="Pilih cara padanan biasiswa:"
+              data-en="Choose your scholarship matching method:">Pilih cara padanan biasiswa:</div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px">
+              <button onclick="setBelumPath('psiko')" id="btn-path-psiko"
+                data-ms="🧠 Berdasarkan psikometri saya" data-en="🧠 Based on my psychometric profile"
+                style="padding:10px 18px;border:2px solid #E2E8F0;border-radius:10px;background:#fff;
+                       font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;cursor:pointer;color:#374151;transition:all .2s">
+                🧠 Berdasarkan psikometri saya
+              </button>
+              <button onclick="setBelumPath('kos')" id="btn-path-kos"
+                data-ms="📋 Ada kos yang diminati" data-en="📋 I have a course in mind"
+                style="padding:10px 18px;border:2px solid #E2E8F0;border-radius:10px;background:#fff;
+                       font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;cursor:pointer;color:#374151;transition:all .2s">
+                📋 Ada kos yang diminati
+              </button>
+            </div>
+            <!-- Sub-path: psikometri -->
+            <div id="belum-psiko" style="display:none;padding:14px 16px;background:#EFF6FF;border-radius:10px;border:1px solid #BFDBFE">
+              <div id="psiko-desc" style="font-size:13px;color:#1E40AF;margin-bottom:12px"
+                data-ms="Sistem akan mencadangkan biasiswa berdasarkan profil psikometri Holland anda."
+                data-en="The system will recommend scholarships based on your Holland psychometric profile.">
+                Sistem akan mencadangkan biasiswa berdasarkan profil psikometri Holland anda.
+              </div>
+              <button onclick="submitHolland()" id="btn-holland"
+                data-ms="Lihat Kos, IPT &amp; Biasiswa Sesuai →" data-en="View Courses, Universities &amp; Scholarships →"
+                style="padding:10px 22px;background:#1A56DB;color:#fff;border:none;border-radius:8px;
+                       font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;cursor:pointer">
+                Lihat Kos, IPT &amp; Biasiswa Sesuai →
+              </button>
+            </div>
+            <!-- Sub-path: kos diminati -->
+            <div id="belum-kos" style="display:none">
+              <div id="belum-kos-lbl" style="font-size:12px;font-weight:700;color:#374151;margin-bottom:6px"
+                data-ms="Nama Kos / Program yang Diminati"
+                data-en="Course / Programme of Interest">Nama Kos / Program yang Diminati</div>
+              <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+                <input id="belum-kos-input" type="text"
+                  data-placeholder-ms="Cth: Diploma Kejuruteraan Mekanikal"
+                  data-placeholder-en="E.g.: Diploma in Mechanical Engineering"
+                  placeholder="Cth: Diploma Kejuruteraan Mekanikal"
+                  style="flex:1;min-width:220px;padding:10px 12px;border:1.5px solid #D1D5DB;border-radius:8px;
+                         font-family:'Montserrat',sans-serif;font-size:13px;outline:none;box-sizing:border-box"
+                  onfocus="this.style.borderColor='#16A34A'" onblur="this.style.borderColor='#D1D5DB'"/>
+                <button onclick="submitBelumKos()" id="btn-belum-kos-cari"
+                  data-ms="Cari Biasiswa →" data-en="Find Scholarships →"
+                  style="padding:10px 20px;background:#16A34A;color:#fff;border:none;border-radius:8px;
+                         font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap">
+                  Cari Biasiswa →
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PATH: YA SUDAH -->
+          <div id="path-ya" style="display:none;border-top:1px solid #F1F5F9;padding-top:14px">
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px">
+              <div style="flex:1;min-width:160px">
+                <div id="ipt-kat-lbl" style="font-size:12px;font-weight:700;color:#374151;margin-bottom:6px"
+                  data-ms="Kategori IPT" data-en="University Category">Kategori IPT</div>
+                <select id="ipt-kat-sel" onchange="loadIptNames()"
+                  style="width:100%;padding:10px 12px;border:1.5px solid #D1D5DB;border-radius:8px;
+                         font-family:'Montserrat',sans-serif;font-size:13px;outline:none;background:#fff">
+                  <option value="" data-ms="-- Pilih kategori --" data-en="-- Select category --">-- Pilih kategori --</option>
+                </select>
+              </div>
+              <div style="flex:1;min-width:160px">
+                <div id="ipt-nama-lbl" style="font-size:12px;font-weight:700;color:#374151;margin-bottom:6px"
+                  data-ms="Nama IPT" data-en="University Name">Nama IPT</div>
+                <select id="ipt-nama-sel"
+                  style="width:100%;padding:10px 12px;border:1.5px solid #D1D5DB;border-radius:8px;
+                         font-family:'Montserrat',sans-serif;font-size:13px;outline:none;background:#fff">
+                  <option value="" data-ms="-- Pilih IPT --" data-en="-- Select university --">-- Pilih IPT --</option>
+                </select>
+              </div>
+              <div style="flex:1;min-width:160px">
+                <div id="ya-kos-lbl" style="font-size:12px;font-weight:700;color:#374151;margin-bottom:6px"
+                  data-ms="Kos / Program Semasa" data-en="Current Course / Programme">Kos / Program Semasa</div>
+                <input id="ya-kos-input" type="text"
+                  data-placeholder-ms="Cth: Diploma Teknologi Maklumat"
+                  data-placeholder-en="E.g.: Diploma in Information Technology"
+                  placeholder="Cth: Diploma Teknologi Maklumat"
+                  style="width:100%;padding:10px 12px;border:1.5px solid #D1D5DB;border-radius:8px;
+                         font-family:'Montserrat',sans-serif;font-size:13px;outline:none;box-sizing:border-box"
+                  onfocus="this.style.borderColor='#16A34A'" onblur="this.style.borderColor='#D1D5DB'"/>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:flex-end">
+              <button onclick="submitYaSudah()" id="btn-ya-cari"
+                data-ms="Cari Biasiswa →" data-en="Find Scholarships →"
+                style="padding:11px 28px;background:#16A34A;color:#fff;border:none;border-radius:10px;
+                       font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;cursor:pointer">
+                Cari Biasiswa →
+              </button>
+            </div>
+          </div>
+
+          <!-- AI processing indicator -->
+          <div id="status-save-msg" style="display:none;font-size:12px;font-weight:600;text-align:right;color:#374151"
+            data-ms="⏳ Memproses dengan AI..."
+            data-en="⏳ Processing with AI...">
+            ⏳ Memproses dengan AI...
+          </div>
+        </div>
+      </div>
+
+      <div id="match-outer" style="display:flex;flex-direction:column;gap:20px">
+        <!-- Matching card -->
+        <div class="card match-section" id="match-card" style="display:none">
+          <div class="card-header">
+            <div class="card-icon" style="background:#EFF6FF">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A56DB" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </div>
+            <div>
+              <div class="card-title" data-ms="Padanan Biasiswa" data-en="Scholarship Matching">Padanan Biasiswa</div>
+              <div class="card-sub" id="match-sub" data-ms="Sedang menjalankan padanan..." data-en="Running scholarship match...">Sedang menjalankan padanan...</div>
+            </div>
+          </div>
+          <div id="match-loading" class="match-loading">
+            <div class="match-spinner"><div class="effect-1"></div><div class="effect-2"></div><div class="effect-3"></div></div>
+            <div class="match-loading-text" data-ms="Sistem sedang mencari biasiswa terbaik untuk anda..." data-en="The system is finding the best scholarships for you...">Sistem sedang mencari biasiswa terbaik untuk anda...</div>
+            <div class="match-loading-sub" id="match-loading-sub" data-ms="Memulakan padanan..." data-en="Initialising match...">Memulakan padanan...</div>
+          </div>
+          <div id="match-results-area"></div>
+
+        </div>
+        <!-- Report card -->
+        <div class="card match-section" id="report-card" style="display:none">
+          <div class="card-header">
+            <div class="card-icon" style="background:var(--success-light)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
+            <div>
+              <div class="card-title" data-ms="Laporan Biasiswa" data-en="Scholarship Report">Laporan Biasiswa</div>
+              <div class="card-sub" data-ms="Sedia untuk dimuat turun &amp; dicetak" data-en="Ready to download &amp; print">Sedia untuk dimuat turun &amp; dicetak</div>
+            </div>
+          </div>
+          <div class="match-loading" id="report-loading">
+            <div class="match-spinner"><div class="effect-1"></div><div class="effect-2"></div><div class="effect-3"></div></div>
+            <div class="match-loading-text" data-ms="Menyediakan laporan PDF anda..." data-en="Preparing your PDF report...">Menyediakan laporan PDF anda...</div>
+            <div class="match-loading-sub" data-ms="Ini mengambil masa beberapa saat..." data-en="This will take a few seconds...">Ini mengambil masa beberapa saat...</div>
+          </div>
+          <div id="report-ready" style="display:none;padding:24px;text-align:center">
+            <p id="report-ready-msg" style="font-size:13px;color:var(--body-color);margin-bottom:16px"
+              data-ms="Laporan padanan biasiswa anda telah sedia. Muat turun dan simpan untuk rujukan."
+              data-en="Your scholarship matching report is ready. Download and save it for future reference.">
+              Laporan padanan biasiswa anda telah sedia. Muat turun dan simpan untuk rujukan.
+            </p>
+            <a id="btn-download" href="#" target="_blank"
+               style="display:inline-flex;align-items:center;gap:10px;background:var(--success);color:#fff;
+                      font-family:'Montserrat',sans-serif;font-size:14px;font-weight:600;
+                      padding:13px 28px;border-radius:10px;text-decoration:none;
+                      box-shadow:0 4px 14px rgba(56,142,60,.3);transition:.2s">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              <span id="btn-download-txt" data-ms="Muat Turun Laporan PDF" data-en="Download PDF Report">Muat Turun Laporan PDF</span>
+            </a>
+            <p id="report-filetype" style="font-size:11px;color:var(--secondary);margin-top:12px"
+              data-ms="Fail PDF • Boleh dicetak terus"
+              data-en="PDF File • Ready to print">Fail PDF • Boleh dicetak terus</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL — Cadangan -->
+    <div class="side-panel panel-right">
+      <div class="side-panel-header">
+        <span data-ms="💡 Cadangan AI" data-en="💡 AI Suggestions">&#128161; Cadangan AI</span>
+        <span class="panel-badge">Tips</span>
+      </div>
+      <div class="side-panel-body">
+        <div class="side-item">
+          <div class="side-item-title" data-ms="Tingkatkan Skor Anda" data-en="Improve Your Score">Tingkatkan Skor Anda</div>
+          <div class="side-item-sub" data-ms="Pelajar dengan GP ≥ 9.0 layak 40% lebih banyak biasiswa" data-en="Students with GP ≥ 9.0 qualify for 40% more scholarships">Pelajar dengan GP &ge; 9.0 layak 40% lebih banyak biasiswa</div>
+        </div>
+        <div class="side-item">
+          <div class="side-item-title" data-ms="Aktif Kokurikulum" data-en="Stay Active in Co-curriculum">Aktif Kokurikulum</div>
+          <div class="side-item-sub" data-ms="Jawatan AJK persatuan meningkatkan markah kepimpinan" data-en="Committee positions in clubs boost your leadership score">Jawatan AJK persatuan meningkatkan markah kepimpinan</div>
+        </div>
+        <div class="side-item">
+          <div class="side-item-title" data-ms="Kenal Pasti Kekuatan" data-en="Know Your Strengths">Kenal Pasti Kekuatan</div>
+          <div class="side-item-sub" data-ms="Gunakan profil RIASEC untuk padankan biasiswa bidang pilihan" data-en="Use your interest profile to match scholarships in your field">Gunakan profil RIASEC untuk padankan biasiswa bidang pilihan</div>
+        </div>
+        <div class="side-item">
+          <div class="side-item-title" data-ms="Mohon Awal" data-en="Apply Early">Mohon Awal</div>
+          <div class="side-item-sub" data-ms="Permohonan awal meningkat peluang — jangan tunggu tarikh akhir" data-en="Early applications improve your chances — don't wait for the deadline">Permohonan awal meningkat peluang — jangan tunggu tarikh akhir</div>
+        </div>
+        <div class="side-item">
+          <div class="side-item-title" data-ms="Surat Sokongan" data-en="Support Letter">Surat Sokongan</div>
+          <div class="side-item-sub" data-ms="Minta surat sokongan dari Pengetua sebelum mohon biasiswa" data-en="Request a support letter from your Principal before applying">Minta surat sokongan dari Pengetua sebelum mohon biasiswa</div>
+        </div>
+        <div class="side-item">
+          <div class="side-item-title" data-ms="Cari Mengikut Minat" data-en="Search by Interest">Cari Mengikut Minat</div>
+          <div class="side-item-sub" data-ms="Guna fungsi carian minat di bawah untuk biasiswa lebih spesifik" data-en="Use the interest search below for more specific scholarships">Guna fungsi carian minat di bawah untuk biasiswa lebih spesifik</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom nav (phone mode only) -->
+  <div class="dash-phone-nav">
+    <div class="dash-phone-nav-item active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Utama</span>
+    </div>
+    <div class="dash-phone-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span>Biasiswa</span>
+    </div>
+    <div class="dash-phone-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      <span>Laporan</span>
+    </div>
+    <div class="dash-phone-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <span>Profil</span>
+    </div>
+  </div>
+</div>
+
+<script>
+let currentStudentId = null;
+let matchPollTimer   = null;
+
+function showPage(id, displayType='block'){
+  ['page-login','page-spm-input','page-dashboard'].forEach(p=>{
+    const el=document.getElementById(p);
+    if(el){ el.style.display='none'; el.classList.remove('page-enter'); }
+  });
+  const target=document.getElementById(id);
+  if(target){
+    target.style.display=displayType;
+    void target.offsetWidth; // force reflow
+    target.classList.add('page-enter');
+  }
+}
+let _lang = 'ms';
+
+// ─── Language switcher ───
+const TRANS = {
+  'delima-subtitle':     {ms:'Menjadikan Pembelajaran Digital Lebih Peribadi', en:'Making Digital Learning Personal'},
+  'delima-login-btn':    {ms:'Klik di sini untuk log masuk', en:'Click here to login'},
+  'delima-agree-lbl':    {ms:'Saya Bersetuju dengan <a>terma dan syarat</a>', en:'I Agree to the <a>term and conditions</a>'},
+  'delima-guardian-lbl': {ms:'Ibu bapa &amp; Penjaga: Sila <a>Klik Di Sini</a>', en:'Parents &amp; Guardians: Please <a>Click Here</a>'},
+  'delima-footer-txt':   {ms:'© 2021 Kementerian Pendidikan Malaysia (KPM). Hak Cipta Terpelihara', en:'© 2021 Ministry of Education Malaysia (MOE). All Rights Reserved'},
+  'spm-card-title':      {ms:'Keputusan SPM Anda', en:'Your SPM Results'},
+  'spm-card-sub':        {ms:'Masukkan bilangan mata pelajaran yang anda ambil, kemudian isi subjek dan gred untuk setiap satu.', en:'Enter the number of subjects you took, then fill in the subject and grade for each one.'},
+  'spm-num-lbl':         {ms:'Bilangan mata pelajaran:', en:'Number of subjects:'},
+  'spm-jana-btn':        {ms:'Jana Jadual', en:'Generate Table'},
+  'spm-submit-btn':      {ms:'Teruskan ke Dashboard →', en:'Continue to Dashboard →'},
+  'spm-hint':            {ms:'* Taip untuk cari subjek dalam senarai. Pilih gred untuk setiap subjek.', en:'* Type to search subjects in the list. Select the grade for each subject.'},
+  'loading-text':        {ms:'Mengesahkan maklumat…', en:'Verifying information…'},
+  'top-bar-title':       {ms:'Portal Pelajar — Sistem Padanan Biasiswa', en:'Student Portal — Scholarship Matching System'},
+  'logout-btn':          {ms:'Log Keluar', en:'Log Out'},
+};
+function toggleLangDrop(id){
+  const drop = document.getElementById(id);
+  drop.classList.toggle('open');
+  // close other dropdowns
+  ['gnav-lang-drop','dash-lang-drop'].forEach(d=>{ if(d!==id) { const el=document.getElementById(d); if(el) el.classList.remove('open'); } });
+}
+document.addEventListener('click', function(e){
+  if(!e.target.closest('.gnav-lang')) {
+    document.querySelectorAll('.gnav-lang-drop').forEach(d=>d.classList.remove('open'));
+  }
+});
+function setLang(lang){
+  _lang = lang;
+  // close dropdowns
+  document.querySelectorAll('.gnav-lang-drop').forEach(d=>d.classList.remove('open'));
+  ['btn-lang-ms','btn-lang-en','tb-lang-ms','tb-lang-en'].forEach(id=>{
+    const el=document.getElementById(id); if(el) el.classList.remove('active');
+  });
+  document.getElementById('btn-lang-ms').classList.toggle('active', lang==='ms');
+  document.getElementById('btn-lang-en').classList.toggle('active', lang==='en');
+  document.getElementById('tb-lang-ms').classList.toggle('active', lang==='ms');
+  document.getElementById('tb-lang-en').classList.toggle('active', lang==='en');
+  // data-ms / data-en on elements
+  document.querySelectorAll('[data-ms],[data-en]').forEach(el=>{
+    const txt = el.dataset[lang];
+    if(txt !== undefined) el.textContent = txt;
+  });
+  // placeholders
+  document.querySelectorAll('[data-placeholder-ms],[data-placeholder-en]').forEach(el=>{
+    const ph = el.dataset['placeholder'+lang.charAt(0).toUpperCase()+lang.slice(1)];
+    if(ph !== undefined) el.placeholder = ph;
+  });
+  // select default options
+  document.querySelectorAll('select option[data-ms],select option[data-en]').forEach(el=>{
+    const txt = el.dataset[lang];
+    if(txt !== undefined) el.textContent = txt;
+  });
+  // rebuild dashboard cards if profile is loaded
+  if(_currentProfile && document.getElementById('dash-content')){
+    document.getElementById('dash-content').innerHTML = buildContent(_currentProfile);
+  }
+  // TRANS table
+  for(const [id, map] of Object.entries(TRANS)){
+    const el = document.getElementById(id);
+    if(!el) continue;
+    if(id==='delima-agree-lbl'||id==='delima-guardian-lbl'||id==='delima-footer-txt') el.innerHTML = map[lang];
+    else el.textContent = map[lang];
+  }
+}
+
+// ─── DELIMa Landing: checkbox → enable button ───
+function toggleLoginBtn(){
+  const chk = document.getElementById('agree-chk');
+  const btn = document.getElementById('delima-login-btn');
+  btn.classList.toggle('enabled', chk.checked);
+  btn.classList.toggle('active', chk.checked);
+}
+
+// ─── Modal: show email popup ───
+function showEmailModal(){
+  document.getElementById('modal-email').classList.add('show');
+  setTimeout(()=>document.getElementById('modal-email-inp').focus(), 100);
+}
+
+function closeModals(){
+  document.getElementById('modal-email').classList.remove('show');
+  document.getElementById('modal-password').classList.remove('show');
+  document.getElementById('delima-login-error').style.display='none';
+  document.getElementById('delima-pw-error').style.display='none';
+  document.getElementById('modal-email-inp').value='';
+  document.getElementById('modal-pw-inp').value='';
+}
+
+// ─── Modal 1 Next → show password modal ───
+function nextToPassword(){
+  const email = document.getElementById('modal-email-inp').value.trim();
+  const errEl = document.getElementById('delima-login-error');
+  if(!email){ errEl.textContent='Sila masukkan emel.'; errEl.style.display='block'; return; }
+  errEl.style.display='none';
+  // Extract student ID: sbp5ik001@moe-dl.edu.my → SBP5IK001
+  const id = email.split('@')[0].toUpperCase();
+  document.getElementById('chip-email').textContent = email;
+  document.getElementById('chip-avatar').textContent = email[0].toUpperCase();
+  document.getElementById('modal-email').classList.remove('show');
+  document.getElementById('modal-password').classList.add('show');
+  setTimeout(()=>document.getElementById('modal-pw-inp').focus(), 100);
+  // Store for login
+  window._loginEmail = email;
+  window._loginId = id;
+}
+
+function togglePwVisibility(){
+  const inp = document.getElementById('modal-pw-inp');
+  inp.type = document.getElementById('show-pw-chk').checked ? 'text' : 'password';
+}
+
+// ─── Login ───
+async function doLogin(){
+  const pw    = document.getElementById('modal-pw-inp').value.trim();
+  const id    = window._loginId || '';
+  const errEl = document.getElementById('delima-pw-error');
+  errEl.style.display='none';
+  if(!pw){ errEl.textContent='Sila masukkan kata laluan.'; errEl.style.display='block'; return; }
+  document.getElementById('loading-overlay').style.display='flex';
+  try{
+    const res  = await fetch('/login',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({id, password:pw})
+    });
+    const data = await res.json();
+    if(!res.ok || !data.success){
+      errEl.textContent = data.error || 'Log masuk gagal. Sila cuba semula.';
+      errEl.style.display='block';
+    } else {
+      closeModals();
+      currentStudentId = data.profile.id;
+      showSpmInput(data.profile);
+    }
+  } catch(ex){
+    errEl.textContent='Ralat sambungan. Pastikan server sedang berjalan.';
+    errEl.style.display='block';
+  } finally {
+    document.getElementById('loading-overlay').style.display='none';
+  }
+}
+
+// ─── SPM Input Page ───
+let _spmProfile = null;
+
+const SPM_SUBJECTS = [
+  // Teras
+  'Bahasa Melayu','Bahasa Inggeris','Pendidikan Islam','Pendidikan Moral','Sejarah','Matematik','Sains',
+  // Sains
+  'Matematik Tambahan','Fizik','Kimia','Biologi','Sains Tambahan',
+  // Bahasa
+  'Kesusasteraan Inggeris','Kesusasteraan Melayu Komunikatif','Bahasa Arab','Bahasa Cina','Bahasa Tamil',
+  'Bahasa Iban','Bahasa Kadazandusun','Bahasa Semai','Bahasa Jepun','Bahasa Jerman','Bahasa Korea',
+  'Bahasa Cina Komunikasi','Kesusasteraan Cina','Kesusasteraan Tamil','Bahasa Perancis','Bahasa Punjabi',
+  'Bible Knowledge',
+  // Ekonomi/Perniagaan
+  'Pengajian Keusahawanan','Perniagaan','Prinsip Perakaunan','Ekonomi',
+  // Sosial/Agama
+  'Geografi','Tasawwur Islam','Pendidikan Al-Quran dan Al-Sunnah','Pendidikan Syariah Islamiah',
+  'Hifz Al-Quran','Maharat Al-Quran','Turath Al-Quran dan Al-Sunnah','Turath Dirasat Islamiah',
+  'Turath Bahasa Arab','Usul Al-Din','Al-Syariah','Al-Lughah Al-Arabiah Al-Muasirah',
+  'Manahij Al-Ulum Al-Islamiah','Al-Adab Wa Al-Balaghah',
+  // Seni/Sukan
+  'Pendidikan Seni Visual','Pendidikan Muzik','Sains Sukan',
+  // Teknikal/Vokasional
+  'Pertanian','Lukisan Kejuruteraan','Pengajian Kejuruteraan Mekanikal','Pengajian Kejuruteraan Awam',
+  'Pengajian Kejuruteraan Elektrik dan Elektronik','Reka Cipta','Asas Kelestarian','Sains Rumah Tangga',
+  'Sains Komputer','Grafik Komunikasi Teknikal','Pembinaan Domestik','Membuat Perabot',
+  'Kerja Paip Domestik','Pendawaian Domestik','Kimpalan Arka dan Gas','Menservis Automobil',
+  'Menservis Motosikal','Menservis Peralatan Penyejukan dan Penyamanan Udara',
+  'Menservis Peralatan Elektrik Domestik','Rekaan dan Jahitan Pakaian','Katering dan Penyajian',
+  'Pemprosesan Makanan','Penjagaan Muka dan Penggayaan Rambut',
+  'Asuhan dan Pendidikan Awal Kanak-Kanak','Gerontologi Asas dan Perkhidmatan Geriatrik',
+  'Landskap dan Nurseri','Akuakultur dan Haiwan Rekreasi','Tanaman Makanan',
+  'Produksi Reka Tanda','Hiasan Dalaman','Produksi Multimedia','Reka Bentuk Grafik Digital'
+];
+
+const GRADE_POINTS = {'A+':10,'A':9,'A-':8,'B+':7,'B':6,'C+':5,'C':4,'D':3,'E':2,'G':1};
+const GRADES = ['A+','A','A-','B+','B','C+','C','D','E','G'];
+
+async function showSpmInput(profile) {
+  _spmProfile = profile;
+  document.getElementById('g-nav').style.display='none';
+  showPage('page-spm-input','flex');
+
+  // Try to load previously saved SPM results
+  try {
+    const res  = await fetch(`/spm-saved?id=${encodeURIComponent(profile.id)}`);
+    const data = await res.json();
+    if (data.saved && data.subjects && data.subjects.length) {
+      prefillSpm(data.subjects);
+      return;
+    }
+  } catch(e) {}
+
+  janaJadual();
+}
+
+function prefillSpm(subjects) {
+  const n = subjects.length;
+  document.getElementById('spm-num-subj').value = n;
+  const tbody = document.getElementById('spm-tbody');
+  tbody.innerHTML = '';
+  for (let i = 1; i <= n; i++) {
+    const s  = subjects[i - 1];
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="no-col">${i}</td>
+      <td>
+        <div class="spm-subj-wrap" id="wrap-${i}">
+          <input type="text" class="spm-subj-input" id="subj-inp-${i}" placeholder="Cari subjek…"
+            autocomplete="off" oninput="filterDropdown(${i})" onfocus="openDropdown(${i})" onblur="blurDropdown(${i})"
+            value="${s.subject.replace(/"/g,'&quot;')}">
+          <div class="spm-dropdown" id="dd-${i}"></div>
+        </div>
+      </td>
+      <td>
+        <select class="spm-grade-sel" id="grade-${i}">
+          <option value="">— Gred —</option>
+          ${GRADES.map(g=>`<option value="${g}"${g===s.grade?' selected':''}>${g}</option>`).join('')}
+        </select>
+      </td>`;
+    tbody.appendChild(tr);
+    buildDropdown(i);
+  }
+  document.getElementById('spm-table-wrap').style.display = 'block';
+  document.getElementById('spm-submit-btn').style.display = 'inline-block';
+
+  // Show a notice that data was loaded from last session
+  let notice = document.getElementById('spm-prefill-notice');
+  if (!notice) {
+    notice = document.createElement('div');
+    notice.id = 'spm-prefill-notice';
+    notice.style.cssText = 'margin-bottom:12px;padding:10px 14px;background:#F0FDF4;border:1px solid #BBF7D0;border-radius:8px;font-size:12px;color:#166534';
+    document.getElementById('spm-table-wrap').insertAdjacentElement('beforebegin', notice);
+  }
+  notice.textContent = `✓ Keputusan SPM anda yang lepas telah dimuatkan semula (${n} subjek). Semak dan tekan "Mulakan Padanan" untuk teruskan.`;
+}
+
+function janaJadual() {
+  const n = parseInt(document.getElementById('spm-num-subj').value) || 8;
+  const clamped = Math.min(Math.max(n, 1), 15);
+  document.getElementById('spm-num-subj').value = clamped;
+  const tbody = document.getElementById('spm-tbody');
+  tbody.innerHTML = '';
+  for (let i = 1; i <= clamped; i++) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="no-col">${i}</td>
+      <td>
+        <div class="spm-subj-wrap" id="wrap-${i}">
+          <input type="text" class="spm-subj-input" id="subj-inp-${i}" placeholder="Cari subjek…"
+            autocomplete="off" oninput="filterDropdown(${i})" onfocus="openDropdown(${i})" onblur="blurDropdown(${i})">
+          <div class="spm-dropdown" id="dd-${i}"></div>
+        </div>
+      </td>
+      <td>
+        <select class="spm-grade-sel" id="grade-${i}">
+          <option value="">— Gred —</option>
+          ${GRADES.map(g=>`<option value="${g}">${g}</option>`).join('')}
+        </select>
+      </td>`;
+    tbody.appendChild(tr);
+    buildDropdown(i);
+  }
+  document.getElementById('spm-table-wrap').style.display = 'block';
+  document.getElementById('spm-submit-btn').style.display = 'inline-block';
+}
+
+function buildDropdown(i, filter='') {
+  const dd = document.getElementById(`dd-${i}`);
+  const fl = filter.toLowerCase();
+  const items = fl ? SPM_SUBJECTS.filter(s => s.toLowerCase().includes(fl)) : SPM_SUBJECTS;
+  dd.innerHTML = items.map(s =>
+    `<div class="spm-dropdown-item" onmousedown="selectSubject(${i},'${s.replace(/'/g,"&#39;")}')">${s}</div>`
+  ).join('') || '<div class="spm-dropdown-item" style="color:var(--secondary);cursor:default">Tiada padanan</div>';
+}
+
+function filterDropdown(i) {
+  const val = document.getElementById(`subj-inp-${i}`).value;
+  buildDropdown(i, val);
+  document.getElementById(`dd-${i}`).classList.add('open');
+}
+
+function openDropdown(i) {
+  buildDropdown(i, document.getElementById(`subj-inp-${i}`).value);
+  document.getElementById(`dd-${i}`).classList.add('open');
+}
+
+function blurDropdown(i) {
+  setTimeout(() => document.getElementById(`dd-${i}`).classList.remove('open'), 150);
+}
+
+function selectSubject(i, name) {
+  document.getElementById(`subj-inp-${i}`).value = name;
+  document.getElementById(`dd-${i}`).classList.remove('open');
+}
+
+function submitSpm() {
+  const n = parseInt(document.getElementById('spm-num-subj').value) || 8;
+  const clamped = Math.min(Math.max(n, 1), 15);
+  const subjects = [];
+  for (let i = 1; i <= clamped; i++) {
+    const subj  = document.getElementById(`subj-inp-${i}`).value.trim();
+    const grade = document.getElementById(`grade-${i}`).value;
+    if (!subj || !grade) {
+      alert(`Sila lengkapkan subjek dan gred untuk baris ${i}.`);
+      return;
+    }
+    subjects.push({ subject: subj, grade });
+  }
+  // Calculate GP score: average of grade points, scaled to 0-10 (max=10)
+  const total = subjects.reduce((sum, s) => sum + (GRADE_POINTS[s.grade] || 0), 0);
+  const gpScore = parseFloat((total / subjects.length).toFixed(2));
+
+  // Attach to profile and proceed
+  _spmProfile.spmSubjects = subjects;
+  _spmProfile.gpScore = gpScore;
+
+  document.getElementById('page-spm-input').style.display = 'none';
+  showDashboard(_spmProfile);
+}
+
+// ─── Logout ───
+function doLogout(){
+  clearInterval(matchPollTimer);
+  currentStudentId = null;
+  window._loginEmail = null;
+  window._loginId = null;
+  document.getElementById('agree-chk').checked = false;
+  document.getElementById('delima-login-btn').classList.remove('active','enabled');
+  document.getElementById('dash-content').innerHTML='';
+  document.getElementById('match-outer').style.display='none';
+  document.getElementById('match-card').style.display='none';
+  document.getElementById('g-nav').style.display='none';
+  showPage('page-login','flex');
+}
+
+// ─── Matching ───
+async function startMatching(id, spmSubjects, bidang, iptKat, iptNama, kos, useHolland) {
+  document.getElementById('match-outer').style.display='block';
+  document.getElementById('match-card').style.display='block';
+
+  await fetch('/start-match', {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({
+      id,
+      spmSubjects: spmSubjects || [],
+      bidang:     bidang     || '',
+      iptKat:     iptKat     || '',
+      iptNama:    iptNama    || '',
+      kos:        kos        || '',
+      useHolland: !!useHolland,
+    })
+  });
+
+  matchPollTimer = setInterval(() => pollMatch(id), 1500);
+}
+
+async function pollMatch(id) {
+  const res  = await fetch('/match-status?id=' + id);
+  const data = await res.json();
+
+  // Update sub-text with current scholarship being scored
+  const scored = (data.logs||[]).filter(l => /^\[(\d+)\//.test(l));
+  if (scored.length) {
+    const last  = scored[scored.length - 1];
+    const match = last.match(/^\[(\d+)\/(\d+)\]\s*Scoring:\s*(.+)/);
+    if (match) {
+      document.getElementById('match-loading-sub').textContent =
+        `Menilai ${match[1]} daripada ${match[2]} biasiswa...`;
+    }
+  }
+
+  if (data.status === 'done') {
+    clearInterval(matchPollTimer);
+    document.getElementById('match-loading').style.display = 'none';
+    document.getElementById('match-sub').textContent = 'Padanan biasiswa berjaya dijalankan';
+    loadMatchResult(id);
+  } else if (data.status === 'spm_required') {
+    clearInterval(matchPollTimer);
+    document.getElementById('match-loading').style.display = 'none';
+    document.getElementById('match-results-area').innerHTML =
+      '<div style="background:#FEF9C3;border:1px solid #FDE047;border-radius:10px;padding:20px;text-align:center;color:#854D0E">' +
+      '<div style="font-size:22px;margin-bottom:8px">⚠️</div>' +
+      '<div style="font-weight:600;margin-bottom:6px">Keputusan SPM belum dimasukkan</div>' +
+      '<div style="font-size:13px">Sila pergi ke tab <b>Keputusan SPM</b> dan masukkan keputusan SPM anda terlebih dahulu sebelum menjalankan padanan biasiswa.</div>' +
+      '</div>';
+  } else if (data.status === 'error') {
+    clearInterval(matchPollTimer);
+    document.getElementById('match-loading-text').textContent = 'Ralat semasa padanan. Sila hubungi pentadbir.';
+    document.getElementById('match-loading-sub').textContent = '';
+  }
+}
+
+async function loadMatchResult(id) {
+  const res  = await fetch('/match-result?id=' + id);
+  const data = await res.json();
+  if (!data.results || !data.results.length) return;
+  const student = data.results[0];
+  const top5    = student.top5 || [];
+
+  const allIneligible = top5.length > 0 && top5.every(m => !m.eligible);
+  if (allIneligible) {
+    document.getElementById('match-result-section').innerHTML = `
+      <div style="text-align:center;padding:48px 24px">
+        <div style="font-size:48px;margin-bottom:16px">😔</div>
+        <div style="font-size:18px;font-weight:700;color:#0F2057;margin-bottom:8px">Tiada Padanan Biasiswa Yang Layak</div>
+        <div style="font-size:14px;color:#6B7280;max-width:420px;margin:0 auto">Berdasarkan profil semasa anda, tiada biasiswa dalam sistem yang memenuhi semua syarat kelayakan. Tingkatkan pencapaian akademik atau aktiviti kokurikulum untuk meningkatkan peluang.</div>
+      </div>`;
+    return;
+  }
+
+  const rows = top5.map((m, i) => {
+    const bd      = m.breakdown || {};
+    const holland = m.holland || {};
+    const hollandBadge = holland.label
+      ? `<span class="fc fc-ps" title="Holland Code match">${holland.match ?? '?'}/3 Psiko: ${esc(holland.label)}</span>`
+      : '';
+    return `<tr>
+      <td style="font-weight:700;color:#0F2057">${i+1}</td>
+      <td>
+        <div style="font-weight:600">${esc(m.scholarshipName)}</div>
+        <div style="font-size:11px;color:var(--secondary)">${esc(m.provider||'')}</div>
+      </td>
+      <td>
+        <span style="font-weight:700;font-size:15px;color:#1A56DB">${m.totalScore}</span>
+        <div class="sc-bar-wrap"><div class="sc-bar" style="width:${Math.round(m.totalScore)}%"></div></div>
+      </td>
+      <td>${m.eligible
+        ? '<span class="elig-yes">&#10003; Layak</span>'
+        : '<span class="elig-no">Tidak layak</span>'}</td>
+      <td>
+        <span class="fc fc-a">Gred A: ${bd.countA ?? '?'}/${bd.minA ?? '?'}</span>
+        <span class="fc fc-p">PAJSK: ${bd.pajsk ?? '—'}</span>
+        ${hollandBadge}
+      </td>
+      <td>${m.url ? `<a href="${m.url}" target="_blank" style="color:#1A56DB;font-size:12px">Mohon &#8599;</a>` : '—'}</td>
+    </tr>`;
+  }).join('');
+
+  const hollandPlan = student.hollandPlan || [];
+  const kosPlan     = student.kosPlan     || [];
+
+  // ── Shared: render # | Kos | IPT | Biasiswa table ──────────
+  function buildPlanTable(plan, title) {
+    const planRows = plan.map((k, i) => {
+      const iptList = (k.ipts||[]).map(u =>
+        `<div style="font-size:12px;color:#374151;margin-bottom:3px">
+           <span style="font-weight:600">${esc(u.nama)}</span>
+           <span style="color:#6B7280;font-size:11px"> (${esc(u.kategori||'')})</span>
+         </div>`
+      ).join('');
+      const schList = (k.scholarships||[]).length
+        ? k.scholarships.map(s =>
+            `<div style="font-size:12px;margin-bottom:4px">
+               ${s.url
+                 ? `<a href="${esc(s.url)}" target="_blank" style="color:#1A56DB;font-weight:600">${esc(s.scholarshipName)}</a>`
+                 : `<span style="font-weight:600;color:#0F2057">${esc(s.scholarshipName)}</span>`}
+               <div style="font-size:11px;color:#6B7280">${esc(s.provider||'')}</div>
+             </div>`
+          ).join('')
+        : '<span style="font-size:12px;color:#9CA3AF">Tiada biasiswa sepadan</span>';
+      return `<tr>
+        <td style="font-weight:700;color:#0F2057;vertical-align:top">${i+1}</td>
+        <td style="vertical-align:top">
+          <div style="font-weight:700;font-size:13px;color:#14532D">${esc(k.kos)}</div>
+          <div style="font-size:11px;color:#16A34A;margin-top:2px">${esc(k.bidang||'')}</div>
+          ${k.reason ? `<div style="font-size:11px;color:#6B7280;margin-top:4px;font-style:italic">${esc(k.reason)}</div>` : ''}
+        </td>
+        <td style="vertical-align:top">${iptList||'<span style="color:#9CA3AF;font-size:12px">—</span>'}</td>
+        <td style="vertical-align:top">${schList}</td>
+      </tr>`;
+    }).join('');
+    return `
+      <div style="margin-bottom:8px;font-size:13px;font-weight:700;color:#0F2057">${title}</div>
+      <div class="match-table-wrap">
+        <table class="match-table">
+          <thead><tr>
+            <th>#</th><th>Kos / Program</th><th>IPT yang Sesuai</th><th>Biasiswa Berkaitan</th>
+          </tr></thead>
+          <tbody>${planRows}</tbody>
+        </table>
+      </div>`;
+  }
+
+  if (hollandPlan.length) {
+    document.getElementById('match-results-area').innerHTML =
+      buildPlanTable(hollandPlan, '📚 Kos, IPT &amp; Biasiswa Berdasarkan Profil Psikometri Anda');
+    startReport(id);
+    return;
+  }
+
+  if (kosPlan.length) {
+    document.getElementById('match-results-area').innerHTML =
+      buildPlanTable(kosPlan, '📋 Kos, IPT &amp; Biasiswa Berdasarkan Kos yang Diminati');
+    startReport(id);
+    return;
+  }
+
+  // Default: regular scholarship table (Ya Sudah path)
+  document.getElementById('match-results-area').innerHTML = `
+    <div class="match-table-wrap">
+      <table class="match-table">
+        <thead><tr>
+          <th>#</th><th>Biasiswa</th><th>Skor /100</th>
+          <th>Kelayakan</th><th>Pecahan Faktor</th><th>Pautan</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+
+  startReport(id);
+}
+
+// ─── Agent 3: PDF Report ───
+async function startReport(id) {
+  document.getElementById('report-card').style.display = 'block';
+  document.getElementById('report-loading').style.display = 'flex';
+  document.getElementById('report-ready').style.display = 'none';
+
+  await fetch('/start-report', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({ id }),
+  });
+  pollReport(id);
+}
+
+function pollReport(id) {
+  fetch('/report-status?id=' + id)
+    .then(r => r.json())
+    .then(data => {
+      if (data.status === 'done') {
+        document.getElementById('report-loading').style.display = 'none';
+        document.getElementById('report-ready').style.display = 'block';
+        document.getElementById('btn-download').href = '/download-report?id=' + id;
+      } else if (data.status === 'error') {
+        document.getElementById('report-loading').innerHTML =
+          '<div style="color:#EF4444;font-size:13px;padding:20px">Ralat menjana laporan. Sila cuba semula.</div>';
+      } else {
+        setTimeout(() => pollReport(id), 1500);
+      }
+    })
+    .catch(() => setTimeout(() => pollReport(id), 2000));
+}
+
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ─── Scholarship News ───
+async function loadScholarshipNews() {
+  const body = document.getElementById('scholarship-news-body');
+  if (!body) return;
+  try {
+    const res  = await fetch('/scholarship-news');
+    const data = await res.json();
+    if (!data.ok || !data.scholarships || !data.scholarships.length) {
+      body.innerHTML = '<div style="text-align:center;padding:16px;color:var(--secondary);font-size:.8rem">Gagal muatkan data. Cuba semula.</div>';
+      return;
+    }
+    body.innerHTML = data.scholarships.map(s => `
+      <div class="side-item">
+        <div class="side-item-title">${esc(s.name)}</div>
+        <div class="side-item-sub">${esc(s.desc)}</div>
+        ${s.tutup ? `<div class="side-item-date">Tutup: ${esc(s.tutup)}</div>` : ''}
+      </div>`).join('');
+  } catch {
+    body.innerHTML = '<div style="text-align:center;padding:16px;color:var(--secondary);font-size:.8rem">Tiada sambungan.</div>';
+  }
+}
+
+// ─── Show Dashboard ───
+let _currentProfile = null;
+function showDashboard(p){
+  _currentProfile = p;
+  document.getElementById('g-nav').style.display='none';
+  showPage('page-dashboard','block');
+  const initials=p.name.split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase();
+  document.getElementById('dash-avatar').textContent=initials;
+  document.getElementById('dash-banner-avatar').textContent=initials;
+  document.getElementById('dash-username').textContent=p.name;
+  document.getElementById('dash-userid').textContent=p.id;
+  // Greeting based on time
+  const hr=new Date().getHours();
+  const greet=hr<12?'Selamat Pagi,':hr<17?'Selamat Petang,':'Selamat Malam,';
+  document.getElementById('dash-banner-greeting').textContent=greet;
+  document.getElementById('side-avatar').textContent=initials;
+  document.getElementById('side-name').textContent=p.name;
+  document.getElementById('dash-content').innerHTML=buildContent(p);
+  loadScholarshipNews();
+  // Show status card and load IPT data
+  document.getElementById('status-card').style.display='block';
+  initStatusCard(p.id);
+}
+
+// ─── Grade helpers ───
+const SUBJ_SHORT={BM:'B.Melayu',BI:'B.Inggeris',MM:'Matematik',SEJ:'Sejarah',
+  PAI:'P.Islam',MT:'Math T',BCKOM:'B.Cina',FIZIK:'Fizik',KIMIA:'Kimia',BIO:'Biologi'};
+const GRADE_CSS={
+  'A+':'Ap','A':'A','A-':'Am','B+':'Bp','B':'B','B-':'B',
+  'C+':'Cp','C':'C','D':'D','E':'E','G':'G'
+};
+
+// ─── Build page content ───
+function buildContent(p){
+  const gpPct=Math.min((p.gpScore/10)*100,100).toFixed(0);
+  const lvlClass=p.leadershipLevel==='High'?'badge-high':p.leadershipLevel==='Medium'?'badge-medium':'badge-basic';
+  const lvlMs=_lang==='en'
+    ?(p.leadershipLevel==='High'?'High':p.leadershipLevel==='Medium'?'Intermediate':'Basic')
+    :(p.leadershipLevel==='High'?'Tinggi':p.leadershipLevel==='Medium'?'Sederhana':'Asas');
+  const paj=p.pajskData||{};
+
+  // SPM cells — guna input manual jika ada, fallback ke data Excel
+  let gradeCells = '';
+  if (p.spmSubjects && p.spmSubjects.length) {
+    gradeCells = p.spmSubjects.map(s =>
+      `<div class="grade-cell ${GRADE_CSS[s.grade]||'G'}">
+        <div class="subj" title="${esc(s.subject)}">${esc(s.subject.length>12?s.subject.substring(0,11)+'…':s.subject)}</div>
+        <div class="grd">${esc(s.grade)}</div></div>`
+    ).join('');
+  } else {
+    const gradeKeys=['BM','BI','MM','SEJ','PAI','MT','BCKOM','FIZIK','KIMIA','BIO'];
+    gradeCells = gradeKeys.map(k=>{
+      const g=p.spmGrades?.[k]; if(!g) return '';
+      return `<div class="grade-cell ${GRADE_CSS[g]||'G'}">
+        <div class="subj">${SUBJ_SHORT[k]||k}</div>
+        <div class="grd">${g}</div></div>`;
+    }).join('');
+  }
+
+  // RIASEC cells
+  const topCodes=p.hollandCode?p.hollandCode.split(''):[];
+  const riasecNames=_lang==='en'
+    ?{R:'Realistic',I:'Investigative',A:'Artistic',S:'Social',E:'Enterprising',K:'Conventional'}
+    :{R:'Realistik',I:'Investigatif',A:'Artistik',S:'Sosial',E:'Enterprising',K:'Konvensional'};
+  const riasecCells=['R','I','A','S','E','K'].map(code=>{
+    const key=Object.keys(p.riasecScores||{}).find(k=>k.startsWith(code));
+    const score=key?p.riasecScores[key]:0;
+    const isTop=topCodes.includes(code);
+    return `<div class="riasec-box r-${code}${isTop?' top':''}">
+      <div class="riasec-code">${code}</div>
+      <div class="riasec-name">${riasecNames[code]}</div>
+      <div class="riasec-score">${score} ${_lang==='en'?'pts':'mata'}</div></div>`;
+  }).join('');
+
+  // Ekstra Kurikulum
+  const paj2=p.pajskData||{};
+  const ekItems=_lang==='en'?[
+    {label:'Service',           val:paj2.perkhidmatan},
+    {label:'Special Award',     val:paj2.anugerahKhas},
+    {label:'Community Service', val:paj2.khidmatMasyarakat},
+  ]:[
+    {label:'Perkhidmatan',       val:paj2.perkhidmatan},
+    {label:'Anugerah Khas',      val:paj2.anugerahKhas},
+    {label:'Khidmat Masyarakat', val:paj2.khidmatMasyarakat},
+  ];
+
+  return `
+  <div class="stat-strip" style="grid-column:1/-1">
+    <div class="stat-box">
+      <div class="stat-num">${p.gpScore.toFixed(2)}</div>
+      <div class="stat-lbl">GP Score (max 10)</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">${p.pajskScore.toFixed(1)}%</div>
+      <div class="stat-lbl">${_lang==='en'?'PAJSK Score':'Skor PAJSK'}</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">${p.hollandCode||'—'}</div>
+      <div class="stat-lbl">${_lang==='en'?'Holland Code':'Kod Holland'}</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num"><span class="leadership-badge ${lvlClass}">${lvlMs}</span></div>
+      <div class="stat-lbl">${_lang==='en'?'Leadership Level':'Aras Kepimpinan'}</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon" style="background:#EFF6FF">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A56DB" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+        </svg>
+      </div>
+      <div>
+        <div class="card-title">${_lang==='en'?'SPM Results':'Keputusan SPM'}</div>
+        <div class="card-sub">${_lang==='en'?'Average GPA':'GP Purata'}: ${p.gpScore.toFixed(2)} / 10.00</div>
+      </div>
+    </div>
+    <div class="grade-grid">${gradeCells}</div>
+    <div class="gp-bar-wrap"><div class="gp-bar" style="width:${gpPct}%"></div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon" style="background:#FDF4FF">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7E22CE" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+      </div>
+      <div>
+        <div class="card-title">${_lang==='en'?'RIASEC Profile (Psychometric)':'Profil RIASEC (Psikometrik)'}</div>
+        <div class="card-sub">${_lang==='en'?'Holland Code':'Kod Holland'}: ${p.hollandCode||'—'} — ${p.riasecType||''}</div>
+      </div>
+    </div>
+    <div class="riasec-grid">${riasecCells}</div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon" style="background:#ECFDF5">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+      </div>
+      <div>
+        <div class="card-title">${_lang==='en'?'PAJSK Record':'Rekod PAJSK'}</div>
+        <div class="card-sub">${_lang==='en'?'Score':'Markah'}: ${p.pajskScore.toFixed(1)}% — ${_lang==='en'?'Leadership':'Kepimpinan'}: <span class="leadership-badge ${lvlClass}">${lvlMs}</span></div>
+      </div>
+    </div>
+    <div class="pajsk-row"><span class="pajsk-key">${_lang==='en'?'Sports / Activity':'Sukan / Aktiviti'}</span><span class="pajsk-val">${paj.sukan||'—'}</span></div>
+    <div class="pajsk-row"><span class="pajsk-key">${_lang==='en'?'Position':'Jawatan'}</span><span class="pajsk-val">${paj.jawatanSukan||'—'}${paj.peringkatSukan?' ('+paj.peringkatSukan+')':''}</span></div>
+    <div class="pajsk-row"><span class="pajsk-key">${_lang==='en'?'Club Name':'Nama Kelab'}</span><span class="pajsk-val">${paj.kelab||'—'}</span></div>
+    <div class="pajsk-row"><span class="pajsk-key">${_lang==='en'?'Club Position':'Jawatan Kelab'}</span><span class="pajsk-val">${paj.jawatanKelab||'—'}${paj.peringkatKelab?' ('+paj.peringkatKelab+')':''}</span></div>
+    <div class="pajsk-row"><span class="pajsk-key">${_lang==='en'?'Uniformed Body':'Badan Beruniform'}</span><span class="pajsk-val">${paj.badanBeruniform||'—'}</span></div>
+    <div class="pajsk-row"><span class="pajsk-key">${_lang==='en'?'Uniform Position':'Jawatan BB'}</span><span class="pajsk-val">${paj.jawatanBB||'—'}${paj.peringkatBB?' ('+paj.peringkatBB+')':''}</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon" style="background:#FFFBEB">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2">
+          <circle cx="12" cy="8" r="6"/>
+          <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+        </svg>
+      </div>
+      <div>
+        <div class="card-title">${_lang==='en'?'Extra-Curricular':'Ekstra Kurikulum'}</div>
+        <div class="card-sub">${_lang==='en'?'Activities outside the classroom':'Aktiviti luar bilik darjah'}</div>
+      </div>
+    </div>
+    ${ekItems.map(item => `
+    <div class="pajsk-row">
+      <span class="pajsk-key">${item.label}</span>
+      <span class="pajsk-val" style="max-width:65%;text-align:right">${item.val||'—'}</span>
+    </div>`).join('')}
+  </div>
+  `;
+}
+
+// ─── Status Lepas SPM ───
+let _iptData = {};
+let _enrollPath = null;
+
+async function initStatusCard(studentId) {
+  // Load IPT categories
+  try {
+    const res  = await fetch('/ipt-categories');
+    const data = await res.json();
+    _iptData = data.categories || {};
+    const sel = document.getElementById('ipt-kat-sel');
+    Object.keys(_iptData).sort().forEach(kat => {
+      const opt = document.createElement('option');
+      opt.value = kat; opt.textContent = kat;
+      sel.appendChild(opt);
+    });
+  } catch(e) { console.error('loadIptCategories:', e); }
+
+  // Load existing status if any
+  try {
+    const res  = await fetch('/murid-status?id=' + studentId);
+    const data = await res.json();
+    if (data && data.status && data.status !== 'belum_update') {
+      showCurrentStatus(data);
+    }
+  } catch(e) {}
+}
+
+function showCurrentStatus(data) {
+  const box  = document.getElementById('status-current');
+  const text = document.getElementById('status-current-text');
+  let msg = '';
+  if (data.status === 'sambung_belajar') {
+    msg = `Sambung Belajar`;
+    if (data.ipt_nama)  msg += ` — ${data.ipt_nama}`;
+    if (data.ipt_kategori) msg += ` (${data.ipt_kategori})`;
+    if (data.bidang)    msg += ` | Bidang: ${data.bidang}`;
+    if (data.dapat_biasiswa && data.nama_biasiswa) msg += ` | Biasiswa: ${data.nama_biasiswa}`;
+    else if (!data.dapat_biasiswa) msg += ` | Tiada biasiswa`;
+  } else if (data.status === 'bekerja') {
+    msg = 'Bekerja selepas SPM';
+  } else {
+    msg = 'Belum tahu / Belum putuskan';
+  }
+  text.textContent = msg;
+  box.style.display = 'block';
+}
+
+function _enrollBtnIds() { return ['btn-enroll-ya','btn-enroll-belum','btn-enroll-bekerja']; }
+
+function setEnroll(path) {
+  // Reset all main buttons
+  _enrollBtnIds().forEach(id => {
+    const btn = document.getElementById(id);
+    if (btn) { btn.style.background='#fff'; btn.style.borderColor='#E2E8F0'; btn.style.color='#374151'; }
+  });
+  // Highlight selected
+  const selMap = { ya:'btn-enroll-ya', belum:'btn-enroll-belum', bekerja:'btn-enroll-bekerja' };
+  const active = document.getElementById(selMap[path]);
+  if (active) { active.style.background='#F0FDF4'; active.style.borderColor='#16A34A'; active.style.color='#16A34A'; }
+
+  // Hide all sub-panels and match area
+  ['path-ya','path-belum','path-bekerja'].forEach(id => {
+    const el = document.getElementById(id); if (el) el.style.display='none';
+  });
+  document.getElementById('match-outer').style.display = 'none';
+  document.getElementById('status-save-msg').style.display = 'none';
+  // Reset belum sub-paths
+  ['belum-psiko','belum-kos'].forEach(id => { const el=document.getElementById(id); if(el) el.style.display='none'; });
+  ['btn-path-psiko','btn-path-kos'].forEach(id => {
+    const btn=document.getElementById(id);
+    if(btn){btn.style.background='#fff';btn.style.borderColor='#E2E8F0';btn.style.color='#374151';}
+  });
+
+  if (path === 'ya')      { document.getElementById('path-ya').style.display = 'block'; }
+  else if (path === 'belum')   { document.getElementById('path-belum').style.display = 'block'; }
+  else if (path === 'bekerja') { document.getElementById('path-bekerja').style.display = 'block'; }
+}
+
+function setBelumPath(sub) {
+  ['btn-path-psiko','btn-path-kos'].forEach(id => {
+    const btn=document.getElementById(id);
+    if(btn){btn.style.background='#fff';btn.style.borderColor='#E2E8F0';btn.style.color='#374151';}
+  });
+  const btnId = sub === 'psiko' ? 'btn-path-psiko' : 'btn-path-kos';
+  const btn = document.getElementById(btnId);
+  if (btn) { btn.style.background='#EFF6FF'; btn.style.borderColor='#1A56DB'; btn.style.color='#1A56DB'; }
+
+  document.getElementById('belum-psiko').style.display = sub === 'psiko' ? 'block' : 'none';
+  document.getElementById('belum-kos').style.display   = sub === 'kos'   ? 'block' : 'none';
+}
+
+function submitHolland() {
+  if (!currentStudentId) return;
+  document.getElementById('status-save-msg').style.display = 'none';
+  startMatching(currentStudentId, _spmProfile.spmSubjects, '', '', '', '', true);
+}
+
+function submitBelumKos() {
+  if (!currentStudentId) return;
+  const kos = document.getElementById('belum-kos-input').value.trim();
+  if (!kos) {
+    document.getElementById('belum-kos-input').focus();
+    document.getElementById('belum-kos-input').style.borderColor = '#EF4444';
+    return;
+  }
+  document.getElementById('belum-kos-input').style.borderColor = '#D1D5DB';
+  const msg = document.getElementById('status-save-msg');
+  msg.textContent = '⏳ AI sedang menganalisis kos anda...';
+  msg.style.display = 'block';
+  startMatching(currentStudentId, _spmProfile.spmSubjects, '', '', '', kos, false);
+}
+
+function submitYaSudah() {
+  if (!currentStudentId) return;
+  const kos    = document.getElementById('ya-kos-input').value.trim();
+  const iptKat = document.getElementById('ipt-kat-sel').value.trim();
+  const iptSel = document.getElementById('ipt-nama-sel');
+  const iptNama = iptSel.options[iptSel.selectedIndex]
+    ? (iptSel.options[iptSel.selectedIndex].textContent || '').replace(/\s*—.*$/, '').trim()
+    : '';
+  if (!kos) {
+    document.getElementById('ya-kos-input').focus();
+    document.getElementById('ya-kos-input').style.borderColor = '#EF4444';
+    return;
+  }
+  document.getElementById('ya-kos-input').style.borderColor = '#D1D5DB';
+  const msg = document.getElementById('status-save-msg');
+  msg.textContent = '⏳ AI sedang menganalisis kos anda...';
+  msg.style.display = 'block';
+  startMatching(currentStudentId, _spmProfile.spmSubjects, '', iptKat, iptNama, kos, false);
+}
+
+function loadIptNames() {
+  const kat = document.getElementById('ipt-kat-sel').value;
+  const sel = document.getElementById('ipt-nama-sel');
+  sel.innerHTML = '<option value="">-- Pilih IPT --</option>';
+  if (!kat || !_iptData[kat]) return;
+  _iptData[kat].forEach(ipt => {
+    const opt = document.createElement('option');
+    opt.value = ipt.id;
+    opt.textContent = ipt.nama + (ipt.nama_penuh ? ' — ' + ipt.nama_penuh : '');
+    sel.appendChild(opt);
+  });
+}
+
+</script>
+</body>
+</html>

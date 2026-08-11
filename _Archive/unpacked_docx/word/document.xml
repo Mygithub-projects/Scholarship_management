@@ -1,0 +1,3784 @@
+<?xml version="1.0" encoding="UTF-8"?><w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing">
+  
+
+  <w:body>
+    
+    
+    <w:bookmarkStart w:id="20" w:name="claude-project-context"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">CLAUDE PROJECT CONTEXT</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="20"/>
+    
+    
+    <w:bookmarkStart w:id="22" w:name="Xab761f79c9f2d4e5bd006661e0c54488668129c"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">AGENTIC AI-POWERED SCHOLARSHIP MATCHING SYSTEM</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkStart w:id="21" w:name="important-context"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">IMPORTANT CONTEXT</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">This document contains the complete project context.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Before proposing any architecture, code, workflow, UI, database structure or recommendation logic, please read and understand the entire project.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">This project is being developed as part of:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">PRESTIJ (Agentic AI for Educationists)</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">The project is currently at prototype stage.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">The goal is NOT to build a production-ready national platform.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">The goal is to demonstrate how Agentic AI can be used to provide personalised scholarship recommendations for Malaysian students after SPM.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="21"/>
+    
+    
+    <w:bookmarkEnd w:id="22"/>
+    
+    
+    <w:bookmarkStart w:id="23" w:name="project-title"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">PROJECT TITLE</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Agentic AI-Powered Scholarship Matching System</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="23"/>
+    
+    
+    <w:bookmarkStart w:id="24" w:name="project-background"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">PROJECT BACKGROUND</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Many Malaysian students are unaware of scholarship opportunities that match their academic achievements, co-curricular involvement, interests and future aspirations.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Most students currently rely on:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1001"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Friends</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1001"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Teachers</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1001"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Counsellors</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1001"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Social media</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1001"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Scholarship websites</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">to discover scholarship opportunities.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">The process is highly manual and students often:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1002"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Miss deadlines</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1002"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Apply for unsuitable scholarships</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1002"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Fail to discover relevant opportunities</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1002"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Receive inconsistent guidance</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">The proposed solution is an Agentic AI-powered system that automatically analyses student profiles and recommends suitable scholarship opportunities.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="24"/>
+    
+    
+    <w:bookmarkStart w:id="28" w:name="problem-discovery"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">PROBLEM DISCOVERY</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkStart w:id="27" w:name="raw-pain-points"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Raw Pain Points</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkStart w:id="25" w:name="scholarship-related"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Scholarship Related</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1003"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Students do not know what scholarship opportunities are available after SPM.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1003"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Students do not know which scholarships are suitable for them.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1003"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Students miss scholarship opportunities because they are unaware of application deadlines.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1003"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Students receive scholarship information from multiple websites and social media platforms.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="25"/>
+    
+    
+    <w:bookmarkStart w:id="26" w:name="other-post-spm-issues"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading3"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Other Post-SPM Issues</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1004"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Students do not know which university programme best matches their interests and strengths.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1004"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Students are uncertain about future career pathways.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1004"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Students receive conflicting advice from parents, teachers and peers.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1004"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Students do not fully understand their strengths and interests.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1004"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Students find it difficult to compare university, TVET and pre-university pathways.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1004"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Teachers and counsellors have limited time to provide personalised guidance.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="26"/>
+    
+    
+    <w:bookmarkEnd w:id="27"/>
+    
+    
+    <w:bookmarkEnd w:id="28"/>
+    
+    
+    <w:bookmarkStart w:id="30" w:name="clustering"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">CLUSTERING</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkStart w:id="29" w:name="cluster-a"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Cluster A</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Scholarship Awareness &amp; Matching</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Priority: TOP 1</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Pain Points:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1005"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Lack of scholarship awareness</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1005"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Difficulty identifying suitable scholarships</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1005"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Missed scholarship deadlines</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1005"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Scattered scholarship information</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Root Cause:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">No personalised scholarship matching system exists.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">HMW:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">How might we help students identify suitable scholarships based on academic results, co-curricular achievements, interests and aspirations?</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="29"/>
+    
+    
+    <w:bookmarkEnd w:id="30"/>
+    
+    
+    <w:bookmarkStart w:id="31" w:name="project-objective"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">PROJECT OBJECTIVE</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Develop an Agentic AI-powered prototype that:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1006"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Analyses student profiles</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1006"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Matches students with scholarships</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1006"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Explains recommendations</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1006"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Sends scholarship notifications</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="31"/>
+    
+    
+    <w:bookmarkStart w:id="32" w:name="important-project-requirements"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">IMPORTANT PROJECT REQUIREMENTS</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">The project MUST remain scholarship-focused.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">The project is NOT:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1007"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">A university recommendation system</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1007"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">A career recommendation system</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1007"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">A counselling chatbot</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">These may support the process but the final output must always be:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">SCHOLARSHIP RECOMMENDATION</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="32"/>
+    
+    
+    <w:bookmarkStart w:id="33" w:name="target-users"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">TARGET USERS</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Primary User:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1008"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">SPM Graduates</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Secondary Users:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1009"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">School Counsellors</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1009"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Teachers</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1009"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Parents</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Future Users:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1010"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">DELIMa</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1010"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Ministry of Education</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="33"/>
+    
+    
+    <w:bookmarkStart w:id="41" w:name="datasets"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">DATASETS</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">The project will use Excel files.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">No real database is required for the prototype.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkStart w:id="34" w:name="dataset-1"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Dataset 1</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">student_master.xlsx</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Fields:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1011"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Student ID</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1011"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Name</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1011"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Email</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Purpose:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1012"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Student identification</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1012"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Login</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1012"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Notification</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="34"/>
+    
+    
+    <w:bookmarkStart w:id="35" w:name="dataset-2"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Dataset 2</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">spm_results.xlsx</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Fields:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1013"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Student ID</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1013"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Subject Results</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1013"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Academic Performance</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Purpose:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1014"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Academic analysis</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Status:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Not yet available.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">May use simulated data.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="35"/>
+    
+    
+    <w:bookmarkStart w:id="36" w:name="dataset-3"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Dataset 3</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">pajsk.xlsx</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Fields:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1015"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">GPA</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1015"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">CGPA</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1015"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Merit</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1015"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Leadership</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1015"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Achievement</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1015"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Participation</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Status:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Available.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="36"/>
+    
+    
+    <w:bookmarkStart w:id="37" w:name="dataset-4"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Dataset 4</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">psychometric.xlsx</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Fields:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1016"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">RIASEC</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1016"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Career Interests</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1016"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Personality Indicators</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Status:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Not yet available.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">May require support from school counsellors.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="37"/>
+    
+    
+    <w:bookmarkStart w:id="38" w:name="dataset-5"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Dataset 5</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">student_aspiration.xlsx</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Fields:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1017"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Dream Career</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1017"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Preferred Field</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1017"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Personal Interests</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Important:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">The project must not rely solely on historical student data.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Students should be allowed to declare their own interests.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Reason:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Students may participate in activities due to parental influence.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Observed behaviour may not reflect genuine interests.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Therefore self-declared aspirations are required.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="38"/>
+    
+    
+    <w:bookmarkStart w:id="39" w:name="dataset-6"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Dataset 6</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">parent_background.xlsx</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Fields:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1018"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Father Occupation</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1018"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Mother Occupation</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1018"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Parent Category</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Categories:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1019"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">B40</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1019"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">M40</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1019"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">T20</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Important:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">This dataset was suggested by the mentor.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Many scholarships consider socioeconomic background.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">This dataset must be included.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="39"/>
+    
+    
+    <w:bookmarkStart w:id="40" w:name="dataset-7"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Dataset 7</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">scholarship_database.xlsx</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Fields:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1020"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Scholarship Name</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1020"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Academic Requirement</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1020"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">PAJSK Requirement</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1020"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Career Preference</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1020"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Parent Category Requirement</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1020"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Eligibility Criteria</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1020"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Deadline</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Status:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Currently under development.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="40"/>
+    
+    
+    <w:bookmarkEnd w:id="41"/>
+    
+    
+    <w:bookmarkStart w:id="48" w:name="ai-agents"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">AI AGENTS</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">The project should use SIX agents only.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Avoid creating too many agents.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkStart w:id="42" w:name="agent-1"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Agent 1</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Academic Profiling Agent</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Role:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Analyse SPM results.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Output:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Academic profile.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="42"/>
+    
+    
+    <w:bookmarkStart w:id="43" w:name="agent-2"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Agent 2</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">PAJSK Analysis Agent</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Role:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Analyse co-curricular achievements.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Output:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">PAJSK profile.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="43"/>
+    
+    
+    <w:bookmarkStart w:id="44" w:name="agent-3"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Agent 3</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Psychometric &amp; Aspiration Agent</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Role:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Analyse:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1021"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Psychometric data</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1021"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Career interests</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1021"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Student aspirations</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Output:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Student interest profile.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="44"/>
+    
+    
+    <w:bookmarkStart w:id="45" w:name="agent-4"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Agent 4</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Scholarship Matching Agent</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Role:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Compare student profile with scholarship requirements.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Output:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Ranked scholarship recommendations.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="45"/>
+    
+    
+    <w:bookmarkStart w:id="46" w:name="agent-5"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Agent 5</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Recommendation &amp; Reasoning Agent</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Role:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Explain recommendations.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Output:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Match percentage and recommendation reasoning.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="46"/>
+    
+    
+    <w:bookmarkStart w:id="47" w:name="agent-6"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Agent 6</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Notification Agent</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Role:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Send:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1022"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Scholarship alerts</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1022"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Deadline reminders</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1022"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Email notifications</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="47"/>
+    
+    
+    <w:bookmarkEnd w:id="48"/>
+    
+    
+    <w:bookmarkStart w:id="49" w:name="system-workflow"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">SYSTEM WORKFLOW</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t>Student Login ↓ Student Database ↓ SPM Results Dataset ↓ PAJSK Dataset ↓ Psychometric Dataset ↓ Student Aspiration Dataset ↓ Parent Background Dataset ↓ Academic Profiling Agent ↓ PAJSK Analysis Agent ↓ Psychometric &amp; Aspiration Agent ↓ Scholarship Matching Agent ↓ Recommendation &amp; Reasoning Agent ↓ Generate Top 5 Recommended Scholarships ↓ Notification Agent ↓ Email Alerts &amp; Deadline Reminders ↓ Student Dashboard</w:t>
+      </w:r>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="49"/>
+    
+    
+    <w:bookmarkStart w:id="50" w:name="user-interface-requirements"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">USER INTERFACE REQUIREMENTS</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">IMPORTANT</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">The interface MUST NOT look like:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1023"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Cyberpunk</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1023"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Gaming dashboard</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1023"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Futuristic hacker UI</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">The interface MUST follow DELIMa design philosophy.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Requirements:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1024"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Educational platform appearance</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1024"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">White background</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1024"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Blue and purple accents</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1024"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Clean dashboard</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1024"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Professional Ministry of Education style</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1024"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Student-friendly layout</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="50"/>
+    
+    
+    <w:bookmarkStart w:id="51" w:name="device-support"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">DEVICE SUPPORT</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Must support:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1025"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Desktop</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1025"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Mobile</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Responsive design required.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="51"/>
+    
+    
+    <w:bookmarkStart w:id="52" w:name="language-support"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">LANGUAGE SUPPORT</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Must support:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1026"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">English</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1026"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Bahasa Melayu</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Language switching required.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="52"/>
+    
+    
+    <w:bookmarkStart w:id="53" w:name="technical-stack"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">TECHNICAL STACK</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Prototype Development:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1027"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Google AI Studio (Gemini)</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Backend:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1028"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Python</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1028"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">FastAPI</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Frontend:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1029"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">HTML</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1029"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">CSS</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1029"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">JavaScript</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Data Storage:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1030"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Excel files</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Server:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1031"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Uvicorn</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="53"/>
+    
+    
+    <w:bookmarkStart w:id="54" w:name="expected-output"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">EXPECTED OUTPUT</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">The system should generate:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1032"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Top 5 Recommended Scholarships</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1032"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Match Percentage</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1032"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Recommendation Explanation</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1032"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Eligibility Analysis</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1032"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Scholarship Deadline Reminder</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1032"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Email Notification Status</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="54"/>
+    
+    
+    <w:bookmarkStart w:id="55" w:name="future-enhancements"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">FUTURE ENHANCEMENTS</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Potential future integrations:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1033"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">DELIMa</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1033"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">iDME</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1033"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Real scholarship providers</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Potential future datasets:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1034"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">PBD</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1034"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">PBS</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1034"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">SEGAK</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Potential future analytics:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1035"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Student development trend analysis</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1035"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Longitudinal profiling from primary school to secondary school</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">These are future enhancements only and should not expand the scope of the current prototype.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:r>
+        <w:pict>
+          <v:rect style="width:0;height:1.5pt" o:hralign="center" o:hrstd="t" o:hr="t"/>
+        </w:pict>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="55"/>
+    
+    
+    <w:bookmarkStart w:id="56" w:name="final-instruction-for-claude"/>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">FINAL INSTRUCTION FOR CLAUDE</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Act as:</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1036"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Agentic AI Architect</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1036"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Educational Technology Solution Architect</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1036"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Full Stack Developer</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Compact"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="1036"/>
+        </w:numPr>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Scholarship Recommendation System Designer</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="FirstParagraph"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Always prioritise simplicity, usability and prototype feasibility.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">Do not over-engineer the solution.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="BodyText"/>
+      </w:pPr>
+      <w:r>
+        <w:t xml:space="preserve">The primary goal is to demonstrate a working Agentic AI scholarship matching prototype that could potentially be integrated into DELIMa in the future.</w:t>
+      </w:r>
+    </w:p>
+    
+    
+    <w:bookmarkEnd w:id="56"/>
+    
+    
+    <w:sectPr>
+      
+      
+      <w:footnotePr>
+        
+        
+                
+        
+        <w:numRestart w:val="eachSect"/>
+        
+        
+              
+      
+      </w:footnotePr>
+      
+    
+    </w:sectPr>
+    
+  
+  </w:body>
+  
+
+</w:document>

@@ -1,0 +1,53 @@
+{
+  "gpScore": 6.67,
+  "subjects": [
+    {
+      "subject": "Bahasa Melayu",
+      "grade": "A"
+    },
+    {
+      "subject": "Bahasa Inggeris",
+      "grade": "B+"
+    },
+    {
+      "subject": "Pendidikan Islam",
+      "grade": "A"
+    },
+    {
+      "subject": "Sejarah",
+      "grade": "A-"
+    },
+    {
+      "subject": "Matematik",
+      "grade": "A-"
+    },
+    {
+      "subject": "Matematik Tambahan",
+      "grade": "B"
+    },
+    {
+      "subject": "Fizik",
+      "grade": "B"
+    },
+    {
+      "subject": "Kimia",
+      "grade": "C+"
+    },
+    {
+      "subject": "Biologi",
+      "grade": "D"
+    },
+    {
+      "subject": "Pendidikan Syariah Islamiah",
+      "grade": "A-"
+    },
+    {
+      "subject": "Pendidikan Al-Quran dan Al-Sunnah",
+      "grade": "C+"
+    },
+    {
+      "subject": "Reka Cipta",
+      "grade": "B"
+    }
+  ]
+}

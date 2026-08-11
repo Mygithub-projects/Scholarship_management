@@ -1,0 +1,111 @@
+{
+  "agent": "Agent 3 — Recommendation Report Generator",
+  "llm": "Groq llama-3.3-70b-versatile",
+  "studentId": "SBP5IK013",
+  "studentName": "AHMAD DANIAL BIN MOHD ROSLI",
+  "top5": [
+    {
+      "scholarshipId": "BIA003",
+      "scholarshipName": "JPA – Program Khas JPA MARA (PKJM)",
+      "provider": "JPA & MARA",
+      "eligible": true,
+      "totalScore": 90.2,
+      "breakdown": {
+        "academic": 100,
+        "pajsk": 92.25,
+        "psychometric": 80,
+        "aspiration": 80,
+        "income": 85
+      },
+      "url": "https://esilav2.jpa.gov.my/online_progs/epermohonan/index.php?program=PKJM"
+    },
+    {
+      "scholarshipId": "BIA009",
+      "scholarshipName": "Biasiswa Yayasan Pahang",
+      "provider": "Yayasan Pahang",
+      "eligible": true,
+      "totalScore": 81.95,
+      "breakdown": {
+        "academic": 100,
+        "pajsk": 92.25,
+        "psychometric": 80,
+        "aspiration": 80,
+        "income": 30
+      },
+      "url": "https://bit.ly/Apply-YP-Scholarship"
+    },
+    {
+      "scholarshipId": "BIA007",
+      "scholarshipName": "Khazanah Watan Scholarship Programme",
+      "provider": "Yayasan Khazanah",
+      "eligible": true,
+      "totalScore": 81.15,
+      "breakdown": {
+        "academic": 82.2,
+        "pajsk": 78.15,
+        "psychometric": 80,
+        "aspiration": 80,
+        "income": 85
+      },
+      "url": "https://apply.yayasankhazanah.com.my/Account/Login"
+    },
+    {
+      "scholarshipId": "BIA004",
+      "scholarshipName": "MARA – Young Talent Development Programme (YTP)",
+      "provider": "MARA",
+      "eligible": true,
+      "totalScore": 73.97,
+      "breakdown": {
+        "academic": 76.7,
+        "pajsk": 78.15,
+        "psychometric": 100,
+        "aspiration": 80,
+        "income": 30
+      },
+      "url": "https://educationloan.mara.gov.my/"
+    },
+    {
+      "scholarshipId": "BIA008",
+      "scholarshipName": "Yayasan Tenaga Nasional (YTN) – TNB Prime Scholarship",
+      "provider": "Yayasan Tenaga Nasional (TNB)",
+      "eligible": true,
+      "totalScore": 72.65,
+      "breakdown": {
+        "academic": 92.2,
+        "pajsk": 78.15,
+        "psychometric": 80,
+        "aspiration": 0,
+        "income": 85
+      },
+      "url": "https://ytn.tnb.com.my/"
+    }
+  ],
+  "report": {
+    "bm": {
+      "tajuk": "Laporan Cadangan Biasiswa",
+      "pengenalan": "Saya dengan ini memperkenalkan Ahmad Danial Bin Mohd Rosli, seorang pelajar sekolah menengah yang berpotensi dan berdedikasi. Laporan ini bertujuan untuk mencadangkan pelajar ini untuk beberapa program biasiswa yang sesuai dengan profil dan keupayaannya. Ahmad Danial telah menunjukkan prestasi akademik yang cemerlang dan mempunyai potensi untuk berjaya dalam bidang yang dipilihnya.",
+      "padanan": [
+        {
+          "nombor": 1,
+          "nama": "JPA – Program Khas JPA MARA (PKJM)",
+          "sebab": "Biasiswa ini sesuai untuk Ahmad Danial kerana skor akademiknya yang tinggi dan keputusan PAJSK yang memuaskan. Selain itu, skor psychometric dan aspirasi yang baik juga menunjukkan bahawa beliau mempunyai potensi untuk berjaya dalam program ini. Dengan skor keseluruhan sebanyak 90.2, Ahmad Danial berada dalam kedudukan yang baik untuk memenangi biasiswa ini."
+        }
+      ],
+      "nasihat_kerjaya": "Berdasarkan profil Ahmad Danial, saya menasihatkan beliau untuk mempertimbangkan kerjaya dalam bidang yang memerlukan kemahiran analitis dan pemikiran kritis. Beliau juga perlu memperkembangkan kemahiran berkomunikasi dan kerja berpasukan untuk berjaya dalam bidang yang dipilihnya. Dengan dedikasi dan usaha, Ahmad Danial berpotensi untuk menjadi seorang pemimpin yang berjaya dalam bidang yang dipilihnya.",
+      "penutup": "Saya berharap Ahmad Danial akan memanfaatkan peluang ini untuk memajukan dirinya dan mencapai matlamatnya. Saya percaya bahawa dengan kerja keras dan dedikasi, beliau akan berjaya dalam bidang yang dipilihnya dan menjadi seorang yang berjaya dalam masyarakat."
+    },
+    "en": {
+      "title": "Scholarship Recommendation Report",
+      "introduction": "I am pleased to introduce Ahmad Danial Bin Mohd Rosli, a dedicated and promising secondary school student. This report aims to recommend Ahmad Danial for several scholarship programs that match his profile and abilities. Ahmad Danial has demonstrated excellent academic performance and has the potential to excel in his chosen field.",
+      "matches": [
+        {
+          "rank": 1,
+          "name": "JPA – Program Khas JPA MARA (PKJM)",
+          "reason": "This scholarship is suitable for Ahmad Danial due to his high academic scores and satisfactory PAJSK results. Additionally, his good psychometric and aspiration scores also indicate that he has the potential to succeed in this program. With an overall score of 90.2, Ahmad Danial is in a good position to win this scholarship."
+        }
+      ],
+      "career_advice": "Based on Ahmad Danial's profile, I advise him to consider a career in a field that requires analytical and critical thinking skills. He should also develop his communication and teamwork skills to succeed in his chosen field. With dedication and hard work, Ahmad Danial has the potential to become a successful leader in his chosen field.",
+      "closing": "I hope Ahmad Danial will take advantage of this opportunity to advance himself and achieve his goals. I believe that with hard work and dedication, he will succeed in his chosen field and become a successful member of society."
+    }
+  }
+}

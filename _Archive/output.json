@@ -1,0 +1,2957 @@
+{
+  "agent": "Agent 1 — Student Profiling Agent",
+  "timestamp": "2026-07-09T04:33:26.046Z",
+  "totalStudents": 50,
+  "profiles": [
+    {
+      "id": "SBP5IK001",
+      "name": "AHMAD FARIS BIN MOHD AZRI",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "A+",
+        "Bahasa Inggeris": "A+",
+        "Matematik": "A+",
+        "Sejarah": "A+",
+        "Pend. Agama Islam": "A+",
+        "Matematik Tambahan": "A+",
+        "Fizik": "A+",
+        "Kimia": "A+",
+        "Biologi": "A+"
+      },
+      "gpScore": 10,
+      "pajskScore": 70,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 44,
+        "I": 18,
+        "A": 48,
+        "S": 22,
+        "E": 25,
+        "K": 38
+      },
+      "riasecType": [
+        "Artistic",
+        "Realistic",
+        "Conventional"
+      ],
+      "hollandCode": "ARC",
+      "fieldOfInterest": "Seni & Komunikasi",
+      "dreamCareer": "Pereka Grafik / Arkitek",
+      "parentCategory": "B40",
+      "perCapitaIncome": 621.12,
+      "keyAchievements": [
+        "BENDAHARI (6) – SILAT (SR) [NEGERI (14)]",
+        "BENDAHARI (6), KADET BOMBA DAN PENYELAMAT MALAYSIA (SR)",
+        "Ahli KELAB KOMPUTER ICT (SR)"
+      ],
+      "pajskData": {
+        "markah": 77,
+        "sukan": "SILAT (SR)",
+        "jawatanSukan": "BENDAHARI (6)",
+        "peringkatSukan": "NEGERI (14)",
+        "kelab": "KELAB KOMPUTER ICT (SR)",
+        "jawatanKelab": "NAIB PENGERUSI (8)",
+        "peringkatKelab": "KEBANGSAAN (15)",
+        "badanBeruniform": "KADET BOMBA DAN PENYELAMAT MALAYSIA (SR)",
+        "jawatanBB": "KOPERAL (5)",
+        "peringkatBB": "ZON/DAERAH (11)",
+        "jawatan": "BENDAHARI (6)",
+        "peringkat": "NEGERI (14)",
+        "perkhidmatan": null,
+        "anugerahKhas": "ANUGERAH KHAS KOKURIKULUM DAN SUKAN - NEGERI (PENERIMA)(8)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT KEBANGSAAN(10)"
+      }
+    },
+    {
+      "id": "SBP5IK002",
+      "name": "MUHAMMAD HAFIZUDDIN BIN AHMAD FAUZI",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "A+",
+        "Bahasa Inggeris": "A+",
+        "Matematik": "A+",
+        "Sejarah": "A+",
+        "Pend. Agama Islam": "A+",
+        "Matematik Tambahan": "A+",
+        "Fizik": "A+",
+        "Kimia": "A+",
+        "Biologi": "A+"
+      },
+      "gpScore": 10,
+      "pajskScore": 70,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 42,
+        "I": 41,
+        "A": 19,
+        "S": 47,
+        "E": 40,
+        "K": 28
+      },
+      "riasecType": [
+        "Social",
+        "Realistic",
+        "Investigative"
+      ],
+      "hollandCode": "SRI",
+      "fieldOfInterest": "Pendidikan & Perkhidmatan Sosial",
+      "dreamCareer": "Pendidik / Pegawai Sosial",
+      "parentCategory": "B40",
+      "perCapitaIncome": 631.87,
+      "keyAchievements": [
+        "AHLI AKTIF (4) – HOKI (SR) [DAERAH (8)]",
+        "AHLI AKTIF (4), PERSEKUTUAN PENGAKAP MALAYSIA (SR)",
+        "Ahli PERSATUAN BAHASA ARAB (SR)"
+      ],
+      "pajskData": {
+        "markah": 77,
+        "sukan": "HOKI (SR)",
+        "jawatanSukan": "AHLI AKTIF (4)",
+        "peringkatSukan": "DAERAH (8)",
+        "kelab": "PERSATUAN BAHASA ARAB (SR)",
+        "jawatanKelab": "NAIB PENGERUSI (8)",
+        "peringkatKelab": "ANTARABANGSA (20)",
+        "badanBeruniform": "PERSEKUTUAN PENGAKAP MALAYSIA (SR)",
+        "jawatanBB": "BENDAHARI (6)",
+        "peringkatBB": "ZON/DAERAH (9)",
+        "jawatan": "AHLI AKTIF (4)",
+        "peringkat": "DAERAH (8)",
+        "perkhidmatan": null,
+        "anugerahKhas": "ANUGERAH REMAJA PERDANA (EMAS)(10)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT KEBANGSAAN(10)"
+      }
+    },
+    {
+      "id": "SBP5IK003",
+      "name": "MUHAMMAD QUSYAIRI BIN ABDUL HALIM",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "B+",
+        "Bahasa Inggeris": "A+",
+        "Matematik": "A",
+        "Sejarah": "A",
+        "Pend. Agama Islam": "A+",
+        "Matematik Tambahan": "A-",
+        "Fizik": "A",
+        "Kimia": "A+",
+        "Biologi": "A+"
+      },
+      "gpScore": 9.11,
+      "pajskScore": 66.4,
+      "leadershipLevel": "Basic",
+      "riasecScores": {
+        "R": 41,
+        "I": 38,
+        "A": 36,
+        "S": 26,
+        "E": 48,
+        "K": 12
+      },
+      "riasecType": [
+        "Enterprising",
+        "Realistic",
+        "Investigative"
+      ],
+      "hollandCode": "ERI",
+      "fieldOfInterest": "Perniagaan & Pengurusan",
+      "dreamCareer": "Usahawan / Pengurus Perniagaan",
+      "parentCategory": "B40",
+      "perCapitaIncome": 1034.78,
+      "keyAchievements": [
+        "KAPTEN (7) – TENIS MEJA (SR) [ANTARABANGSA (20)]",
+        "KAPTEN (7), KADET REMAJA SEKOLAH (KRS) (SR)",
+        "Ahli KELAB SENI VISUAL (SR)"
+      ],
+      "pajskData": {
+        "markah": 73,
+        "sukan": "TENIS MEJA (SR)",
+        "jawatanSukan": "KAPTEN (7)",
+        "peringkatSukan": "ANTARABANGSA (20)",
+        "kelab": "KELAB SENI VISUAL (SR)",
+        "jawatanKelab": "PENGERUSI (10)",
+        "peringkatKelab": "ANTARABANGSA (20)",
+        "badanBeruniform": "KADET REMAJA SEKOLAH (KRS) (SR)",
+        "jawatanBB": "KOPERAL (5)",
+        "peringkatBB": "ZON/DAERAH (9)",
+        "jawatan": "KAPTEN (7)",
+        "peringkat": "ANTARABANGSA (20)",
+        "perkhidmatan": "KUARTERMASTER/PENGERUSI BADAN PERKHIDMATAN SEKOLAH (7)",
+        "anugerahKhas": null,
+        "khidmatMasyarakat": "AKTIVITI INSANIAH(10)"
+      }
+    },
+    {
+      "id": "SBP5IK004",
+      "name": "AHMAD DANIAL BIN ZAINUDIN",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "A-",
+        "Bahasa Inggeris": "B",
+        "Matematik": "E",
+        "Sejarah": "C",
+        "Pend. Agama Islam": "A-",
+        "Matematik Tambahan": "B",
+        "Fizik": "A-",
+        "Kimia": "A",
+        "Biologi": "A+"
+      },
+      "gpScore": 6.78,
+      "pajskScore": 59.1,
+      "leadershipLevel": "Basic",
+      "riasecScores": {
+        "R": 27,
+        "I": 34,
+        "A": 27,
+        "S": 41,
+        "E": 39,
+        "K": 11
+      },
+      "riasecType": [
+        "Social",
+        "Enterprising",
+        "Investigative"
+      ],
+      "hollandCode": "SEI",
+      "fieldOfInterest": "Pendidikan & Perkhidmatan Sosial",
+      "dreamCareer": "Pendidik / Pegawai Sosial",
+      "parentCategory": "M40",
+      "perCapitaIncome": 3670.05,
+      "keyAchievements": [
+        "BENDAHARI (6) – SEPAK TAKRAW (SR) [KEBANGSAAN (17)]",
+        "BENDAHARI (6), KOR KADET POLIS (SR)",
+        "Ahli KELAB FIZIK (SR)"
+      ],
+      "pajskData": {
+        "markah": 65,
+        "sukan": "SEPAK TAKRAW (SR)",
+        "jawatanSukan": "BENDAHARI (6)",
+        "peringkatSukan": "KEBANGSAAN (17)",
+        "kelab": "KELAB FIZIK (SR)",
+        "jawatanKelab": "AHLI AKTIF (4)",
+        "peringkatKelab": "ANTARABANGSA (20)",
+        "badanBeruniform": "KOR KADET POLIS (SR)",
+        "jawatanBB": "SARJAN (6)",
+        "peringkatBB": "NEGERI (14)",
+        "jawatan": "BENDAHARI (6)",
+        "peringkat": "KEBANGSAAN (17)",
+        "perkhidmatan": "TIMBALAN/PENOLONG KETUA MURID (8)",
+        "anugerahKhas": "ANUGERAH KHAS KOKURIKULUM DAN SUKAN - NEGERI (PENERIMA)(8)",
+        "khidmatMasyarakat": "PROGRAM GOTONG-ROYONG KOMUNITI(5)"
+      }
+    },
+    {
+      "id": "SBP5IK005",
+      "name": "MUHAMMAD QUSYAIRI BIN MOHD ZULKIFLI",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "B+",
+        "Bahasa Inggeris": "B+",
+        "Matematik": "A-",
+        "Sejarah": "C",
+        "Pend. Agama Islam": "A-",
+        "Matematik Tambahan": "B+",
+        "Fizik": "A",
+        "Kimia": "A-",
+        "Biologi": "A-"
+      },
+      "gpScore": 7.33,
+      "pajskScore": 75.5,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 46,
+        "I": 35,
+        "A": 25,
+        "S": 28,
+        "E": 43,
+        "K": 23
+      },
+      "riasecType": [
+        "Realistic",
+        "Enterprising",
+        "Investigative"
+      ],
+      "hollandCode": "REI",
+      "fieldOfInterest": "Kejuruteraan & Teknologi",
+      "dreamCareer": "Jurutera / Juruteknik",
+      "parentCategory": "T20",
+      "perCapitaIncome": 9711.79,
+      "keyAchievements": [
+        "AHLI JAWATANKUASA (5) – RAGBI (SR) [NEGERI (14)]",
+        "AHLI JAWATANKUASA (5), KOR KADET TENTERA UDARA (SR)",
+        "Ahli KELAB SEJARAH (SR)"
+      ],
+      "pajskData": {
+        "markah": 83,
+        "sukan": "RAGBI (SR)",
+        "jawatanSukan": "AHLI JAWATANKUASA (5)",
+        "peringkatSukan": "NEGERI (14)",
+        "kelab": "KELAB SEJARAH (SR)",
+        "jawatanKelab": "PENGERUSI (10)",
+        "peringkatKelab": "ZON/DAERAH (11)",
+        "badanBeruniform": "KOR KADET TENTERA UDARA (SR)",
+        "jawatanBB": "KOPERAL (5)",
+        "peringkatBB": "ANTARABANGSA (20)",
+        "jawatan": "AHLI JAWATANKUASA (5)",
+        "peringkat": "NEGERI (14)",
+        "perkhidmatan": "KUARTERMASTER/PENGERUSI BADAN PERKHIDMATAN SEKOLAH (7)",
+        "anugerahKhas": "ANUGERAH REMAJA PERDANA (PERAK)(8)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT NEGERI(8)"
+      }
+    },
+    {
+      "id": "SBP5IK006",
+      "name": "AHMAD FARIS BIN MOHD ZULKIFLI",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "B+",
+        "Bahasa Inggeris": "A-",
+        "Matematik": "B+",
+        "Sejarah": "A+",
+        "Pend. Agama Islam": "A+",
+        "Matematik Tambahan": "A",
+        "Fizik": "B+",
+        "Kimia": "A",
+        "Biologi": "A"
+      },
+      "gpScore": 8.44,
+      "pajskScore": 70,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 15,
+        "I": 11,
+        "A": 28,
+        "S": 26,
+        "E": 21,
+        "K": 12
+      },
+      "riasecType": [
+        "Artistic",
+        "Social",
+        "Enterprising"
+      ],
+      "hollandCode": "ASE",
+      "fieldOfInterest": "Seni & Komunikasi",
+      "dreamCareer": "Pereka Grafik / Arkitek",
+      "parentCategory": "M40",
+      "perCapitaIncome": 1599.81,
+      "keyAchievements": [
+        "NAIB BENDAHARI (5) – TAEKWONDO (SR) [ZON/DAERAH (11)]",
+        "NAIB BENDAHARI (5), KOR KADET TENTERA LAUT (SR)",
+        "Ahli KELAB KEUSAHAWANAN (SR)"
+      ],
+      "pajskData": {
+        "markah": 77,
+        "sukan": "TAEKWONDO (SR)",
+        "jawatanSukan": "NAIB BENDAHARI (5)",
+        "peringkatSukan": "ZON/DAERAH (11)",
+        "kelab": "KELAB KEUSAHAWANAN (SR)",
+        "jawatanKelab": "AHLI AKTIF (4)",
+        "peringkatKelab": "DAERAH (8)",
+        "badanBeruniform": "KOR KADET TENTERA LAUT (SR)",
+        "jawatanBB": "AHLI JAWATANKUASA (5)",
+        "peringkatBB": "NEGERI (14)",
+        "jawatan": "NAIB BENDAHARI (5)",
+        "peringkat": "ZON/DAERAH (11)",
+        "perkhidmatan": null,
+        "anugerahKhas": null,
+        "khidmatMasyarakat": null
+      }
+    },
+    {
+      "id": "SBP5IK007",
+      "name": "MUHAMMAD QUSYAIRI BIN ABDUL RAZAK",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "A",
+        "Bahasa Inggeris": "B+",
+        "Matematik": "A-",
+        "Sejarah": "D",
+        "Pend. Agama Islam": "A",
+        "Matematik Tambahan": "C+",
+        "Fizik": "A-",
+        "Kimia": "D",
+        "Biologi": "A+"
+      },
+      "gpScore": 6.89,
+      "pajskScore": 92.7,
+      "leadershipLevel": "High",
+      "riasecScores": {
+        "R": 31,
+        "I": 15,
+        "A": 28,
+        "S": 23,
+        "E": 40,
+        "K": 25
+      },
+      "riasecType": [
+        "Enterprising",
+        "Realistic",
+        "Artistic"
+      ],
+      "hollandCode": "ERA",
+      "fieldOfInterest": "Perniagaan & Pengurusan",
+      "dreamCareer": "Usahawan / Pengurus Perniagaan",
+      "parentCategory": "B40",
+      "perCapitaIncome": 1403.45,
+      "keyAchievements": [
+        "NAIB PENGERUSI (8) – BOLA SEPAK (SR) [KEBANGSAAN (15)]",
+        "NAIB PENGERUSI (8), KOR KADET TENTERA DARAT (SR)",
+        "Ahli KELAB GEOGRAFI (SR)"
+      ],
+      "pajskData": {
+        "markah": 102,
+        "sukan": "BOLA SEPAK (SR)",
+        "jawatanSukan": "NAIB PENGERUSI (8)",
+        "peringkatSukan": "KEBANGSAAN (15)",
+        "kelab": "KELAB GEOGRAFI (SR)",
+        "jawatanKelab": "BENDAHARI (6)",
+        "peringkatKelab": "SEKOLAH (5)",
+        "badanBeruniform": "KOR KADET TENTERA DARAT (SR)",
+        "jawatanBB": "SETIAUSAHA (7)",
+        "peringkatBB": "ZON/DAERAH (9)",
+        "jawatan": "NAIB PENGERUSI (8)",
+        "peringkat": "KEBANGSAAN (15)",
+        "perkhidmatan": null,
+        "anugerahKhas": "PROGRAM KEPIMPINAN GENERASI MADANI - TIER 2 (PENERIMA)(4)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT ZON/DAERAH(6)"
+      }
+    },
+    {
+      "id": "SBP5IK008",
+      "name": "MUHAMMAD AZFAR BIN NORDIN",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "B",
+        "Bahasa Inggeris": "B+",
+        "Matematik": "D",
+        "Sejarah": "A-",
+        "Pend. Agama Islam": "E",
+        "Matematik Tambahan": "A+",
+        "Fizik": "B",
+        "Kimia": "C+",
+        "Biologi": "B+"
+      },
+      "gpScore": 6,
+      "pajskScore": 66.4,
+      "leadershipLevel": "Basic",
+      "riasecScores": {
+        "R": 28,
+        "I": 8,
+        "A": 30,
+        "S": 41,
+        "E": 27,
+        "K": 43
+      },
+      "riasecType": [
+        "Conventional",
+        "Social",
+        "Artistic"
+      ],
+      "hollandCode": "CSA",
+      "fieldOfInterest": "Perakaunan & Kewangan",
+      "dreamCareer": "Akauntan / Penganalisis Kewangan",
+      "parentCategory": "B40",
+      "perCapitaIncome": 362.04,
+      "keyAchievements": [
+        "PENGERUSI (10) – BADMINTON (SR) [NEGERI (12)]",
+        "PENGERUSI (10), BULAN SABIT MERAH MALAYSIA (BSMM) (SR)",
+        "Ahli PERSATUAN BAHASA INGGERIS (SR)"
+      ],
+      "pajskData": {
+        "markah": 73,
+        "sukan": "BADMINTON (SR)",
+        "jawatanSukan": "PENGERUSI (10)",
+        "peringkatSukan": "NEGERI (12)",
+        "kelab": "PERSATUAN BAHASA INGGERIS (SR)",
+        "jawatanKelab": "BENDAHARI (6)",
+        "peringkatKelab": "DAERAH (8)",
+        "badanBeruniform": "BULAN SABIT MERAH MALAYSIA (BSMM) (SR)",
+        "jawatanBB": "SETIAUSAHA (7)",
+        "peringkatBB": "ZON/DAERAH (11)",
+        "jawatan": "PENGERUSI (10)",
+        "peringkat": "NEGERI (12)",
+        "perkhidmatan": null,
+        "anugerahKhas": "ANUGERAH REMAJA PERDANA (EMAS)(10)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT ZON/DAERAH(6)"
+      }
+    },
+    {
+      "id": "SBP5IK009",
+      "name": "MUHAMMAD QUSYAIRI BIN MOHD AZRI",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "A",
+        "Bahasa Inggeris": "C+",
+        "Matematik": "A-",
+        "Sejarah": "A",
+        "Pend. Agama Islam": "A+",
+        "Matematik Tambahan": "A-",
+        "Fizik": "A",
+        "Kimia": "A+",
+        "Biologi": "C"
+      },
+      "gpScore": 8,
+      "pajskScore": 78.2,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 33,
+        "I": 32,
+        "A": 19,
+        "S": 15,
+        "E": 10,
+        "K": 31
+      },
+      "riasecType": [
+        "Realistic",
+        "Investigative",
+        "Conventional"
+      ],
+      "hollandCode": "RIC",
+      "fieldOfInterest": "Kejuruteraan & Teknologi",
+      "dreamCareer": "Jurutera / Juruteknik",
+      "parentCategory": "M40",
+      "perCapitaIncome": 2708.24,
+      "keyAchievements": [
+        "KAPTEN (7) – CATUR (SR) [NEGERI (14)]",
+        "KAPTEN (7), KADET BOMBA DAN PENYELAMAT MALAYSIA (SR)",
+        "Ahli KELAB MUZIK (SR)"
+      ],
+      "pajskData": {
+        "markah": 86,
+        "sukan": "CATUR (SR)",
+        "jawatanSukan": "KAPTEN (7)",
+        "peringkatSukan": "NEGERI (14)",
+        "kelab": "KELAB MUZIK (SR)",
+        "jawatanKelab": "NAIB BENDAHARI (5)",
+        "peringkatKelab": "SEKOLAH (5)",
+        "badanBeruniform": "KADET BOMBA DAN PENYELAMAT MALAYSIA (SR)",
+        "jawatanBB": "BENDAHARI (6)",
+        "peringkatBB": "KEBANGSAAN (15)",
+        "jawatan": "KAPTEN (7)",
+        "peringkat": "NEGERI (14)",
+        "perkhidmatan": "KUARTERMASTER/PENGERUSI BADAN PERKHIDMATAN SEKOLAH (7)",
+        "anugerahKhas": "ANUGERAH KHAS KOKURIKULUM DAN SUKAN - KEBANGSAAN (PENERIMA)(10)",
+        "khidmatMasyarakat": "PROGRAM GOTONG-ROYONG KOMUNITI(5)"
+      }
+    },
+    {
+      "id": "SBP5IK010",
+      "name": "MOHAMAD AIMAN BIN NORDIN",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "A",
+        "Bahasa Inggeris": "A",
+        "Matematik": "A",
+        "Sejarah": "A+",
+        "Pend. Agama Islam": "D",
+        "Matematik Tambahan": "D",
+        "Fizik": "A+",
+        "Kimia": "B",
+        "Biologi": "B+"
+      },
+      "gpScore": 7.33,
+      "pajskScore": 64.5,
+      "leadershipLevel": "Basic",
+      "riasecScores": {
+        "R": 48,
+        "I": 43,
+        "A": 15,
+        "S": 12,
+        "E": 17,
+        "K": 13
+      },
+      "riasecType": [
+        "Realistic",
+        "Investigative",
+        "Enterprising"
+      ],
+      "hollandCode": "RIE",
+      "fieldOfInterest": "Kejuruteraan & Teknologi",
+      "dreamCareer": "Jurutera / Juruteknik",
+      "parentCategory": "M40",
+      "perCapitaIncome": 2944.73,
+      "keyAchievements": [
+        "AHLI JAWATANKUASA (5) – MEMANAH (SR) [ZON/DAERAH (11)]",
+        "AHLI JAWATANKUASA (5), BULAN SABIT MERAH MALAYSIA (BSMM) (SR)",
+        "Ahli KELAB PERTANIAN (SR)"
+      ],
+      "pajskData": {
+        "markah": 71,
+        "sukan": "MEMANAH (SR)",
+        "jawatanSukan": "AHLI JAWATANKUASA (5)",
+        "peringkatSukan": "ZON/DAERAH (11)",
+        "kelab": "KELAB PERTANIAN (SR)",
+        "jawatanKelab": "AHLI AKTIF (4)",
+        "peringkatKelab": "NEGERI (14)",
+        "badanBeruniform": "BULAN SABIT MERAH MALAYSIA (BSMM) (SR)",
+        "jawatanBB": "SARJAN (6)",
+        "peringkatBB": "KEBANGSAAN (17)",
+        "jawatan": "AHLI JAWATANKUASA (5)",
+        "peringkat": "ZON/DAERAH (11)",
+        "perkhidmatan": "TIMBALAN/PENOLONG KETUA MURID (8)",
+        "anugerahKhas": "ANUGERAH REMAJA PERDANA (GANGSA)(6)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT NEGERI(8)"
+      }
+    },
+    {
+      "id": "SBP5IK011",
+      "name": "MOHAMAD SYAFIQ BIN MOHD REDZUAN",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "A+",
+        "Bahasa Inggeris": "B",
+        "Matematik": "E",
+        "Sejarah": "A",
+        "Pend. Agama Islam": "A",
+        "Matematik Tambahan": "C",
+        "Fizik": "A+",
+        "Kimia": "C+",
+        "Biologi": "A+"
+      },
+      "gpScore": 7.22,
+      "pajskScore": 68.2,
+      "leadershipLevel": "Basic",
+      "riasecScores": {
+        "R": 15,
+        "I": 28,
+        "A": 8,
+        "S": 11,
+        "E": 34,
+        "K": 25
+      },
+      "riasecType": [
+        "Enterprising",
+        "Investigative",
+        "Conventional"
+      ],
+      "hollandCode": "EIC",
+      "fieldOfInterest": "Perniagaan & Pengurusan",
+      "dreamCareer": "Usahawan / Pengurus Perniagaan",
+      "parentCategory": "T20",
+      "perCapitaIncome": 14788.98,
+      "keyAchievements": [
+        "PENGERUSI (10) – BOLA KERANJANG (SR) [DAERAH (8)]",
+        "PENGERUSI (10), KOR KADET TENTERA DARAT (SR)",
+        "Ahli KELAB REKA BENTUK DAN TEKNOLOGI (SR)"
+      ],
+      "pajskData": {
+        "markah": 75,
+        "sukan": "BOLA KERANJANG (SR)",
+        "jawatanSukan": "PENGERUSI (10)",
+        "peringkatSukan": "DAERAH (8)",
+        "kelab": "KELAB REKA BENTUK DAN TEKNOLOGI (SR)",
+        "jawatanKelab": "BENDAHARI (6)",
+        "peringkatKelab": "KEBANGSAAN (15)",
+        "badanBeruniform": "KOR KADET TENTERA DARAT (SR)",
+        "jawatanBB": "SARJAN MEJAR (7)",
+        "peringkatBB": "ANTARABANGSA (20)",
+        "jawatan": "PENGERUSI (10)",
+        "peringkat": "DAERAH (8)",
+        "perkhidmatan": "KETUA PENGAWAS/PENGAWAS SEKOLAH (8)",
+        "anugerahKhas": "AKTIVITI INSANIAH(10)",
+        "khidmatMasyarakat": null
+      }
+    },
+    {
+      "id": "SBP5IK012",
+      "name": "MOHAMAD SYAFIQ BIN MOHD SHAHRUL",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "A-",
+        "Bahasa Inggeris": "E",
+        "Matematik": "C+",
+        "Sejarah": "C+",
+        "Pend. Agama Islam": "A",
+        "Matematik Tambahan": "B",
+        "Fizik": "A+",
+        "Kimia": "A+",
+        "Biologi": "A-"
+      },
+      "gpScore": 7,
+      "pajskScore": 81.8,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 30,
+        "I": 20,
+        "A": 20,
+        "S": 32,
+        "E": 37,
+        "K": 46
+      },
+      "riasecType": [
+        "Conventional",
+        "Enterprising",
+        "Social"
+      ],
+      "hollandCode": "CES",
+      "fieldOfInterest": "Perakaunan & Kewangan",
+      "dreamCareer": "Akauntan / Penganalisis Kewangan",
+      "parentCategory": "B40",
+      "perCapitaIncome": 1053.12,
+      "keyAchievements": [
+        "AHLI AKTIF (4) – RENANG (SR) [KEBANGSAAN (17)]",
+        "AHLI AKTIF (4), KOR KADET TENTERA UDARA (SR)",
+        "Ahli KELAB KOPERASI SEKOLAH (SM)"
+      ],
+      "pajskData": {
+        "markah": 90,
+        "sukan": "RENANG (SR)",
+        "jawatanSukan": "AHLI AKTIF (4)",
+        "peringkatSukan": "KEBANGSAAN (17)",
+        "kelab": "KELAB KOPERASI SEKOLAH (SM)",
+        "jawatanKelab": "NAIB SETIAUSAHA (6)",
+        "peringkatKelab": "ZON/DAERAH (11)",
+        "badanBeruniform": "KOR KADET TENTERA UDARA (SR)",
+        "jawatanBB": "SARJAN MEJAR (7)",
+        "peringkatBB": "ZON/DAERAH (11)",
+        "jawatan": "AHLI AKTIF (4)",
+        "peringkat": "KEBANGSAAN (17)",
+        "perkhidmatan": "AHLI LEMBAGA PENGARAH KOPERASI SEKOLAH (6)",
+        "anugerahKhas": "ANUGERAH KHAS KOKURIKULUM DAN SUKAN - NEGERI (PENERIMA)(8)",
+        "khidmatMasyarakat": null
+      }
+    },
+    {
+      "id": "SBP5IK013",
+      "name": "AHMAD DANIAL BIN MOHD ROSLI",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "B+",
+        "Bahasa Inggeris": "A+",
+        "Matematik": "A+",
+        "Sejarah": "A",
+        "Pend. Agama Islam": "B+",
+        "Matematik Tambahan": "A+",
+        "Fizik": "A+",
+        "Kimia": "A",
+        "Biologi": "A+"
+      },
+      "gpScore": 9.11,
+      "pajskScore": 84.5,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 38,
+        "I": 30,
+        "A": 45,
+        "S": 42,
+        "E": 37,
+        "K": 27
+      },
+      "riasecType": [
+        "Artistic",
+        "Social",
+        "Realistic"
+      ],
+      "hollandCode": "ASR",
+      "fieldOfInterest": "Seni & Komunikasi",
+      "dreamCareer": "Pereka Grafik / Arkitek",
+      "parentCategory": "M40",
+      "perCapitaIncome": 3512.06,
+      "keyAchievements": [
+        "KAPTEN (7) – OLAHRAGA (SR) [ZON/DAERAH (9)]",
+        "KAPTEN (7), KADET REMAJA SEKOLAH (KRS) (SR)",
+        "Ahli KELAB SAINS (SR)"
+      ],
+      "pajskData": {
+        "markah": 93,
+        "sukan": "OLAHRAGA (SR)",
+        "jawatanSukan": "KAPTEN (7)",
+        "peringkatSukan": "ZON/DAERAH (9)",
+        "kelab": "KELAB SAINS (SR)",
+        "jawatanKelab": "AHLI AKTIF (4)",
+        "peringkatKelab": "ANTARABANGSA (20)",
+        "badanBeruniform": "KADET REMAJA SEKOLAH (KRS) (SR)",
+        "jawatanBB": "SARJAN MEJAR (7)",
+        "peringkatBB": "KEBANGSAAN (17)",
+        "jawatan": "KAPTEN (7)",
+        "peringkat": "ZON/DAERAH (9)",
+        "perkhidmatan": "KETUA PENGAWAS/PENGAWAS SEKOLAH (8)",
+        "anugerahKhas": "ANUGERAH KHAS KOKURIKULUM DAN SUKAN - KEBANGSAAN (PENERIMA)(10)",
+        "khidmatMasyarakat": "AKTIVITI INSANIAH(10)"
+      }
+    },
+    {
+      "id": "SBP5IK014",
+      "name": "MUHAMMAD AZFAR BIN ABDUL WAHAB",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "D",
+        "Bahasa Inggeris": "B+",
+        "Matematik": "A+",
+        "Sejarah": "B+",
+        "Pend. Agama Islam": "A+",
+        "Matematik Tambahan": "B",
+        "Fizik": "A-",
+        "Kimia": "A",
+        "Biologi": "B"
+      },
+      "gpScore": 7.33,
+      "pajskScore": 72.7,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 39,
+        "I": 12,
+        "A": 8,
+        "S": 38,
+        "E": 32,
+        "K": 32
+      },
+      "riasecType": [
+        "Realistic",
+        "Social",
+        "Enterprising"
+      ],
+      "hollandCode": "RSE",
+      "fieldOfInterest": "Kejuruteraan & Teknologi",
+      "dreamCareer": "Jurutera / Juruteknik",
+      "parentCategory": "T20",
+      "perCapitaIncome": 6681.43,
+      "keyAchievements": [
+        "NAIB BENDAHARI (5) – SKUASY (SR) [ZON/DAERAH (11)]",
+        "NAIB BENDAHARI (5), KADET REMAJA SEKOLAH (KRS) (SR)",
+        "Ahli KELAB BIOLOGI (SR)"
+      ],
+      "pajskData": {
+        "markah": 80,
+        "sukan": "SKUASY (SR)",
+        "jawatanSukan": "NAIB BENDAHARI (5)",
+        "peringkatSukan": "ZON/DAERAH (11)",
+        "kelab": "KELAB BIOLOGI (SR)",
+        "jawatanKelab": "NAIB SETIAUSAHA (6)",
+        "peringkatKelab": "SEKOLAH (5)",
+        "badanBeruniform": "KADET REMAJA SEKOLAH (KRS) (SR)",
+        "jawatanBB": "NAIB PENGERUSI (8)",
+        "peringkatBB": "ZON/DAERAH (9)",
+        "jawatan": "NAIB BENDAHARI (5)",
+        "peringkat": "ZON/DAERAH (11)",
+        "perkhidmatan": "KETUA ASRAMA/PENGAWAS ASRAMA (7)",
+        "anugerahKhas": "ANUGERAH KHAS KOKURIKULUM DAN SUKAN - KEBANGSAAN (PENERIMA)(10)",
+        "khidmatMasyarakat": "PROGRAM GOTONG-ROYONG KOMUNITI(5)"
+      }
+    },
+    {
+      "id": "SBP5IK015",
+      "name": "SITI HAJAR BINTI MOHD HELMI",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "A+",
+        "Bahasa Inggeris": "C+",
+        "Matematik": "A+",
+        "Sejarah": "A",
+        "Pend. Agama Islam": "A+",
+        "Matematik Tambahan": "B+",
+        "Fizik": "B+",
+        "Kimia": "B+",
+        "Biologi": "A+"
+      },
+      "gpScore": 8.33,
+      "pajskScore": 80,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 31,
+        "I": 15,
+        "A": 23,
+        "S": 8,
+        "E": 42,
+        "K": 48
+      },
+      "riasecType": [
+        "Conventional",
+        "Enterprising",
+        "Realistic"
+      ],
+      "hollandCode": "CER",
+      "fieldOfInterest": "Perakaunan & Kewangan",
+      "dreamCareer": "Akauntan / Penganalisis Kewangan",
+      "parentCategory": "B40",
+      "perCapitaIncome": 668,
+      "keyAchievements": [
+        "AHLI JAWATANKUASA (5) – BOLA TAMPAR (SR) [KEBANGSAAN (15)]",
+        "AHLI JAWATANKUASA (5), PENGAKAP PUTERI (SR)",
+        "Ahli PERSATUAN BAHASA MELAYU (SR)"
+      ],
+      "pajskData": {
+        "markah": 88,
+        "sukan": "BOLA TAMPAR (SR)",
+        "jawatanSukan": "AHLI JAWATANKUASA (5)",
+        "peringkatSukan": "KEBANGSAAN (15)",
+        "kelab": "PERSATUAN BAHASA MELAYU (SR)",
+        "jawatanKelab": "NAIB PENGERUSI (8)",
+        "peringkatKelab": "SEKOLAH (5)",
+        "badanBeruniform": "PENGAKAP PUTERI (SR)",
+        "jawatanBB": "SETIAUSAHA (7)",
+        "peringkatBB": "ZON/DAERAH (11)",
+        "jawatan": "AHLI JAWATANKUASA (5)",
+        "peringkat": "KEBANGSAAN (15)",
+        "perkhidmatan": "PEMIMPIN RUMAH SUKAN (6)",
+        "anugerahKhas": "PROGRAM KEPIMPINAN GENERASI MADANI - TIER 1 (PENERIMA)(6)",
+        "khidmatMasyarakat": null
+      }
+    },
+    {
+      "id": "SBP5IK016",
+      "name": "NURUL LIYANA BINTI ZULKARNAIN",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "A+",
+        "Bahasa Inggeris": "B",
+        "Matematik": "A-",
+        "Sejarah": "B+",
+        "Pend. Agama Islam": "A-",
+        "Matematik Tambahan": "A",
+        "Fizik": "B",
+        "Kimia": "A",
+        "Biologi": "B+"
+      },
+      "gpScore": 7.78,
+      "pajskScore": 70.9,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 36,
+        "I": 28,
+        "A": 18,
+        "S": 39,
+        "E": 47,
+        "K": 38
+      },
+      "riasecType": [
+        "Enterprising",
+        "Social",
+        "Conventional"
+      ],
+      "hollandCode": "ESC",
+      "fieldOfInterest": "Perniagaan & Pengurusan",
+      "dreamCareer": "Usahawan / Pengurus Perniagaan",
+      "parentCategory": "B40",
+      "perCapitaIncome": 482.09,
+      "keyAchievements": [
+        "KAPTEN (7) – BOLA JARING (SR) [KEBANGSAAN (15)]",
+        "KAPTEN (7), PANDU PUTERI MALAYSIA (SR)",
+        "Ahli PERSATUAN EKONOMI (SR)"
+      ],
+      "pajskData": {
+        "markah": 78,
+        "sukan": "BOLA JARING (SR)",
+        "jawatanSukan": "KAPTEN (7)",
+        "peringkatSukan": "KEBANGSAAN (15)",
+        "kelab": "PERSATUAN EKONOMI (SR)",
+        "jawatanKelab": "NAIB PENGERUSI (8)",
+        "peringkatKelab": "KEBANGSAAN (15)",
+        "badanBeruniform": "PANDU PUTERI MALAYSIA (SR)",
+        "jawatanBB": "NAIB PENGERUSI (8)",
+        "peringkatBB": "DAERAH (8)",
+        "jawatan": "KAPTEN (7)",
+        "peringkat": "KEBANGSAAN (15)",
+        "perkhidmatan": null,
+        "anugerahKhas": "PROGRAM KEPIMPINAN GENERASI MADANI - TIER 1 (PENERIMA)(6)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT ZON/DAERAH(6)"
+      }
+    },
+    {
+      "id": "SBP5IK017",
+      "name": "NUR FARHANA BINTI MOHD ARIFFIN",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "A",
+        "Bahasa Inggeris": "C+",
+        "Matematik": "B+",
+        "Sejarah": "C+",
+        "Pend. Agama Islam": "B+",
+        "Matematik Tambahan": "A",
+        "Fizik": "B",
+        "Kimia": "C",
+        "Biologi": "E"
+      },
+      "gpScore": 6,
+      "pajskScore": 83.6,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 10,
+        "I": 13,
+        "A": 46,
+        "S": 26,
+        "E": 37,
+        "K": 25
+      },
+      "riasecType": [
+        "Artistic",
+        "Enterprising",
+        "Social"
+      ],
+      "hollandCode": "AES",
+      "fieldOfInterest": "Seni & Komunikasi",
+      "dreamCareer": "Pereka Grafik / Arkitek",
+      "parentCategory": "B40",
+      "perCapitaIncome": 1092.72,
+      "keyAchievements": [
+        "KAPTEN (7) – SILAT (SR) [ZON/DAERAH (9)]",
+        "KAPTEN (7), BULAN SABIT MERAH MALAYSIA (BSMM) (SR)",
+        "Ahli KELAB PENDIDIKAN ISLAM (SR)"
+      ],
+      "pajskData": {
+        "markah": 92,
+        "sukan": "SILAT (SR)",
+        "jawatanSukan": "KAPTEN (7)",
+        "peringkatSukan": "ZON/DAERAH (9)",
+        "kelab": "KELAB PENDIDIKAN ISLAM (SR)",
+        "jawatanKelab": "AHLI JAWATANKUASA (5)",
+        "peringkatKelab": "ANTARABANGSA (20)",
+        "badanBeruniform": "BULAN SABIT MERAH MALAYSIA (BSMM) (SR)",
+        "jawatanBB": "BENDAHARI (6)",
+        "peringkatBB": "KEBANGSAAN (17)",
+        "jawatan": "KAPTEN (7)",
+        "peringkat": "ZON/DAERAH (9)",
+        "perkhidmatan": "TIMBALAN/PENOLONG KETUA MURID (8)",
+        "anugerahKhas": "ANUGERAH-ANUGERAH LAIN/PENGHARGAAN KHAS SETARA-KEBANGSAAN (PENERIMA)(10)",
+        "khidmatMasyarakat": "AKTIVITI INSANIAH(10)"
+      }
+    },
+    {
+      "id": "SBP5IK018",
+      "name": "NUR IZZATI BINTI NORHAIZAM",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "B+",
+        "Bahasa Inggeris": "B",
+        "Matematik": "A-",
+        "Sejarah": "B",
+        "Pend. Agama Islam": "B",
+        "Matematik Tambahan": "G",
+        "Fizik": "A+",
+        "Kimia": "A+",
+        "Biologi": "A"
+      },
+      "gpScore": 7,
+      "pajskScore": 81.8,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 35,
+        "I": 40,
+        "A": 34,
+        "S": 24,
+        "E": 38,
+        "K": 47
+      },
+      "riasecType": [
+        "Conventional",
+        "Investigative",
+        "Enterprising"
+      ],
+      "hollandCode": "CIE",
+      "fieldOfInterest": "Perakaunan & Kewangan",
+      "dreamCareer": "Akauntan / Penganalisis Kewangan",
+      "parentCategory": "T20",
+      "perCapitaIncome": 13706.47,
+      "keyAchievements": [
+        "NAIB BENDAHARI (5) – BOLA JARING (SR) [KEBANGSAAN (15)]",
+        "NAIB BENDAHARI (5), KADET BOMBA DAN PENYELAMAT MALAYSIA (SR)",
+        "Ahli KELAB DEBAT (SR)"
+      ],
+      "pajskData": {
+        "markah": 90,
+        "sukan": "BOLA JARING (SR)",
+        "jawatanSukan": "NAIB BENDAHARI (5)",
+        "peringkatSukan": "KEBANGSAAN (15)",
+        "kelab": "KELAB DEBAT (SR)",
+        "jawatanKelab": "NAIB SETIAUSAHA (6)",
+        "peringkatKelab": "DAERAH (8)",
+        "badanBeruniform": "KADET BOMBA DAN PENYELAMAT MALAYSIA (SR)",
+        "jawatanBB": "KOPERAL (5)",
+        "peringkatBB": "DAERAH (8)",
+        "jawatan": "NAIB BENDAHARI (5)",
+        "peringkat": "KEBANGSAAN (15)",
+        "perkhidmatan": "KUARTERMASTER/PENGERUSI BADAN PERKHIDMATAN SEKOLAH (7)",
+        "anugerahKhas": "ANUGERAH REMAJA PERDANA (EMAS)(10)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT ZON/DAERAH(6)"
+      }
+    },
+    {
+      "id": "SBP5IK019",
+      "name": "NURUL SYAFIQAH BINTI ZULKARNAIN",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "A-",
+        "Bahasa Inggeris": "A-",
+        "Matematik": "E",
+        "Sejarah": "B",
+        "Pend. Agama Islam": "A-",
+        "Matematik Tambahan": "A",
+        "Fizik": "C+",
+        "Kimia": "G",
+        "Biologi": "A-"
+      },
+      "gpScore": 6.11,
+      "pajskScore": 83.6,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 38,
+        "I": 32,
+        "A": 9,
+        "S": 33,
+        "E": 28,
+        "K": 28
+      },
+      "riasecType": [
+        "Realistic",
+        "Social",
+        "Investigative"
+      ],
+      "hollandCode": "RSI",
+      "fieldOfInterest": "Kejuruteraan & Teknologi",
+      "dreamCareer": "Jurutera / Juruteknik",
+      "parentCategory": "M40",
+      "perCapitaIncome": 2534.36,
+      "keyAchievements": [
+        "KETUA PASUKAN (8) – BADMINTON (SR) [NEGERI (12)]",
+        "KETUA PASUKAN (8), KADET BOMBA DAN PENYELAMAT MALAYSIA (SR)",
+        "Ahli KELAB MATEMATIK (SR)"
+      ],
+      "pajskData": {
+        "markah": 92,
+        "sukan": "BADMINTON (SR)",
+        "jawatanSukan": "KETUA PASUKAN (8)",
+        "peringkatSukan": "NEGERI (12)",
+        "kelab": "KELAB MATEMATIK (SR)",
+        "jawatanKelab": "BENDAHARI (6)",
+        "peringkatKelab": "ANTARABANGSA (20)",
+        "badanBeruniform": "KADET BOMBA DAN PENYELAMAT MALAYSIA (SR)",
+        "jawatanBB": "KETUA PASUKAN (8)",
+        "peringkatBB": "ZON/DAERAH (9)",
+        "jawatan": "KETUA PASUKAN (8)",
+        "peringkat": "NEGERI (12)",
+        "perkhidmatan": "KETUA ASRAMA/PENGAWAS ASRAMA (7)",
+        "anugerahKhas": "ANUGERAH REMAJA PERDANA (EMAS)(10)",
+        "khidmatMasyarakat": null
+      }
+    },
+    {
+      "id": "SBP5IK020",
+      "name": "NUR SYAZWANI BINTI ABDUL KADIR",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "A-",
+        "Bahasa Inggeris": "A+",
+        "Matematik": "A+",
+        "Sejarah": "A",
+        "Pend. Agama Islam": "A+",
+        "Matematik Tambahan": "A+",
+        "Fizik": "A",
+        "Kimia": "A+",
+        "Biologi": "A"
+      },
+      "gpScore": 9.44,
+      "pajskScore": 59.1,
+      "leadershipLevel": "Basic",
+      "riasecScores": {
+        "R": 18,
+        "I": 14,
+        "A": 19,
+        "S": 28,
+        "E": 47,
+        "K": 26
+      },
+      "riasecType": [
+        "Enterprising",
+        "Social",
+        "Conventional"
+      ],
+      "hollandCode": "ESC",
+      "fieldOfInterest": "Perniagaan & Pengurusan",
+      "dreamCareer": "Usahawan / Pengurus Perniagaan",
+      "parentCategory": "B40",
+      "perCapitaIncome": 591.03,
+      "keyAchievements": [
+        "KAPTEN (7) – SILAT (SR) [DAERAH (8)]",
+        "KAPTEN (7), BULAN SABIT MERAH MALAYSIA (BSMM) (SR)",
+        "Ahli KELAB ROBOTIK (SM)"
+      ],
+      "pajskData": {
+        "markah": 65,
+        "sukan": "SILAT (SR)",
+        "jawatanSukan": "KAPTEN (7)",
+        "peringkatSukan": "DAERAH (8)",
+        "kelab": "KELAB ROBOTIK (SM)",
+        "jawatanKelab": "PENGERUSI (10)",
+        "peringkatKelab": "NEGERI (14)",
+        "badanBeruniform": "BULAN SABIT MERAH MALAYSIA (BSMM) (SR)",
+        "jawatanBB": "SARJAN (6)",
+        "peringkatBB": "KEBANGSAAN (15)",
+        "jawatan": "KAPTEN (7)",
+        "peringkat": "DAERAH (8)",
+        "perkhidmatan": null,
+        "anugerahKhas": null,
+        "khidmatMasyarakat": "AKTIVITI INSANIAH(10)"
+      }
+    },
+    {
+      "id": "SBP5IK021",
+      "name": "NUR FARHANA BINTI ZULKARNAIN",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "B+",
+        "Bahasa Inggeris": "A",
+        "Matematik": "C+",
+        "Sejarah": "C",
+        "Pend. Agama Islam": "A-",
+        "Matematik Tambahan": "C+",
+        "Fizik": "C+",
+        "Kimia": "A",
+        "Biologi": "C"
+      },
+      "gpScore": 6.22,
+      "pajskScore": 83.6,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 47,
+        "I": 19,
+        "A": 30,
+        "S": 35,
+        "E": 35,
+        "K": 29
+      },
+      "riasecType": [
+        "Realistic",
+        "Social",
+        "Enterprising"
+      ],
+      "hollandCode": "RSE",
+      "fieldOfInterest": "Kejuruteraan & Teknologi",
+      "dreamCareer": "Jurutera / Juruteknik",
+      "parentCategory": "B40",
+      "perCapitaIncome": 314.21,
+      "keyAchievements": [
+        "BENDAHARI (6) – MEMANAH (SR) [ANTARABANGSA (20)]",
+        "BENDAHARI (6), KOR KADET TENTERA UDARA (SR)",
+        "Ahli KELAB ASTRONOMI (SR)"
+      ],
+      "pajskData": {
+        "markah": 92,
+        "sukan": "MEMANAH (SR)",
+        "jawatanSukan": "BENDAHARI (6)",
+        "peringkatSukan": "ANTARABANGSA (20)",
+        "kelab": "KELAB ASTRONOMI (SR)",
+        "jawatanKelab": "PENGERUSI (10)",
+        "peringkatKelab": "ANTARABANGSA (20)",
+        "badanBeruniform": "KOR KADET TENTERA UDARA (SR)",
+        "jawatanBB": "NAIB PENGERUSI (8)",
+        "peringkatBB": "DAERAH (8)",
+        "jawatan": "BENDAHARI (6)",
+        "peringkat": "ANTARABANGSA (20)",
+        "perkhidmatan": "KETUA PENGAWAS/PENGAWAS SEKOLAH (8)",
+        "anugerahKhas": null,
+        "khidmatMasyarakat": "PROGRAM GOTONG-ROYONG KOMUNITI(5)"
+      }
+    },
+    {
+      "id": "SBP5IK022",
+      "name": "SITI HAJAR BINTI ROSLAN",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "B",
+        "Bahasa Inggeris": "A+",
+        "Matematik": "C+",
+        "Sejarah": "B+",
+        "Pend. Agama Islam": "B",
+        "Matematik Tambahan": "A",
+        "Fizik": "C+",
+        "Kimia": "B+",
+        "Biologi": "A+"
+      },
+      "gpScore": 7.22,
+      "pajskScore": 70.9,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 31,
+        "I": 45,
+        "A": 40,
+        "S": 10,
+        "E": 48,
+        "K": 8
+      },
+      "riasecType": [
+        "Enterprising",
+        "Investigative",
+        "Artistic"
+      ],
+      "hollandCode": "EIA",
+      "fieldOfInterest": "Perniagaan & Pengurusan",
+      "dreamCareer": "Usahawan / Pengurus Perniagaan",
+      "parentCategory": "M40",
+      "perCapitaIncome": 2563.97,
+      "keyAchievements": [
+        "AHLI AKTIF (4) – BOLA KERANJANG (SR) [KEBANGSAAN (15)]",
+        "AHLI AKTIF (4), KOR KADET POLIS (SR)",
+        "Ahli KELAB ALAM SEKITAR (SR)"
+      ],
+      "pajskData": {
+        "markah": 78,
+        "sukan": "BOLA KERANJANG (SR)",
+        "jawatanSukan": "AHLI AKTIF (4)",
+        "peringkatSukan": "KEBANGSAAN (15)",
+        "kelab": "KELAB ALAM SEKITAR (SR)",
+        "jawatanKelab": "SETIAUSAHA (7)",
+        "peringkatKelab": "NEGERI (14)",
+        "badanBeruniform": "KOR KADET POLIS (SR)",
+        "jawatanBB": "NAIB PENGERUSI (8)",
+        "peringkatBB": "ZON/DAERAH (9)",
+        "jawatan": "AHLI AKTIF (4)",
+        "peringkat": "KEBANGSAAN (15)",
+        "perkhidmatan": "PENGAWAS/PENGAWAS PUSAT PRS/KETUA SUMBER (7)",
+        "anugerahKhas": "ANUGERAH KHAS KOKURIKULUM DAN SUKAN - NEGERI (PENERIMA)(8)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT NEGERI(8)"
+      }
+    },
+    {
+      "id": "SBP5IK023",
+      "name": "SITI MAISARAH BINTI ABDUL KADIR",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "B+",
+        "Bahasa Inggeris": "A",
+        "Matematik": "A+",
+        "Sejarah": "A+",
+        "Pend. Agama Islam": "A",
+        "Matematik Tambahan": "A+",
+        "Fizik": "A+",
+        "Kimia": "A+",
+        "Biologi": "A+"
+      },
+      "gpScore": 9.44,
+      "pajskScore": 86.4,
+      "leadershipLevel": "High",
+      "riasecScores": {
+        "R": 22,
+        "I": 38,
+        "A": 13,
+        "S": 25,
+        "E": 45,
+        "K": 13
+      },
+      "riasecType": [
+        "Enterprising",
+        "Investigative",
+        "Social"
+      ],
+      "hollandCode": "EIS",
+      "fieldOfInterest": "Perniagaan & Pengurusan",
+      "dreamCareer": "Usahawan / Pengurus Perniagaan",
+      "parentCategory": "M40",
+      "perCapitaIncome": 3053.52,
+      "keyAchievements": [
+        "NAIB PENGERUSI (8) – BOLA JARING (SR) [ZON/DAERAH (11)]",
+        "NAIB PENGERUSI (8), KOR KADET POLIS (SR)",
+        "Ahli KELAB KIMIA (SR)"
+      ],
+      "pajskData": {
+        "markah": 95,
+        "sukan": "BOLA JARING (SR)",
+        "jawatanSukan": "NAIB PENGERUSI (8)",
+        "peringkatSukan": "ZON/DAERAH (11)",
+        "kelab": "KELAB KIMIA (SR)",
+        "jawatanKelab": "BENDAHARI (6)",
+        "peringkatKelab": "ANTARABANGSA (20)",
+        "badanBeruniform": "KOR KADET POLIS (SR)",
+        "jawatanBB": "SARJAN (6)",
+        "peringkatBB": "ANTARABANGSA (20)",
+        "jawatan": "NAIB PENGERUSI (8)",
+        "peringkat": "ZON/DAERAH (11)",
+        "perkhidmatan": "KETUA PENGAWAS/PENGAWAS SEKOLAH (8)",
+        "anugerahKhas": "ANUGERAH REMAJA PERDANA (PERAK)(8)",
+        "khidmatMasyarakat": "AKTIVITI INSANIAH(10)"
+      }
+    },
+    {
+      "id": "SBP5IK024",
+      "name": "NUR SYAZWANI BINTI MOHD HELMI",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "A+",
+        "Bahasa Inggeris": "A",
+        "Matematik": "C+",
+        "Sejarah": "A-",
+        "Pend. Agama Islam": "A",
+        "Matematik Tambahan": "A",
+        "Fizik": "B",
+        "Kimia": "A",
+        "Biologi": "B+"
+      },
+      "gpScore": 8,
+      "pajskScore": 82.7,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 44,
+        "I": 15,
+        "A": 20,
+        "S": 20,
+        "E": 20,
+        "K": 46
+      },
+      "riasecType": [
+        "Conventional",
+        "Realistic",
+        "Artistic"
+      ],
+      "hollandCode": "CRA",
+      "fieldOfInterest": "Perakaunan & Kewangan",
+      "dreamCareer": "Akauntan / Penganalisis Kewangan",
+      "parentCategory": "B40",
+      "perCapitaIncome": 1022.05,
+      "keyAchievements": [
+        "NAIB PENGERUSI (8) – BOLA JARING (SR) [DAERAH (8)]",
+        "NAIB PENGERUSI (8), KOR KADET TENTERA DARAT (SR)",
+        "Ahli KELAB NASYID (SR)"
+      ],
+      "pajskData": {
+        "markah": 91,
+        "sukan": "BOLA JARING (SR)",
+        "jawatanSukan": "NAIB PENGERUSI (8)",
+        "peringkatSukan": "DAERAH (8)",
+        "kelab": "KELAB NASYID (SR)",
+        "jawatanKelab": "NAIB SETIAUSAHA (6)",
+        "peringkatKelab": "ZON/DAERAH (11)",
+        "badanBeruniform": "KOR KADET TENTERA DARAT (SR)",
+        "jawatanBB": "BENDAHARI (6)",
+        "peringkatBB": "KEBANGSAAN (15)",
+        "jawatan": "NAIB PENGERUSI (8)",
+        "peringkat": "DAERAH (8)",
+        "perkhidmatan": "KETUA ASRAMA/PENGAWAS ASRAMA (7)",
+        "anugerahKhas": "AKTIVITI INSANIAH(10)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT ZON/DAERAH(6)"
+      }
+    },
+    {
+      "id": "SBP5IK025",
+      "name": "NUR AISYAH BINTI MOHD FADZILLAH",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "A+",
+        "Bahasa Inggeris": "B+",
+        "Matematik": "A",
+        "Sejarah": "A+",
+        "Pend. Agama Islam": "A+",
+        "Matematik Tambahan": "A+",
+        "Fizik": "A",
+        "Kimia": "A-",
+        "Biologi": "A+"
+      },
+      "gpScore": 9.22,
+      "pajskScore": 69.1,
+      "leadershipLevel": "Basic",
+      "riasecScores": {
+        "R": 12,
+        "I": 12,
+        "A": 8,
+        "S": 44,
+        "E": 35,
+        "K": 41
+      },
+      "riasecType": [
+        "Social",
+        "Conventional",
+        "Enterprising"
+      ],
+      "hollandCode": "SCE",
+      "fieldOfInterest": "Pendidikan & Perkhidmatan Sosial",
+      "dreamCareer": "Pendidik / Pegawai Sosial",
+      "parentCategory": "M40",
+      "perCapitaIncome": 2776.41,
+      "keyAchievements": [
+        "NAIB PENGERUSI (8) – TENIS MEJA (SR) [NEGERI (14)]",
+        "NAIB PENGERUSI (8), KADET REMAJA SEKOLAH (KRS) (SR)",
+        "Ahli KELAB INOVASI DAN REKACIPTA (SR)"
+      ],
+      "pajskData": {
+        "markah": 76,
+        "sukan": "TENIS MEJA (SR)",
+        "jawatanSukan": "NAIB PENGERUSI (8)",
+        "peringkatSukan": "NEGERI (14)",
+        "kelab": "KELAB INOVASI DAN REKACIPTA (SR)",
+        "jawatanKelab": "PENGERUSI (10)",
+        "peringkatKelab": "DAERAH (8)",
+        "badanBeruniform": "KADET REMAJA SEKOLAH (KRS) (SR)",
+        "jawatanBB": "SARJAN MEJAR (7)",
+        "peringkatBB": "NEGERI (14)",
+        "jawatan": "NAIB PENGERUSI (8)",
+        "peringkat": "NEGERI (14)",
+        "perkhidmatan": "PENGAWAS/PENGAWAS PUSAT PRS/KETUA SUMBER (7)",
+        "anugerahKhas": "PROGRAM KEPIMPINAN GENERASI MADANI - TIER 2 (PENERIMA)(4)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT NEGERI(8)"
+      }
+    },
+    {
+      "id": "SBP5IK026",
+      "name": "NUR IZZATI BINTI MOHD FADZILLAH",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "D",
+        "Bahasa Inggeris": "A+",
+        "Matematik": "E",
+        "Sejarah": "B+",
+        "Pend. Agama Islam": "E",
+        "Matematik Tambahan": "A",
+        "Fizik": "C",
+        "Kimia": "B+",
+        "Biologi": "G"
+      },
+      "gpScore": 5,
+      "pajskScore": 96.4,
+      "leadershipLevel": "High",
+      "riasecScores": {
+        "R": 31,
+        "I": 8,
+        "A": 17,
+        "S": 34,
+        "E": 9,
+        "K": 13
+      },
+      "riasecType": [
+        "Social",
+        "Realistic",
+        "Artistic"
+      ],
+      "hollandCode": "SRA",
+      "fieldOfInterest": "Pendidikan & Perkhidmatan Sosial",
+      "dreamCareer": "Pendidik / Pegawai Sosial",
+      "parentCategory": "B40",
+      "perCapitaIncome": 555.56,
+      "keyAchievements": [
+        "AHLI AKTIF (4) – BADMINTON (SR) [KEBANGSAAN (15)]",
+        "AHLI AKTIF (4), KOR KADET TENTERA DARAT (SR)",
+        "Ahli KELAB KOMPUTER ICT (SR)"
+      ],
+      "pajskData": {
+        "markah": 106,
+        "sukan": "BADMINTON (SR)",
+        "jawatanSukan": "AHLI AKTIF (4)",
+        "peringkatSukan": "KEBANGSAAN (15)",
+        "kelab": "KELAB KOMPUTER ICT (SR)",
+        "jawatanKelab": "PENGERUSI (10)",
+        "peringkatKelab": "SEKOLAH (5)",
+        "badanBeruniform": "KOR KADET TENTERA DARAT (SR)",
+        "jawatanBB": "KOPERAL (5)",
+        "peringkatBB": "NEGERI (14)",
+        "jawatan": "AHLI AKTIF (4)",
+        "peringkat": "KEBANGSAAN (15)",
+        "perkhidmatan": null,
+        "anugerahKhas": "ANUGERAH-ANUGERAH LAIN/PENGHARGAAN KHAS SETARA-KEBANGSAAN (PENERIMA)(10)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT KEBANGSAAN(10)"
+      }
+    },
+    {
+      "id": "SBP5IK027",
+      "name": "SITI NURFATIN BINTI MOHD HELMI",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "A",
+        "Bahasa Inggeris": "C+",
+        "Matematik": "A-",
+        "Sejarah": "E",
+        "Pend. Agama Islam": "C",
+        "Matematik Tambahan": "A",
+        "Fizik": "E",
+        "Kimia": "A+",
+        "Biologi": "D"
+      },
+      "gpScore": 5.78,
+      "pajskScore": 96.4,
+      "leadershipLevel": "High",
+      "riasecScores": {
+        "R": 16,
+        "I": 37,
+        "A": 10,
+        "S": 9,
+        "E": 45,
+        "K": 21
+      },
+      "riasecType": [
+        "Enterprising",
+        "Investigative",
+        "Conventional"
+      ],
+      "hollandCode": "EIC",
+      "fieldOfInterest": "Perniagaan & Pengurusan",
+      "dreamCareer": "Usahawan / Pengurus Perniagaan",
+      "parentCategory": "T20",
+      "perCapitaIncome": 14644.89,
+      "keyAchievements": [
+        "SETIAUSAHA (7) – TENIS MEJA (SR) [DAERAH (8)]",
+        "SETIAUSAHA (7), KADET BOMBA DAN PENYELAMAT MALAYSIA (SR)",
+        "Ahli KELAB ALAM SEKITAR (SR)"
+      ],
+      "pajskData": {
+        "markah": 106,
+        "sukan": "TENIS MEJA (SR)",
+        "jawatanSukan": "SETIAUSAHA (7)",
+        "peringkatSukan": "DAERAH (8)",
+        "kelab": "KELAB ALAM SEKITAR (SR)",
+        "jawatanKelab": "NAIB BENDAHARI (5)",
+        "peringkatKelab": "KEBANGSAAN (17)",
+        "badanBeruniform": "KADET BOMBA DAN PENYELAMAT MALAYSIA (SR)",
+        "jawatanBB": "KETUA PASUKAN (8)",
+        "peringkatBB": "NEGERI (14)",
+        "jawatan": "SETIAUSAHA (7)",
+        "peringkat": "DAERAH (8)",
+        "perkhidmatan": "PENGAWAS/PENGAWAS PUSAT PRS/KETUA SUMBER (7)",
+        "anugerahKhas": "AKTIVITI INSANIAH(10)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT NEGERI(8)"
+      }
+    },
+    {
+      "id": "SBP5IK028",
+      "name": "NURUL AIN BINTI NORHAIZAM",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "C+",
+        "Bahasa Inggeris": "A",
+        "Matematik": "G",
+        "Sejarah": "B",
+        "Pend. Agama Islam": "D",
+        "Matematik Tambahan": "B",
+        "Fizik": "G",
+        "Kimia": "D",
+        "Biologi": "B+"
+      },
+      "gpScore": 4.56,
+      "pajskScore": 80.9,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 43,
+        "I": 22,
+        "A": 15,
+        "S": 29,
+        "E": 31,
+        "K": 13
+      },
+      "riasecType": [
+        "Realistic",
+        "Enterprising",
+        "Social"
+      ],
+      "hollandCode": "RES",
+      "fieldOfInterest": "Kejuruteraan & Teknologi",
+      "dreamCareer": "Jurutera / Juruteknik",
+      "parentCategory": "B40",
+      "perCapitaIncome": 1089.3,
+      "keyAchievements": [
+        "KETUA PASUKAN (8) – TAEKWONDO (SR) [KEBANGSAAN (15)]",
+        "KETUA PASUKAN (8), KOR KADET TENTERA UDARA (SR)",
+        "Ahli KELAB SENI VISUAL (SR)"
+      ],
+      "pajskData": {
+        "markah": 89,
+        "sukan": "TAEKWONDO (SR)",
+        "jawatanSukan": "KETUA PASUKAN (8)",
+        "peringkatSukan": "KEBANGSAAN (15)",
+        "kelab": "KELAB SENI VISUAL (SR)",
+        "jawatanKelab": "NAIB BENDAHARI (5)",
+        "peringkatKelab": "ZON/DAERAH (11)",
+        "badanBeruniform": "KOR KADET TENTERA UDARA (SR)",
+        "jawatanBB": "SETIAUSAHA (7)",
+        "peringkatBB": "NEGERI (14)",
+        "jawatan": "KETUA PASUKAN (8)",
+        "peringkat": "KEBANGSAAN (15)",
+        "perkhidmatan": "KETUA PENGAWAS/PENGAWAS SEKOLAH (8)",
+        "anugerahKhas": "ANUGERAH REMAJA PERDANA (EMAS)(10)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT ZON/DAERAH(6)"
+      }
+    },
+    {
+      "id": "SBP5IK029",
+      "name": "MUHAMMAD IRFAN BIN ZULKIFLI",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "C",
+        "Bahasa Inggeris": "E",
+        "Matematik": "A",
+        "Sejarah": "C",
+        "Pend. Agama Islam": "A",
+        "Matematik Tambahan": "G",
+        "Fizik": "A",
+        "Kimia": "A-",
+        "Biologi": "B"
+      },
+      "gpScore": 5.78,
+      "pajskScore": 81.8,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 39,
+        "I": 27,
+        "A": 9,
+        "S": 9,
+        "E": 8,
+        "K": 39
+      },
+      "riasecType": [
+        "Realistic",
+        "Conventional",
+        "Investigative"
+      ],
+      "hollandCode": "RCI",
+      "fieldOfInterest": "Kejuruteraan & Teknologi",
+      "dreamCareer": "Jurutera / Juruteknik",
+      "parentCategory": "T20",
+      "perCapitaIncome": 13152.56,
+      "keyAchievements": [
+        "KETUA PASUKAN (8) – HOKI (SR) [KEBANGSAAN (15)]",
+        "KETUA PASUKAN (8), PERSEKUTUAN PENGAKAP MALAYSIA (SR)",
+        "Ahli KELAB PERTANIAN (SR)"
+      ],
+      "pajskData": {
+        "markah": 90,
+        "sukan": "HOKI (SR)",
+        "jawatanSukan": "KETUA PASUKAN (8)",
+        "peringkatSukan": "KEBANGSAAN (15)",
+        "kelab": "KELAB PERTANIAN (SR)",
+        "jawatanKelab": "PENGERUSI (10)",
+        "peringkatKelab": "ZON/DAERAH (11)",
+        "badanBeruniform": "PERSEKUTUAN PENGAKAP MALAYSIA (SR)",
+        "jawatanBB": "SARJAN MEJAR (7)",
+        "peringkatBB": "ZON/DAERAH (9)",
+        "jawatan": "KETUA PASUKAN (8)",
+        "peringkat": "KEBANGSAAN (15)",
+        "perkhidmatan": "PENOLONG KETUA ASRAMA/AHLI KETUA BADAR (6)",
+        "anugerahKhas": "ANUGERAH REMAJA PERDANA (EMAS)(10)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT KEBANGSAAN(10)"
+      }
+    },
+    {
+      "id": "SBP5IK030",
+      "name": "ADAM HARRIS BIN MOHD NOOR",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "D",
+        "Bahasa Inggeris": "G",
+        "Matematik": "B",
+        "Sejarah": "A-",
+        "Pend. Agama Islam": "B+",
+        "Matematik Tambahan": "C+",
+        "Fizik": "B+",
+        "Kimia": "C",
+        "Biologi": "C+"
+      },
+      "gpScore": 5.11,
+      "pajskScore": 72.7,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 26,
+        "I": 47,
+        "A": 29,
+        "S": 28,
+        "E": 41,
+        "K": 16
+      },
+      "riasecType": [
+        "Investigative",
+        "Enterprising",
+        "Artistic"
+      ],
+      "hollandCode": "IEA",
+      "fieldOfInterest": "Sains & Perubatan",
+      "dreamCareer": "Saintis / Doktor",
+      "parentCategory": "B40",
+      "perCapitaIncome": 1070.17,
+      "keyAchievements": [
+        "AHLI AKTIF (4) – SKUASY (SR) [DAERAH (8)]",
+        "AHLI AKTIF (4), KADET REMAJA SEKOLAH (KRS) (SR)",
+        "Ahli KELAB NASYID (SR)"
+      ],
+      "pajskData": {
+        "markah": 80,
+        "sukan": "SKUASY (SR)",
+        "jawatanSukan": "AHLI AKTIF (4)",
+        "peringkatSukan": "DAERAH (8)",
+        "kelab": "KELAB NASYID (SR)",
+        "jawatanKelab": "PENGERUSI (10)",
+        "peringkatKelab": "SEKOLAH (5)",
+        "badanBeruniform": "KADET REMAJA SEKOLAH (KRS) (SR)",
+        "jawatanBB": "SARJAN (6)",
+        "peringkatBB": "ZON/DAERAH (11)",
+        "jawatan": "AHLI AKTIF (4)",
+        "peringkat": "DAERAH (8)",
+        "perkhidmatan": "AHLI LEMBAGA PENGARAH KOPERASI SEKOLAH (6)",
+        "anugerahKhas": "ANUGERAH-ANUGERAH LAIN/PENGHARGAAN KHAS SETARA-KEBANGSAAN (PENERIMA)(10)",
+        "khidmatMasyarakat": "AKTIVITI INSANIAH(10)"
+      }
+    },
+    {
+      "id": "SBP5IK031",
+      "name": "IZZUL HAKIM BIN ROSLAN",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "C+",
+        "Bahasa Inggeris": "C+",
+        "Matematik": "B",
+        "Sejarah": "A+",
+        "Pend. Agama Islam": "B",
+        "Matematik Tambahan": "C",
+        "Fizik": "E",
+        "Kimia": "C",
+        "Biologi": "D"
+      },
+      "gpScore": 5,
+      "pajskScore": 79.1,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 29,
+        "I": 14,
+        "A": 29,
+        "S": 32,
+        "E": 39,
+        "K": 36
+      },
+      "riasecType": [
+        "Enterprising",
+        "Conventional",
+        "Social"
+      ],
+      "hollandCode": "ECS",
+      "fieldOfInterest": "Perniagaan & Pengurusan",
+      "dreamCareer": "Usahawan / Pengurus Perniagaan",
+      "parentCategory": "M40",
+      "perCapitaIncome": 2709.63,
+      "keyAchievements": [
+        "KETUA PASUKAN (8) – SEPAK TAKRAW (SR) [ZON/DAERAH (9)]",
+        "KETUA PASUKAN (8), BULAN SABIT MERAH MALAYSIA (BSMM) (SR)",
+        "Ahli KELAB FIZIK (SR)"
+      ],
+      "pajskData": {
+        "markah": 87,
+        "sukan": "SEPAK TAKRAW (SR)",
+        "jawatanSukan": "KETUA PASUKAN (8)",
+        "peringkatSukan": "ZON/DAERAH (9)",
+        "kelab": "KELAB FIZIK (SR)",
+        "jawatanKelab": "NAIB BENDAHARI (5)",
+        "peringkatKelab": "KEBANGSAAN (15)",
+        "badanBeruniform": "BULAN SABIT MERAH MALAYSIA (BSMM) (SR)",
+        "jawatanBB": "AHLI JAWATANKUASA (5)",
+        "peringkatBB": "DAERAH (8)",
+        "jawatan": "KETUA PASUKAN (8)",
+        "peringkat": "ZON/DAERAH (9)",
+        "perkhidmatan": "KETUA ASRAMA/PENGAWAS ASRAMA (7)",
+        "anugerahKhas": "PROGRAM KEPIMPINAN GENERASI MADANI - TIER 1 (PENERIMA)(6)",
+        "khidmatMasyarakat": "AKTIVITI INSANIAH(10)"
+      }
+    },
+    {
+      "id": "SBP5IK032",
+      "name": "MUHAMMAD SYAHMI BIN OMAR",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "B+",
+        "Bahasa Inggeris": "A",
+        "Matematik": "C",
+        "Sejarah": "E",
+        "Pend. Agama Islam": "E",
+        "Matematik Tambahan": "C",
+        "Fizik": "A+",
+        "Kimia": "C",
+        "Biologi": "C"
+      },
+      "gpScore": 5.11,
+      "pajskScore": 90.9,
+      "leadershipLevel": "High",
+      "riasecScores": {
+        "R": 25,
+        "I": 20,
+        "A": 13,
+        "S": 41,
+        "E": 20,
+        "K": 16
+      },
+      "riasecType": [
+        "Social",
+        "Realistic",
+        "Investigative"
+      ],
+      "hollandCode": "SRI",
+      "fieldOfInterest": "Pendidikan & Perkhidmatan Sosial",
+      "dreamCareer": "Pendidik / Pegawai Sosial",
+      "parentCategory": "B40",
+      "perCapitaIncome": 700.66,
+      "keyAchievements": [
+        "BENDAHARI (6) – HOKI (SR) [ANTARABANGSA (20)]",
+        "BENDAHARI (6), BULAN SABIT MERAH MALAYSIA (BSMM) (SR)",
+        "Ahli KELAB KEUSAHAWANAN (SR)"
+      ],
+      "pajskData": {
+        "markah": 100,
+        "sukan": "HOKI (SR)",
+        "jawatanSukan": "BENDAHARI (6)",
+        "peringkatSukan": "ANTARABANGSA (20)",
+        "kelab": "KELAB KEUSAHAWANAN (SR)",
+        "jawatanKelab": "AHLI AKTIF (4)",
+        "peringkatKelab": "KEBANGSAAN (17)",
+        "badanBeruniform": "BULAN SABIT MERAH MALAYSIA (BSMM) (SR)",
+        "jawatanBB": "PENGERUSI (10)",
+        "peringkatBB": "ZON/DAERAH (9)",
+        "jawatan": "BENDAHARI (6)",
+        "peringkat": "ANTARABANGSA (20)",
+        "perkhidmatan": "KUARTERMASTER/PENGERUSI BADAN PERKHIDMATAN SEKOLAH (7)",
+        "anugerahKhas": null,
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT KEBANGSAAN(10)"
+      }
+    },
+    {
+      "id": "SBP5IK033",
+      "name": "ARIF DANISH BIN ZAINUDIN",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "C+",
+        "Bahasa Inggeris": "A",
+        "Matematik": "B",
+        "Sejarah": "C",
+        "Pend. Agama Islam": "B+",
+        "Matematik Tambahan": "C+",
+        "Fizik": "B",
+        "Kimia": "D",
+        "Biologi": "C"
+      },
+      "gpScore": 5.44,
+      "pajskScore": 89.1,
+      "leadershipLevel": "High",
+      "riasecScores": {
+        "R": 24,
+        "I": 14,
+        "A": 19,
+        "S": 34,
+        "E": 41,
+        "K": 16
+      },
+      "riasecType": [
+        "Enterprising",
+        "Social",
+        "Realistic"
+      ],
+      "hollandCode": "ESR",
+      "fieldOfInterest": "Perniagaan & Pengurusan",
+      "dreamCareer": "Usahawan / Pengurus Perniagaan",
+      "parentCategory": "B40",
+      "perCapitaIncome": 479.32,
+      "keyAchievements": [
+        "KAPTEN (7) – MEMANAH (SR) [ZON/DAERAH (9)]",
+        "KAPTEN (7), KADET BOMBA DAN PENYELAMAT MALAYSIA (SR)",
+        "Ahli KELAB BIOLOGI (SR)"
+      ],
+      "pajskData": {
+        "markah": 98,
+        "sukan": "MEMANAH (SR)",
+        "jawatanSukan": "KAPTEN (7)",
+        "peringkatSukan": "ZON/DAERAH (9)",
+        "kelab": "KELAB BIOLOGI (SR)",
+        "jawatanKelab": "PENGERUSI (10)",
+        "peringkatKelab": "KEBANGSAAN (15)",
+        "badanBeruniform": "KADET BOMBA DAN PENYELAMAT MALAYSIA (SR)",
+        "jawatanBB": "SARJAN MEJAR (7)",
+        "peringkatBB": "NEGERI (14)",
+        "jawatan": "KAPTEN (7)",
+        "peringkat": "ZON/DAERAH (9)",
+        "perkhidmatan": "KUARTERMASTER/PENGERUSI BADAN PERKHIDMATAN SEKOLAH (7)",
+        "anugerahKhas": "ANUGERAH REMAJA PERDANA (EMAS)(10)",
+        "khidmatMasyarakat": "AKTIVITI INSANIAH(10)"
+      }
+    },
+    {
+      "id": "SBP5IK034",
+      "name": "MUHAMMAD HARITH BIN ABD RAHMAN",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "E",
+        "Bahasa Inggeris": "A-",
+        "Matematik": "A",
+        "Sejarah": "C+",
+        "Pend. Agama Islam": "C+",
+        "Matematik Tambahan": "A",
+        "Fizik": "D",
+        "Kimia": "B+",
+        "Biologi": "B+"
+      },
+      "gpScore": 6.11,
+      "pajskScore": 66.4,
+      "leadershipLevel": "Basic",
+      "riasecScores": {
+        "R": 16,
+        "I": 38,
+        "A": 42,
+        "S": 37,
+        "E": 37,
+        "K": 28
+      },
+      "riasecType": [
+        "Artistic",
+        "Investigative",
+        "Social"
+      ],
+      "hollandCode": "AIS",
+      "fieldOfInterest": "Seni & Komunikasi",
+      "dreamCareer": "Pereka Grafik / Arkitek",
+      "parentCategory": "T20",
+      "perCapitaIncome": 8125.02,
+      "keyAchievements": [
+        "SETIAUSAHA (7) – BOLA SEPAK (SR) [KEBANGSAAN (17)]",
+        "SETIAUSAHA (7), KOR KADET TENTERA UDARA (SR)",
+        "Ahli KELAB DEBAT (SR)"
+      ],
+      "pajskData": {
+        "markah": 73,
+        "sukan": "BOLA SEPAK (SR)",
+        "jawatanSukan": "SETIAUSAHA (7)",
+        "peringkatSukan": "KEBANGSAAN (17)",
+        "kelab": "KELAB DEBAT (SR)",
+        "jawatanKelab": "AHLI AKTIF (4)",
+        "peringkatKelab": "NEGERI (14)",
+        "badanBeruniform": "KOR KADET TENTERA UDARA (SR)",
+        "jawatanBB": "BENDAHARI (6)",
+        "peringkatBB": "KEBANGSAAN (15)",
+        "jawatan": "SETIAUSAHA (7)",
+        "peringkat": "KEBANGSAAN (17)",
+        "perkhidmatan": "KUARTERMASTER/PENGERUSI BADAN PERKHIDMATAN SEKOLAH (7)",
+        "anugerahKhas": "ANUGERAH REMAJA PERDANA (PERAK)(8)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT NEGERI(8)"
+      }
+    },
+    {
+      "id": "SBP5IK035",
+      "name": "LUQMANUL HAKIM BIN IBRAHIM",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "B+",
+        "Bahasa Inggeris": "E",
+        "Matematik": "C+",
+        "Sejarah": "C",
+        "Pend. Agama Islam": "B+",
+        "Matematik Tambahan": "B",
+        "Fizik": "D",
+        "Kimia": "A+",
+        "Biologi": "B"
+      },
+      "gpScore": 5.56,
+      "pajskScore": 80.9,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 48,
+        "I": 23,
+        "A": 8,
+        "S": 9,
+        "E": 9,
+        "K": 13
+      },
+      "riasecType": [
+        "Realistic",
+        "Investigative",
+        "Conventional"
+      ],
+      "hollandCode": "RIC",
+      "fieldOfInterest": "Kejuruteraan & Teknologi",
+      "dreamCareer": "Jurutera / Juruteknik",
+      "parentCategory": "T20",
+      "perCapitaIncome": 8369.22,
+      "keyAchievements": [
+        "KAPTEN (7) – OLAHRAGA (SR) [ANTARABANGSA (20)]",
+        "KAPTEN (7), KOR KADET TENTERA DARAT (SR)",
+        "Ahli KELAB ROBOTIK (SM)"
+      ],
+      "pajskData": {
+        "markah": 89,
+        "sukan": "OLAHRAGA (SR)",
+        "jawatanSukan": "KAPTEN (7)",
+        "peringkatSukan": "ANTARABANGSA (20)",
+        "kelab": "KELAB ROBOTIK (SM)",
+        "jawatanKelab": "NAIB SETIAUSAHA (6)",
+        "peringkatKelab": "SEKOLAH (5)",
+        "badanBeruniform": "KOR KADET TENTERA DARAT (SR)",
+        "jawatanBB": "NAIB PENGERUSI (8)",
+        "peringkatBB": "NEGERI (14)",
+        "jawatan": "KAPTEN (7)",
+        "peringkat": "ANTARABANGSA (20)",
+        "perkhidmatan": "PENOLONG KETUA ASRAMA/AHLI KETUA BADAR (6)",
+        "anugerahKhas": "ANUGERAH REMAJA PERDANA (PERAK)(8)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT ZON/DAERAH(6)"
+      }
+    },
+    {
+      "id": "SBP5IK036",
+      "name": "DANISH AQIL BIN MOHD FADZIL",
+      "gender": "L",
+      "spmGrades": {
+        "Bahasa Melayu": "B",
+        "Bahasa Inggeris": "G",
+        "Matematik": "B",
+        "Sejarah": "D",
+        "Pend. Agama Islam": "C",
+        "Matematik Tambahan": "G",
+        "Fizik": "C",
+        "Kimia": "C",
+        "Biologi": "B"
+      },
+      "gpScore": 3.89,
+      "pajskScore": 75.5,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 17,
+        "I": 29,
+        "A": 19,
+        "S": 31,
+        "E": 24,
+        "K": 23
+      },
+      "riasecType": [
+        "Social",
+        "Investigative",
+        "Enterprising"
+      ],
+      "hollandCode": "SIE",
+      "fieldOfInterest": "Pendidikan & Perkhidmatan Sosial",
+      "dreamCareer": "Pendidik / Pegawai Sosial",
+      "parentCategory": "B40",
+      "perCapitaIncome": 585.59,
+      "keyAchievements": [
+        "KETUA PASUKAN (8) – TAEKWONDO (SR) [KEBANGSAAN (17)]",
+        "KETUA PASUKAN (8), KADET REMAJA SEKOLAH (KRS) (SR)",
+        "Ahli KELAB FIZIK (SR)"
+      ],
+      "pajskData": {
+        "markah": 83,
+        "sukan": "TAEKWONDO (SR)",
+        "jawatanSukan": "KETUA PASUKAN (8)",
+        "peringkatSukan": "KEBANGSAAN (17)",
+        "kelab": "KELAB FIZIK (SR)",
+        "jawatanKelab": "NAIB BENDAHARI (5)",
+        "peringkatKelab": "SEKOLAH (5)",
+        "badanBeruniform": "KADET REMAJA SEKOLAH (KRS) (SR)",
+        "jawatanBB": "AHLI AKTIF (4)",
+        "peringkatBB": "KEBANGSAAN (17)",
+        "jawatan": "KETUA PASUKAN (8)",
+        "peringkat": "KEBANGSAAN (17)",
+        "perkhidmatan": "KETUA ASRAMA/PENGAWAS ASRAMA (7)",
+        "anugerahKhas": "ANUGERAH REMAJA PERDANA (GANGSA)(6)",
+        "khidmatMasyarakat": "AKTIVITI INSANIAH(10)"
+      }
+    },
+    {
+      "id": "SBP5IK037",
+      "name": "NUR BATRISYIA BINTI HASSAN",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "E",
+        "Bahasa Inggeris": "B",
+        "Matematik": "C+",
+        "Sejarah": "B",
+        "Pend. Agama Islam": "C",
+        "Matematik Tambahan": "E",
+        "Fizik": "C+",
+        "Kimia": "B+",
+        "Biologi": "C"
+      },
+      "gpScore": 4.56,
+      "pajskScore": 70,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 27,
+        "I": 47,
+        "A": 8,
+        "S": 39,
+        "E": 36,
+        "K": 46
+      },
+      "riasecType": [
+        "Investigative",
+        "Conventional",
+        "Social"
+      ],
+      "hollandCode": "ICS",
+      "fieldOfInterest": "Sains & Perubatan",
+      "dreamCareer": "Saintis / Doktor",
+      "parentCategory": "B40",
+      "perCapitaIncome": 348.99,
+      "keyAchievements": [
+        "PENGERUSI (10) – RENANG (SR) [ZON/DAERAH (11)]",
+        "PENGERUSI (10), KOR KADET TENTERA DARAT (SR)",
+        "Ahli KELAB INOVASI DAN REKACIPTA (SR)"
+      ],
+      "pajskData": {
+        "markah": 77,
+        "sukan": "RENANG (SR)",
+        "jawatanSukan": "PENGERUSI (10)",
+        "peringkatSukan": "ZON/DAERAH (11)",
+        "kelab": "KELAB INOVASI DAN REKACIPTA (SR)",
+        "jawatanKelab": "BENDAHARI (6)",
+        "peringkatKelab": "ZON/DAERAH (11)",
+        "badanBeruniform": "KOR KADET TENTERA DARAT (SR)",
+        "jawatanBB": "AHLI JAWATANKUASA (5)",
+        "peringkatBB": "ZON/DAERAH (11)",
+        "jawatan": "PENGERUSI (10)",
+        "peringkat": "ZON/DAERAH (11)",
+        "perkhidmatan": "TIMBALAN/PENOLONG KETUA MURID (8)",
+        "anugerahKhas": "ANUGERAH-ANUGERAH LAIN/PENGHARGAAN KHAS SETARA-KEBANGSAAN (PENERIMA)(10)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT NEGERI(8)"
+      }
+    },
+    {
+      "id": "SBP5IK038",
+      "name": "AMIRAH HUMAIRA BINTI RAZALI",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "C",
+        "Bahasa Inggeris": "G",
+        "Matematik": "D",
+        "Sejarah": "B",
+        "Pend. Agama Islam": "A-",
+        "Matematik Tambahan": "E",
+        "Fizik": "A-",
+        "Kimia": "C",
+        "Biologi": "E"
+      },
+      "gpScore": 4.22,
+      "pajskScore": 80,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 32,
+        "I": 44,
+        "A": 26,
+        "S": 25,
+        "E": 22,
+        "K": 10
+      },
+      "riasecType": [
+        "Investigative",
+        "Realistic",
+        "Artistic"
+      ],
+      "hollandCode": "IRA",
+      "fieldOfInterest": "Sains & Perubatan",
+      "dreamCareer": "Saintis / Doktor",
+      "parentCategory": "M40",
+      "perCapitaIncome": 3510.42,
+      "keyAchievements": [
+        "SETIAUSAHA (7) – BOLA KERANJANG (SR) [DAERAH (8)]",
+        "SETIAUSAHA (7), KADET REMAJA SEKOLAH (KRS) (SR)",
+        "Ahli KELAB BIOLOGI (SR)"
+      ],
+      "pajskData": {
+        "markah": 88,
+        "sukan": "BOLA KERANJANG (SR)",
+        "jawatanSukan": "SETIAUSAHA (7)",
+        "peringkatSukan": "DAERAH (8)",
+        "kelab": "KELAB BIOLOGI (SR)",
+        "jawatanKelab": "BENDAHARI (6)",
+        "peringkatKelab": "SEKOLAH (5)",
+        "badanBeruniform": "KADET REMAJA SEKOLAH (KRS) (SR)",
+        "jawatanBB": "BENDAHARI (6)",
+        "peringkatBB": "NEGERI (14)",
+        "jawatan": "SETIAUSAHA (7)",
+        "peringkat": "DAERAH (8)",
+        "perkhidmatan": "PENOLONG KETUA ASRAMA/AHLI KETUA BADAR (6)",
+        "anugerahKhas": "PROGRAM KEPIMPINAN GENERASI MADANI - TIER 1 (PENERIMA)(6)",
+        "khidmatMasyarakat": null
+      }
+    },
+    {
+      "id": "SBP5IK039",
+      "name": "NURUL HUSNA BINTI MOHD YUSOF",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "C",
+        "Bahasa Inggeris": "E",
+        "Matematik": "E",
+        "Sejarah": "E",
+        "Pend. Agama Islam": "D",
+        "Matematik Tambahan": "C+",
+        "Fizik": "C+",
+        "Kimia": "A+",
+        "Biologi": "B"
+      },
+      "gpScore": 4.33,
+      "pajskScore": 84.5,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 26,
+        "I": 18,
+        "A": 33,
+        "S": 9,
+        "E": 30,
+        "K": 13
+      },
+      "riasecType": [
+        "Artistic",
+        "Enterprising",
+        "Realistic"
+      ],
+      "hollandCode": "AER",
+      "fieldOfInterest": "Seni & Komunikasi",
+      "dreamCareer": "Pereka Grafik / Arkitek",
+      "parentCategory": "B40",
+      "perCapitaIncome": 907.08,
+      "keyAchievements": [
+        "AHLI JAWATANKUASA (5) – CATUR (SR) [NEGERI (14)]",
+        "AHLI JAWATANKUASA (5), PENGAKAP PUTERI (SR)",
+        "Ahli KELAB MUZIK (SR)"
+      ],
+      "pajskData": {
+        "markah": 93,
+        "sukan": "CATUR (SR)",
+        "jawatanSukan": "AHLI JAWATANKUASA (5)",
+        "peringkatSukan": "NEGERI (14)",
+        "kelab": "KELAB MUZIK (SR)",
+        "jawatanKelab": "PENGERUSI (10)",
+        "peringkatKelab": "ANTARABANGSA (20)",
+        "badanBeruniform": "PENGAKAP PUTERI (SR)",
+        "jawatanBB": "KOPERAL (5)",
+        "peringkatBB": "ZON/DAERAH (9)",
+        "jawatan": "AHLI JAWATANKUASA (5)",
+        "peringkat": "NEGERI (14)",
+        "perkhidmatan": "AHLI LEMBAGA PENGARAH KOPERASI SEKOLAH (6)",
+        "anugerahKhas": "AKTIVITI INSANIAH(10)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT KEBANGSAAN(10)"
+      }
+    },
+    {
+      "id": "SBP5IK040",
+      "name": "SITI ZULAIKHA BINTI ZAINAL",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "C+",
+        "Bahasa Inggeris": "C",
+        "Matematik": "D",
+        "Sejarah": "D",
+        "Pend. Agama Islam": "C",
+        "Matematik Tambahan": "C+",
+        "Fizik": "B",
+        "Kimia": "A",
+        "Biologi": "D"
+      },
+      "gpScore": 4.67,
+      "pajskScore": 86.4,
+      "leadershipLevel": "High",
+      "riasecScores": {
+        "R": 15,
+        "I": 20,
+        "A": 32,
+        "S": 29,
+        "E": 23,
+        "K": 32
+      },
+      "riasecType": [
+        "Artistic",
+        "Conventional",
+        "Social"
+      ],
+      "hollandCode": "ACS",
+      "fieldOfInterest": "Seni & Komunikasi",
+      "dreamCareer": "Pereka Grafik / Arkitek",
+      "parentCategory": "M40",
+      "perCapitaIncome": 1506.06,
+      "keyAchievements": [
+        "AHLI AKTIF (4) – CATUR (SR) [ZON/DAERAH (11)]",
+        "AHLI AKTIF (4), BULAN SABIT MERAH MALAYSIA (BSMM) (SR)",
+        "Ahli KELAB ALAM SEKITAR (SR)"
+      ],
+      "pajskData": {
+        "markah": 95,
+        "sukan": "CATUR (SR)",
+        "jawatanSukan": "AHLI AKTIF (4)",
+        "peringkatSukan": "ZON/DAERAH (11)",
+        "kelab": "KELAB ALAM SEKITAR (SR)",
+        "jawatanKelab": "AHLI JAWATANKUASA (5)",
+        "peringkatKelab": "NEGERI (14)",
+        "badanBeruniform": "BULAN SABIT MERAH MALAYSIA (BSMM) (SR)",
+        "jawatanBB": "PENGERUSI (10)",
+        "peringkatBB": "ANTARABANGSA (20)",
+        "jawatan": "AHLI AKTIF (4)",
+        "peringkat": "ZON/DAERAH (11)",
+        "perkhidmatan": "KUARTERMASTER/PENGERUSI BADAN PERKHIDMATAN SEKOLAH (7)",
+        "anugerahKhas": "ANUGERAH KHAS KOKURIKULUM DAN SUKAN - KEBANGSAAN (PENERIMA)(10)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT NEGERI(8)"
+      }
+    },
+    {
+      "id": "SBP5IK041",
+      "name": "FARAH DIYANA BINTI OTHMAN",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "E",
+        "Bahasa Inggeris": "C+",
+        "Matematik": "A+",
+        "Sejarah": "G",
+        "Pend. Agama Islam": "A+",
+        "Matematik Tambahan": "B+",
+        "Fizik": "A",
+        "Kimia": "B+",
+        "Biologi": "E"
+      },
+      "gpScore": 5.89,
+      "pajskScore": 93.6,
+      "leadershipLevel": "High",
+      "riasecScores": {
+        "R": 10,
+        "I": 23,
+        "A": 16,
+        "S": 41,
+        "E": 18,
+        "K": 32
+      },
+      "riasecType": [
+        "Social",
+        "Conventional",
+        "Investigative"
+      ],
+      "hollandCode": "SCI",
+      "fieldOfInterest": "Pendidikan & Perkhidmatan Sosial",
+      "dreamCareer": "Pendidik / Pegawai Sosial",
+      "parentCategory": "B40",
+      "perCapitaIncome": 880.08,
+      "keyAchievements": [
+        "NAIB BENDAHARI (5) – SKUASY (SR) [ANTARABANGSA (20)]",
+        "NAIB BENDAHARI (5), KOR KADET TENTERA UDARA (SR)",
+        "Ahli KELAB MATEMATIK (SR)"
+      ],
+      "pajskData": {
+        "markah": 103,
+        "sukan": "SKUASY (SR)",
+        "jawatanSukan": "NAIB BENDAHARI (5)",
+        "peringkatSukan": "ANTARABANGSA (20)",
+        "kelab": "KELAB MATEMATIK (SR)",
+        "jawatanKelab": "NAIB SETIAUSAHA (6)",
+        "peringkatKelab": "SEKOLAH (5)",
+        "badanBeruniform": "KOR KADET TENTERA UDARA (SR)",
+        "jawatanBB": "PENGERUSI (10)",
+        "peringkatBB": "KEBANGSAAN (15)",
+        "jawatan": "NAIB BENDAHARI (5)",
+        "peringkat": "ANTARABANGSA (20)",
+        "perkhidmatan": null,
+        "anugerahKhas": "ANUGERAH REMAJA PERDANA (GANGSA)(6)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT KEBANGSAAN(10)"
+      }
+    },
+    {
+      "id": "SBP5IK042",
+      "name": "NUR ATHIRAH BINTI KAMARUDIN",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "G",
+        "Bahasa Inggeris": "B",
+        "Matematik": "A-",
+        "Sejarah": "A+",
+        "Pend. Agama Islam": "C+",
+        "Matematik Tambahan": "C+",
+        "Fizik": "C+",
+        "Kimia": "A",
+        "Biologi": "C+"
+      },
+      "gpScore": 6,
+      "pajskScore": 72.7,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 47,
+        "I": 12,
+        "A": 47,
+        "S": 39,
+        "E": 20,
+        "K": 20
+      },
+      "riasecType": [
+        "Realistic",
+        "Artistic",
+        "Social"
+      ],
+      "hollandCode": "RAS",
+      "fieldOfInterest": "Kejuruteraan & Teknologi",
+      "dreamCareer": "Jurutera / Juruteknik",
+      "parentCategory": "T20",
+      "perCapitaIncome": 13158.94,
+      "keyAchievements": [
+        "NAIB PENGERUSI (8) – BADMINTON (SR) [ANTARABANGSA (20)]",
+        "NAIB PENGERUSI (8), KOR KADET POLIS (SR)",
+        "Ahli KELAB PENDIDIKAN ISLAM (SR)"
+      ],
+      "pajskData": {
+        "markah": 80,
+        "sukan": "BADMINTON (SR)",
+        "jawatanSukan": "NAIB PENGERUSI (8)",
+        "peringkatSukan": "ANTARABANGSA (20)",
+        "kelab": "KELAB PENDIDIKAN ISLAM (SR)",
+        "jawatanKelab": "NAIB BENDAHARI (5)",
+        "peringkatKelab": "KEBANGSAAN (15)",
+        "badanBeruniform": "KOR KADET POLIS (SR)",
+        "jawatanBB": "BENDAHARI (6)",
+        "peringkatBB": "ANTARABANGSA (20)",
+        "jawatan": "NAIB PENGERUSI (8)",
+        "peringkat": "ANTARABANGSA (20)",
+        "perkhidmatan": "PENGAWAS/PENGAWAS PUSAT PRS/KETUA SUMBER (7)",
+        "anugerahKhas": "AKTIVITI INSANIAH(10)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT NEGERI(8)"
+      }
+    },
+    {
+      "id": "SBP5IK043",
+      "name": "AISYAH NUR BINTI MOHD SABRI",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "C",
+        "Bahasa Inggeris": "B",
+        "Matematik": "B",
+        "Sejarah": "D",
+        "Pend. Agama Islam": "D",
+        "Matematik Tambahan": "E",
+        "Fizik": "E",
+        "Kimia": "B+",
+        "Biologi": "A+"
+      },
+      "gpScore": 4.78,
+      "pajskScore": 87.3,
+      "leadershipLevel": "High",
+      "riasecScores": {
+        "R": 35,
+        "I": 26,
+        "A": 26,
+        "S": 32,
+        "E": 27,
+        "K": 48
+      },
+      "riasecType": [
+        "Conventional",
+        "Realistic",
+        "Social"
+      ],
+      "hollandCode": "CRS",
+      "fieldOfInterest": "Perakaunan & Kewangan",
+      "dreamCareer": "Akauntan / Penganalisis Kewangan",
+      "parentCategory": "B40",
+      "perCapitaIncome": 1393.49,
+      "keyAchievements": [
+        "NAIB BENDAHARI (5) – BOLA JARING (SR) [DAERAH (8)]",
+        "NAIB BENDAHARI (5), BULAN SABIT MERAH MALAYSIA (BSMM) (SR)",
+        "Ahli KELAB SENI VISUAL (SR)"
+      ],
+      "pajskData": {
+        "markah": 96,
+        "sukan": "BOLA JARING (SR)",
+        "jawatanSukan": "NAIB BENDAHARI (5)",
+        "peringkatSukan": "DAERAH (8)",
+        "kelab": "KELAB SENI VISUAL (SR)",
+        "jawatanKelab": "NAIB PENGERUSI (8)",
+        "peringkatKelab": "SEKOLAH (5)",
+        "badanBeruniform": "BULAN SABIT MERAH MALAYSIA (BSMM) (SR)",
+        "jawatanBB": "AHLI JAWATANKUASA (5)",
+        "peringkatBB": "ZON/DAERAH (11)",
+        "jawatan": "NAIB BENDAHARI (5)",
+        "peringkat": "DAERAH (8)",
+        "perkhidmatan": "PENGAWAS/PENGAWAS PUSAT PRS/KETUA SUMBER (7)",
+        "anugerahKhas": "PROGRAM KEPIMPINAN GENERASI MADANI - TIER 2 (PENERIMA)(4)",
+        "khidmatMasyarakat": null
+      }
+    },
+    {
+      "id": "SBP5IK044",
+      "name": "NURUL AIN BINTI AHMAD FAUZI",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "E",
+        "Bahasa Inggeris": "B",
+        "Matematik": "C",
+        "Sejarah": "D",
+        "Pend. Agama Islam": "C+",
+        "Matematik Tambahan": "A+",
+        "Fizik": "A-",
+        "Kimia": "C",
+        "Biologi": "B"
+      },
+      "gpScore": 5.33,
+      "pajskScore": 85.5,
+      "leadershipLevel": "High",
+      "riasecScores": {
+        "R": 35,
+        "I": 23,
+        "A": 45,
+        "S": 32,
+        "E": 37,
+        "K": 36
+      },
+      "riasecType": [
+        "Artistic",
+        "Enterprising",
+        "Conventional"
+      ],
+      "hollandCode": "AEC",
+      "fieldOfInterest": "Seni & Komunikasi",
+      "dreamCareer": "Pereka Grafik / Arkitek",
+      "parentCategory": "B40",
+      "perCapitaIncome": 1379.22,
+      "keyAchievements": [
+        "KAPTEN (7) – SILAT (SR) [KEBANGSAAN (17)]",
+        "KAPTEN (7), KADET REMAJA SEKOLAH (KRS) (SR)",
+        "Ahli KELAB NASYID (SR)"
+      ],
+      "pajskData": {
+        "markah": 94,
+        "sukan": "SILAT (SR)",
+        "jawatanSukan": "KAPTEN (7)",
+        "peringkatSukan": "KEBANGSAAN (17)",
+        "kelab": "KELAB NASYID (SR)",
+        "jawatanKelab": "NAIB SETIAUSAHA (6)",
+        "peringkatKelab": "NEGERI (14)",
+        "badanBeruniform": "KADET REMAJA SEKOLAH (KRS) (SR)",
+        "jawatanBB": "AHLI JAWATANKUASA (5)",
+        "peringkatBB": "KEBANGSAAN (15)",
+        "jawatan": "KAPTEN (7)",
+        "peringkat": "KEBANGSAAN (17)",
+        "perkhidmatan": "PENOLONG KETUA ASRAMA/AHLI KETUA BADAR (6)",
+        "anugerahKhas": null,
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT NEGERI(8)"
+      }
+    },
+    {
+      "id": "SBP5IK045",
+      "name": "SITI HAFSAH BINTI MOHD SALLEH",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "C+",
+        "Bahasa Inggeris": "C+",
+        "Matematik": "B",
+        "Sejarah": "C+",
+        "Pend. Agama Islam": "C+",
+        "Matematik Tambahan": "C+",
+        "Fizik": "A-",
+        "Kimia": "A-",
+        "Biologi": "D"
+      },
+      "gpScore": 5.56,
+      "pajskScore": 80,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 48,
+        "I": 33,
+        "A": 14,
+        "S": 31,
+        "E": 36,
+        "K": 18
+      },
+      "riasecType": [
+        "Realistic",
+        "Enterprising",
+        "Investigative"
+      ],
+      "hollandCode": "REI",
+      "fieldOfInterest": "Kejuruteraan & Teknologi",
+      "dreamCareer": "Jurutera / Juruteknik",
+      "parentCategory": "B40",
+      "perCapitaIncome": 1468.59,
+      "keyAchievements": [
+        "AHLI JAWATANKUASA (5) – OLAHRAGA (SR) [DAERAH (8)]",
+        "AHLI JAWATANKUASA (5), KOR KADET TENTERA DARAT (SR)",
+        "Ahli KELAB ROBOTIK (SM)"
+      ],
+      "pajskData": {
+        "markah": 88,
+        "sukan": "OLAHRAGA (SR)",
+        "jawatanSukan": "AHLI JAWATANKUASA (5)",
+        "peringkatSukan": "DAERAH (8)",
+        "kelab": "KELAB ROBOTIK (SM)",
+        "jawatanKelab": "NAIB PENGERUSI (8)",
+        "peringkatKelab": "SEKOLAH (5)",
+        "badanBeruniform": "KOR KADET TENTERA DARAT (SR)",
+        "jawatanBB": "SARJAN (6)",
+        "peringkatBB": "NEGERI (14)",
+        "jawatan": "AHLI JAWATANKUASA (5)",
+        "peringkat": "DAERAH (8)",
+        "perkhidmatan": "PEMIMPIN RUMAH SUKAN (6)",
+        "anugerahKhas": "ANUGERAH REMAJA PERDANA (GANGSA)(6)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT ZON/DAERAH(6)"
+      }
+    },
+    {
+      "id": "SBP5IK046",
+      "name": "NUR IMAN BINTI ZULKARNAIN",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "D",
+        "Bahasa Inggeris": "C",
+        "Matematik": "C+",
+        "Sejarah": "D",
+        "Pend. Agama Islam": "G",
+        "Matematik Tambahan": "C",
+        "Fizik": "E",
+        "Kimia": "E",
+        "Biologi": "C"
+      },
+      "gpScore": 3.11,
+      "pajskScore": 68.2,
+      "leadershipLevel": "Basic",
+      "riasecScores": {
+        "R": 25,
+        "I": 21,
+        "A": 10,
+        "S": 14,
+        "E": 18,
+        "K": 19
+      },
+      "riasecType": [
+        "Realistic",
+        "Investigative",
+        "Conventional"
+      ],
+      "hollandCode": "RIC",
+      "fieldOfInterest": "Kejuruteraan & Teknologi",
+      "dreamCareer": "Jurutera / Juruteknik",
+      "parentCategory": "T20",
+      "perCapitaIncome": 9567.51,
+      "keyAchievements": [
+        "NAIB BENDAHARI (5) – SEPAK TAKRAW (SR) [ZON/DAERAH (9)]",
+        "NAIB BENDAHARI (5), PENGAKAP PUTERI (SR)",
+        "Ahli KELAB PENDIDIKAN ISLAM (SR)"
+      ],
+      "pajskData": {
+        "markah": 75,
+        "sukan": "SEPAK TAKRAW (SR)",
+        "jawatanSukan": "NAIB BENDAHARI (5)",
+        "peringkatSukan": "ZON/DAERAH (9)",
+        "kelab": "KELAB PENDIDIKAN ISLAM (SR)",
+        "jawatanKelab": "BENDAHARI (6)",
+        "peringkatKelab": "KEBANGSAAN (15)",
+        "badanBeruniform": "PENGAKAP PUTERI (SR)",
+        "jawatanBB": "SARJAN (6)",
+        "peringkatBB": "DAERAH (8)",
+        "jawatan": "NAIB BENDAHARI (5)",
+        "peringkat": "ZON/DAERAH (9)",
+        "perkhidmatan": "KUARTERMASTER/PENGERUSI BADAN PERKHIDMATAN SEKOLAH (7)",
+        "anugerahKhas": null,
+        "khidmatMasyarakat": null
+      }
+    },
+    {
+      "id": "SBP5IK047",
+      "name": "FARIDAH HANUM BINTI RAZAK",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "C+",
+        "Bahasa Inggeris": "A",
+        "Matematik": "B",
+        "Sejarah": "A+",
+        "Pend. Agama Islam": "G",
+        "Matematik Tambahan": "E",
+        "Fizik": "C",
+        "Kimia": "C+",
+        "Biologi": "B+"
+      },
+      "gpScore": 5.44,
+      "pajskScore": 60,
+      "leadershipLevel": "Basic",
+      "riasecScores": {
+        "R": 32,
+        "I": 29,
+        "A": 38,
+        "S": 19,
+        "E": 35,
+        "K": 16
+      },
+      "riasecType": [
+        "Artistic",
+        "Enterprising",
+        "Realistic"
+      ],
+      "hollandCode": "AER",
+      "fieldOfInterest": "Seni & Komunikasi",
+      "dreamCareer": "Pereka Grafik / Arkitek",
+      "parentCategory": "B40",
+      "perCapitaIncome": 295.96,
+      "keyAchievements": [
+        "KAPTEN (7) – SKUASY (SR) [DAERAH (8)]",
+        "KAPTEN (7), KOR KADET TENTERA DARAT (SR)",
+        "Ahli KELAB PERTANIAN (SR)"
+      ],
+      "pajskData": {
+        "markah": 66,
+        "sukan": "SKUASY (SR)",
+        "jawatanSukan": "KAPTEN (7)",
+        "peringkatSukan": "DAERAH (8)",
+        "kelab": "KELAB PERTANIAN (SR)",
+        "jawatanKelab": "AHLI AKTIF (4)",
+        "peringkatKelab": "ANTARABANGSA (20)",
+        "badanBeruniform": "KOR KADET TENTERA DARAT (SR)",
+        "jawatanBB": "KOPERAL (5)",
+        "peringkatBB": "ZON/DAERAH (11)",
+        "jawatan": "KAPTEN (7)",
+        "peringkat": "DAERAH (8)",
+        "perkhidmatan": null,
+        "anugerahKhas": null,
+        "khidmatMasyarakat": "PROGRAM GOTONG-ROYONG KOMUNITI(5)"
+      }
+    },
+    {
+      "id": "SBP5IK048",
+      "name": "NUR SAFIYYAH BINTI ABD HALIM",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "C",
+        "Bahasa Inggeris": "D",
+        "Matematik": "D",
+        "Sejarah": "D",
+        "Pend. Agama Islam": "E",
+        "Matematik Tambahan": "C+",
+        "Fizik": "C+",
+        "Kimia": "A",
+        "Biologi": "D"
+      },
+      "gpScore": 4.11,
+      "pajskScore": 80,
+      "leadershipLevel": "Medium",
+      "riasecScores": {
+        "R": 23,
+        "I": 14,
+        "A": 16,
+        "S": 41,
+        "E": 34,
+        "K": 17
+      },
+      "riasecType": [
+        "Social",
+        "Enterprising",
+        "Realistic"
+      ],
+      "hollandCode": "SER",
+      "fieldOfInterest": "Pendidikan & Perkhidmatan Sosial",
+      "dreamCareer": "Pendidik / Pegawai Sosial",
+      "parentCategory": "B40",
+      "perCapitaIncome": 882.46,
+      "keyAchievements": [
+        "PENGERUSI (10) – OLAHRAGA (SR) [NEGERI (12)]",
+        "PENGERUSI (10), KOR KADET POLIS (SR)",
+        "Ahli KELAB NASYID (SR)"
+      ],
+      "pajskData": {
+        "markah": 88,
+        "sukan": "OLAHRAGA (SR)",
+        "jawatanSukan": "PENGERUSI (10)",
+        "peringkatSukan": "NEGERI (12)",
+        "kelab": "KELAB NASYID (SR)",
+        "jawatanKelab": "NAIB BENDAHARI (5)",
+        "peringkatKelab": "KEBANGSAAN (17)",
+        "badanBeruniform": "KOR KADET POLIS (SR)",
+        "jawatanBB": "PENGERUSI (10)",
+        "peringkatBB": "DAERAH (8)",
+        "jawatan": "PENGERUSI (10)",
+        "peringkat": "NEGERI (12)",
+        "perkhidmatan": "TIMBALAN/PENOLONG KETUA MURID (8)",
+        "anugerahKhas": "PROGRAM KEPIMPINAN GENERASI MADANI - TIER 2 (PENERIMA)(4)",
+        "khidmatMasyarakat": null
+      }
+    },
+    {
+      "id": "SBP5IK049",
+      "name": "ZULAIKHA BINTI MOHD ZAIN",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "C",
+        "Bahasa Inggeris": "C",
+        "Matematik": "E",
+        "Sejarah": "B",
+        "Pend. Agama Islam": "B+",
+        "Matematik Tambahan": "B+",
+        "Fizik": "B",
+        "Kimia": "A",
+        "Biologi": "B+"
+      },
+      "gpScore": 5.78,
+      "pajskScore": 88.2,
+      "leadershipLevel": "High",
+      "riasecScores": {
+        "R": 44,
+        "I": 40,
+        "A": 13,
+        "S": 33,
+        "E": 14,
+        "K": 44
+      },
+      "riasecType": [
+        "Realistic",
+        "Conventional",
+        "Investigative"
+      ],
+      "hollandCode": "RCI",
+      "fieldOfInterest": "Kejuruteraan & Teknologi",
+      "dreamCareer": "Jurutera / Juruteknik",
+      "parentCategory": "B40",
+      "perCapitaIncome": 276.13,
+      "keyAchievements": [
+        "PENGERUSI (10) – MEMANAH (SR) [NEGERI (14)]",
+        "PENGERUSI (10), BULAN SABIT MERAH MALAYSIA (BSMM) (SR)",
+        "Ahli PERSATUAN BAHASA ARAB (SR)"
+      ],
+      "pajskData": {
+        "markah": 97,
+        "sukan": "MEMANAH (SR)",
+        "jawatanSukan": "PENGERUSI (10)",
+        "peringkatSukan": "NEGERI (14)",
+        "kelab": "PERSATUAN BAHASA ARAB (SR)",
+        "jawatanKelab": "PENGERUSI (10)",
+        "peringkatKelab": "ZON/DAERAH (11)",
+        "badanBeruniform": "BULAN SABIT MERAH MALAYSIA (BSMM) (SR)",
+        "jawatanBB": "SARJAN MEJAR (7)",
+        "peringkatBB": "NEGERI (14)",
+        "jawatan": "PENGERUSI (10)",
+        "peringkat": "NEGERI (14)",
+        "perkhidmatan": "PEMIMPIN RUMAH SUKAN (6)",
+        "anugerahKhas": "AKTIVITI INSANIAH(10)",
+        "khidmatMasyarakat": "PROGRAM GOTONG-ROYONG KOMUNITI(5)"
+      }
+    },
+    {
+      "id": "SBP5IK050",
+      "name": "NURUL HIDAYAH BINTI NORDIN",
+      "gender": "P",
+      "spmGrades": {
+        "Bahasa Melayu": "A-",
+        "Bahasa Inggeris": "E",
+        "Matematik": "C",
+        "Sejarah": "D",
+        "Pend. Agama Islam": "G",
+        "Matematik Tambahan": "D",
+        "Fizik": "G",
+        "Kimia": "G",
+        "Biologi": "C+"
+      },
+      "gpScore": 3.11,
+      "pajskScore": 96.4,
+      "leadershipLevel": "High",
+      "riasecScores": {
+        "R": 41,
+        "I": 36,
+        "A": 32,
+        "S": 8,
+        "E": 45,
+        "K": 14
+      },
+      "riasecType": [
+        "Enterprising",
+        "Realistic",
+        "Investigative"
+      ],
+      "hollandCode": "ERI",
+      "fieldOfInterest": "Perniagaan & Pengurusan",
+      "dreamCareer": "Usahawan / Pengurus Perniagaan",
+      "parentCategory": "M40",
+      "perCapitaIncome": 1734.83,
+      "keyAchievements": [
+        "NAIB PENGERUSI (8) – SKUASY (SR) [KEBANGSAAN (15)]",
+        "NAIB PENGERUSI (8), KADET REMAJA SEKOLAH (KRS) (SR)",
+        "Ahli PERSATUAN BAHASA ARAB (SR)"
+      ],
+      "pajskData": {
+        "markah": 106,
+        "sukan": "SKUASY (SR)",
+        "jawatanSukan": "NAIB PENGERUSI (8)",
+        "peringkatSukan": "KEBANGSAAN (15)",
+        "kelab": "PERSATUAN BAHASA ARAB (SR)",
+        "jawatanKelab": "NAIB SETIAUSAHA (6)",
+        "peringkatKelab": "NEGERI (14)",
+        "badanBeruniform": "KADET REMAJA SEKOLAH (KRS) (SR)",
+        "jawatanBB": "AHLI JAWATANKUASA (5)",
+        "peringkatBB": "DAERAH (8)",
+        "jawatan": "NAIB PENGERUSI (8)",
+        "peringkat": "KEBANGSAAN (15)",
+        "perkhidmatan": "PENGAWAS/PENGAWAS PUSAT PRS/KETUA SUMBER (7)",
+        "anugerahKhas": "PROGRAM KEPIMPINAN GENERASI MADANI - TIER 2 (PENERIMA)(4)",
+        "khidmatMasyarakat": "KHIDMAT MASYARAKAT PERINGKAT NEGERI(8)"
+      }
+    }
+  ]
+}

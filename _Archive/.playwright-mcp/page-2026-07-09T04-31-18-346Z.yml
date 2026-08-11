@@ -1,0 +1,124 @@
+- generic [active] [ref=f4e1]:
+  - generic [ref=f4e2]:
+    - generic [ref=f4e4]: DELIMa 2
+    - generic [ref=f4e5]: KEMENTERIAN PENDIDIKAN MALAYSIA
+  - generic [ref=f4e6]:
+    - generic [ref=f4e7]: SBP Ibnu Khaldun • 2026
+    - heading "AI-Powered Scholarship Matching System Why Is It Called a Multi-Agent System?" [level=1] [ref=f4e8]:
+      - text: AI-Powered
+      - emphasis [ref=f4e9]: Scholarship
+      - text: Matching System
+      - text: Why Is It Called a
+      - emphasis [ref=f4e10]: Multi-Agent
+      - text: System?
+    - generic [ref=f4e11]: 3 Autonomous Agents • Groq LLM • Node.js • Python • 50 SPM Students — Class 5IK
+  - generic [ref=f4e12]:
+    - generic [ref=f4e13]:
+      - generic [ref=f4e14]:
+        - generic [ref=f4e15]:
+          - generic [ref=f4e16]: Agent 1
+          - generic [ref=f4e17]:
+            - text: Data &
+            - text: Dashboard
+          - generic [ref=f4e18]: Node.js + Python
+        - generic [ref=f4e19]:
+          - generic [ref=f4e20]: ▶ Why Is It an Agent?
+          - generic [ref=f4e21]: Operates on its own without human instruction — scrapes live scholarship data, manages student login, and triggers Agent 2 automatically.
+        - generic [ref=f4e22]:
+          - generic [ref=f4e23]:
+            - generic [ref=f4e24]: ▶
+            - generic [ref=f4e25]:
+              - strong [ref=f4e26]: Auto-scrapes
+              - text: latest scholarships from biasiswa.co every 24 hours
+          - generic [ref=f4e27]:
+            - generic [ref=f4e28]: ▶
+            - generic [ref=f4e29]:
+              - strong [ref=f4e30]: Triggers Agent 2
+              - text: automatically when a student submits SPM grades
+          - generic [ref=f4e31]:
+            - generic [ref=f4e32]: ▶
+            - generic [ref=f4e33]:
+              - strong [ref=f4e34]: Auth gate
+              - text: — validates student identity before granting access
+      - generic [ref=f4e37]: output.json
+      - generic [ref=f4e40]:
+        - generic [ref=f4e41]:
+          - generic [ref=f4e42]: Agent 2
+          - generic [ref=f4e43]:
+            - text: Scholarship
+            - text: Matching
+          - generic [ref=f4e44]: Python + Groq LLM
+        - generic [ref=f4e45]:
+          - generic [ref=f4e46]: ▶ Why Is It an Agent?
+          - generic [ref=f4e47]: Uses real AI (Groq LLM) to assess student interest fit — not just comparing numbers, but reasoning and making decisions.
+        - generic [ref=f4e48]:
+          - generic [ref=f4e49]:
+            - generic [ref=f4e50]: AI
+            - generic [ref=f4e51]:
+              - strong [ref=f4e52]: Groq LLM
+              - text: evaluates student interest vs. scholarship field
+          - generic [ref=f4e53]:
+            - generic [ref=f4e54]: ▶
+            - generic [ref=f4e55]:
+              - strong [ref=f4e56]: 5-factor scoring
+              - text: — Academic, PAJSK, Aspiration (AI), Psychometric, Income
+          - generic [ref=f4e57]:
+            - generic [ref=f4e58]: ▶
+            - generic [ref=f4e59]:
+              - strong [ref=f4e60]: Self-adapts
+              - text: whenever a student updates their SPM grades
+      - generic [ref=f4e63]: matches.json
+      - generic [ref=f4e66]:
+        - generic [ref=f4e67]:
+          - generic [ref=f4e68]: Agent 3
+          - generic [ref=f4e69]:
+            - text: PDF Report
+            - text: Generator
+          - generic [ref=f4e70]: Python + ReportLab
+        - generic [ref=f4e71]:
+          - generic [ref=f4e72]: ▶ Why Is It an Agent?
+          - generic [ref=f4e73]: Generates a print-ready PDF report automatically — no human needs to format or arrange any document.
+        - generic [ref=f4e74]:
+          - generic [ref=f4e75]:
+            - generic [ref=f4e76]: ▶
+            - generic [ref=f4e77]:
+              - strong [ref=f4e78]: Generates PDF
+              - text: of top-5 scholarship matches for every student
+          - generic [ref=f4e79]:
+            - generic [ref=f4e80]: ▶
+            - generic [ref=f4e81]:
+              - strong [ref=f4e82]: Self-activates
+              - text: the moment Agent 2 finishes matching
+          - generic [ref=f4e83]:
+            - generic [ref=f4e84]: ▶
+            - generic [ref=f4e85]:
+              - strong [ref=f4e86]: Ready to download
+              - text: straight from the dashboard — zero manual steps
+    - generic [ref=f4e87]:
+      - generic [ref=f4e88]:
+        - generic [ref=f4e89]: WHY MULTI-AGENT?
+        - text: 5 Criteria That Make It an Agentic AI System
+      - generic [ref=f4e90]:
+        - generic [ref=f4e91]:
+          - generic [ref=f4e92]: "1"
+          - generic [ref=f4e93]: Autonomous
+          - generic [ref=f4e94]: Each agent acts on its own without being directed by a human during operation
+        - generic [ref=f4e95]:
+          - generic [ref=f4e96]: "2"
+          - generic [ref=f4e97]: Event-Driven
+          - generic [ref=f4e98]: Each agent automatically triggers the next agent when its task is done — no human intervention needed
+        - generic [ref=f4e99]:
+          - generic [ref=f4e100]: "3"
+          - generic [ref=f4e101]: AI Intelligence
+          - generic [ref=f4e102]: Agent 2 uses a real Groq LLM to reason and evaluate fit — not just a fixed formula
+        - generic [ref=f4e103]:
+          - generic [ref=f4e104]: "4"
+          - generic [ref=f4e105]: Communicates
+          - generic [ref=f4e106]: Each agent passes its results to the next via JSON files — independent yet interconnected
+        - generic [ref=f4e107]:
+          - generic [ref=f4e108]: "5"
+          - generic [ref=f4e109]: Adaptive
+          - generic [ref=f4e110]: Agent 2 adjusts its scoring based on context — e.g. when a student submits updated SPM grades
+  - generic [ref=f4e111]:
+    - generic [ref=f4e112]: Digital Educational Learning Initiative Malaysia • Kementerian Pendidikan Malaysia • 2026
+    - generic [ref=f4e113]: SBP IBNU KHALDUN • KELAS 5IK

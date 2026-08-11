@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>PRESTIJ — ERD</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Outfit',sans-serif;background:#EEF2F7;padding:20px}
+h1.title{font-size:16px;font-weight:700;color:#0F2057;text-align:center;margin-bottom:3px}
+p.subtitle{font-size:11px;color:#6B7280;text-align:center;margin-bottom:16px}
+
+.canvas-scroll{overflow-x:auto;padding-bottom:12px}
+.canvas{position:relative;width:980px;height:760px;margin:0 auto}
+
+/* SVG sits UNDER the tables */
+.erd-lines{position:absolute;top:0;left:0;width:980px;height:760px;pointer-events:none;z-index:0}
+
+/* Table cards sit ON TOP */
+.tbl{
+  position:absolute;border-radius:8px;overflow:hidden;
+  box-shadow:0 2px 14px rgba(0,0,0,.14);background:#fff;
+  font-size:12px;z-index:1;
+}
+.tbl-head{padding:8px 13px;display:flex;align-items:center;gap:7px}
+.tbl-head span{font-size:12px;font-weight:700;color:#fff;letter-spacing:.5px;text-transform:uppercase}
+.tbl-note{font-size:9px;color:rgba(255,255,255,.78);padding:0 13px 6px;font-style:italic}
+.tbl-body{padding:0}
+.field{display:flex;align-items:center;gap:6px;padding:5px 12px;border-bottom:1px solid #F1F5F9}
+.field:last-child{border-bottom:none}
+.ficon{font-size:12px;width:16px;text-align:center;flex-shrink:0}
+.fname{flex:1;color:#1E293B;font-weight:500;font-size:11.5px}
+.ftype{font-size:10px;color:#94A3B8;white-space:nowrap}
+.fsrc {font-size:9px;color:#10B981;font-style:italic;margin-left:3px}
+.fref {font-size:9.5px;color:#3B82F6;font-weight:600;margin-left:2px}
+.field.pk .fname{font-weight:700;color:#1E293B}
+.field.fk{background:#F8FAFF}
+.field.fk .fname{color:#2563EB}
+.tbl-footer{padding:5px 12px 8px;font-size:9px;color:#94A3B8;font-style:italic;border-top:1px solid #F1F5F9}
+
+/* Header colours */
+.h-navy {background:#1E3A5F}
+.h-teal {background:#0D7377}
+.h-green{background:#166534}
+.h-brown{background:#92400E}
+.h-purple{background:#6D28D9}
+.h-red  {background:#991B1B}
+
+/* Junction table */
+.junction{outline:2.5px dashed #DC2626;outline-offset:-1px}
+.junction .tbl-head{background:#7F1D1D}
+
+/* Legend */
+.legend{
+  display:flex;gap:18px;flex-wrap:wrap;justify-content:center;
+  background:#fff;border-radius:8px;padding:10px 18px;
+  box-shadow:0 1px 6px rgba(0,0,0,.08);margin-top:14px;
+  max-width:980px;margin-left:auto;margin-right:auto;
+}
+.leg{display:flex;align-items:center;gap:7px;font-size:11px;color:#374151}
+</style>
+</head>
+<body>
+
+<h1 class="title">&#9670; PRESTIJ — Entity Relationship Diagram</h1>
+<p class="subtitle">SBP Integrasi Kuantan, Kelas Ibnu Khaldun &nbsp;|&nbsp; 50 Pelajar &nbsp;|&nbsp; Semua table → Scholarship_Matches</p>
+
+<div class="canvas-scroll">
+<div class="canvas" id="canvas">
+
+  <!-- SVG BEHIND tables -->
+  <svg class="erd-lines" id="svg-lines" xmlns="http://www.w3.org/2000/svg"></svg>
+
+  <!-- ══ STUDENTS  (col1, top) ══ -->
+  <div class="tbl" id="t-students" style="left:10px;top:20px;width:215px">
+    <div class="tbl-head h-navy"><span>Students</span></div>
+    <div class="tbl-body">
+      <div class="field pk"><span class="ficon">🔑</span><span class="fname">id</span><span class="ftype">VARCHAR PK</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">name</span><span class="ftype">VARCHAR</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">gender</span><span class="ftype">CHAR(1)</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">gpScore</span><span class="ftype">DECIMAL</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">pajskScore</span><span class="ftype">DECIMAL</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">leadershipLevel</span><span class="ftype">VARCHAR</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">riasecType</span><span class="ftype">VARCHAR[]</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">fieldOfInterest</span><span class="ftype">VARCHAR</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">dreamCareer</span><span class="ftype">VARCHAR</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">parentCategory</span><span class="ftype">VARCHAR</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">keyAchievements</span><span class="ftype">TEXT[]</span></div>
+    </div>
+    <div class="tbl-footer">Source: output.json (Agent 1)</div>
+  </div>
+
+  <!-- ══ FAMILY_INCOME  (col1, mid) ══ -->
+  <div class="tbl" id="t-income" style="left:10px;top:410px;width:215px">
+    <div class="tbl-head h-brown"><span>Family_Income</span></div>
+    <div class="tbl-body">
+      <div class="field pk"><span class="ficon">🔑</span><span class="fname">income_id</span><span class="ftype">INT PK</span></div>
+      <div class="field fk"><span class="ficon">🔗</span><span class="fname">student_id</span><span class="fref">→ Students</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">perCapitaIncome</span><span class="ftype">DECIMAL</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">category</span><span class="ftype">ENUM</span></div>
+    </div>
+    <div class="tbl-footer">B40 / M40 / T20 &nbsp;|&nbsp; Source: Income v1</div>
+  </div>
+
+  <!-- ══ SPM_GRADES  (col2, top) ══ -->
+  <div class="tbl" id="t-spm" style="left:265px;top:10px;width:215px">
+    <div class="tbl-head h-teal"><span>SPM_Grades</span></div>
+    <div class="tbl-body">
+      <div class="field pk"><span class="ficon">🔑</span><span class="fname">grade_id</span><span class="ftype">INT PK</span></div>
+      <div class="field fk"><span class="ficon">🔗</span><span class="fname">student_id</span><span class="fref">→ Students</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">subject</span><span class="ftype">VARCHAR</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">grade</span><span class="ftype">CHAR(3)</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">gradePoint</span><span class="ftype">INT</span></div>
+    </div>
+    <div class="tbl-footer">9 rekod per pelajar &nbsp;|&nbsp; Source: SPM v4</div>
+  </div>
+
+  <!-- ══ PAJSK_DATA  (col2, mid) ══ -->
+  <div class="tbl" id="t-pajsk" style="left:265px;top:265px;width:215px">
+    <div class="tbl-head h-green"><span>PAJSK_Data</span></div>
+    <div class="tbl-body">
+      <div class="field pk"><span class="ficon">🔑</span><span class="fname">pajsk_id</span><span class="ftype">INT PK</span></div>
+      <div class="field fk"><span class="ficon">🔗</span><span class="fname">student_id</span><span class="fref">→ Students</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">markah</span><span class="ftype">DECIMAL</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">sukan</span><span class="ftype">VARCHAR</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">kelab</span><span class="ftype">VARCHAR</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">badanBeruniform</span><span class="ftype">VARCHAR</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">jawatan</span><span class="ftype">VARCHAR</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">peringkat</span><span class="ftype">VARCHAR</span></div>
+    </div>
+    <div class="tbl-footer">Source: PAJSK v3</div>
+  </div>
+
+  <!-- ══ IMK_PSYCHOMETRIC  (col2, low) ══ -->
+  <div class="tbl" id="t-imk" style="left:265px;top:530px;width:215px">
+    <div class="tbl-head h-purple"><span>IMK_Psychometric</span></div>
+    <div class="tbl-body">
+      <div class="field pk"><span class="ficon">🔑</span><span class="fname">imk_id</span><span class="ftype">INT PK</span></div>
+      <div class="field fk"><span class="ficon">🔗</span><span class="fname">student_id</span><span class="fref">→ Students</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">R / I / A / S / E / K</span><span class="ftype">INT</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">hollandCode</span><span class="ftype">CHAR(3)</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">riasecType</span><span class="ftype">VARCHAR</span></div>
+    </div>
+    <div class="tbl-footer">Source: IMK v3</div>
+  </div>
+
+  <!-- ══ SCHOLARSHIPS  (col3, top) ══ -->
+  <div class="tbl" id="t-schol" style="left:755px;top:10px;width:215px">
+    <div class="tbl-head h-navy"><span>Scholarships</span></div>
+    <div class="tbl-body">
+      <div class="field pk"><span class="ficon">🔑</span><span class="fname">id</span><span class="ftype">VARCHAR PK</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">name</span><span class="ftype">VARCHAR</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">provider</span><span class="ftype">VARCHAR</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">minSpmRequirement</span><span class="ftype">INT</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">pajskRequirement</span><span class="ftype">INT</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">preferredRiasec</span><span class="ftype">VARCHAR[]</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">preferredFields</span><span class="ftype">VARCHAR[]</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">parentCategoryRequired</span><span class="ftype">ENUM</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">bumiputeraOnly</span><span class="ftype">BOOLEAN</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">amount</span><span class="ftype">VARCHAR</span></div>
+      <div class="field">   <span class="ficon"> </span><span class="fname">deadlineDays</span><span class="ftype">INT</span></div>
+    </div>
+    <div class="tbl-footer">Source: Biasiswa v3</div>
+  </div>
+
+  <!-- ══ SCHOLARSHIP_MATCHES  (col3, bottom — JUNCTION HUB) ══ -->
+  <div class="tbl junction" id="t-match" style="left:510px;top:335px;width:460px">
+    <div class="tbl-head"><span>Scholarship_Matches</span></div>
+    <div class="tbl-note">Junction Table — Output Agent 2 &nbsp;|&nbsp; Aggregates ALL student data sources</div>
+    <div class="tbl-body" style="display:grid;grid-template-columns:1fr 1fr">
+      <div>
+        <div class="field pk"><span class="ficon">🔑</span><span class="fname">match_id</span><span class="ftype">INT PK</span></div>
+        <div class="field fk"><span class="ficon">🔗</span><span class="fname">student_id</span><span class="fref">→ Students</span></div>
+        <div class="field fk"><span class="ficon">🔗</span><span class="fname">scholarship_id</span><span class="fref">→ Scholarships</span></div>
+        <div class="field">   <span class="ficon"> </span><span class="fname">totalScore</span><span class="ftype">DECIMAL</span></div>
+        <div class="field">   <span class="ficon"> </span><span class="fname">rank</span><span class="ftype">INT</span></div>
+      </div>
+      <div>
+        <div class="field">   <span class="ficon"> </span><span class="fname">academicScore</span><span class="ftype">DECIMAL</span><span class="fsrc">← SPM</span></div>
+        <div class="field">   <span class="ficon"> </span><span class="fname">pajskScore</span><span class="ftype">DECIMAL</span><span class="fsrc">← PAJSK</span></div>
+        <div class="field">   <span class="ficon"> </span><span class="fname">riasecScore</span><span class="ftype">DECIMAL</span><span class="fsrc">← IMK</span></div>
+        <div class="field">   <span class="ficon"> </span><span class="fname">incomeCategory</span><span class="ftype">VARCHAR</span><span class="fsrc">← Income</span></div>
+        <div class="field">   <span class="ficon"> </span><span class="fname">aspirationScore</span><span class="ftype">DECIMAL</span></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /canvas -->
+</div><!-- /canvas-scroll -->
+
+<!-- Legend -->
+<div class="legend">
+  <div class="leg">🔑 Primary Key</div>
+  <div class="leg">🔗 Foreign Key</div>
+  <div class="leg">
+    <svg width="32" height="10"><line x1="0" y1="5" x2="32" y2="5" stroke="#1E3A5F" stroke-width="2"/></svg>
+    FK Relationship (1:N / 1:1)
+  </div>
+  <div class="leg">
+    <svg width="32" height="10"><line x1="0" y1="5" x2="32" y2="5" stroke="#10B981" stroke-width="2" stroke-dasharray="5,3"/></svg>
+    Data Flow ke Scholarship_Matches
+  </div>
+  <div class="leg">
+    <svg width="20" height="18"><rect x="2" y="2" width="16" height="14" fill="none" stroke="#DC2626" stroke-width="2" stroke-dasharray="4,2" rx="3"/></svg>
+    Junction Table (Hub)
+  </div>
+  <div class="leg"><span style="font-size:10px;background:#EEF2F7;padding:2px 6px;border-radius:3px;font-weight:700">1</span>&nbsp;/&nbsp;<span style="font-size:10px;background:#EEF2F7;padding:2px 6px;border-radius:3px;font-weight:700">N</span> Cardinality</div>
+</div>
+
+<script>
+const NS  = 'http://www.w3.org/2000/svg';
+const svg = document.getElementById('svg-lines');
+const cnv = document.getElementById('canvas');
+
+function box(id){
+  const r = document.getElementById(id).getBoundingClientRect();
+  const c = cnv.getBoundingClientRect();
+  return {
+    l: r.left   - c.left,
+    r: r.right  - c.left,
+    t: r.top    - c.top,
+    b: r.bottom - c.top,
+    mx:(r.left+r.right)/2  - c.left,
+    my:(r.top+r.bottom)/2  - c.top,
+    w: r.width, h: r.height
+  };
+}
+
+function mkPath(d, color, dashed, width){
+  const el = document.createElementNS(NS,'path');
+  el.setAttribute('d', d);
+  el.setAttribute('stroke', color);
+  el.setAttribute('stroke-width', width||'2');
+  el.setAttribute('fill','none');
+  el.setAttribute('stroke-linecap','round');
+  el.setAttribute('stroke-linejoin','round');
+  if(dashed) el.setAttribute('stroke-dasharray','6,4');
+  svg.appendChild(el);
+}
+
+function dot(x, y, color){
+  const el = document.createElementNS(NS,'circle');
+  el.setAttribute('cx',x); el.setAttribute('cy',y); el.setAttribute('r','3.5');
+  el.setAttribute('fill',color);
+  el.setAttribute('stroke','#EEF2F7'); el.setAttribute('stroke-width','1.5');
+  svg.appendChild(el);
+}
+
+function lbl(x, y, txt, color){
+  const tw = txt.length * 7 + 8;
+  const bg = document.createElementNS(NS,'rect');
+  bg.setAttribute('x', x-tw/2); bg.setAttribute('y', y-9);
+  bg.setAttribute('width', tw); bg.setAttribute('height', 16);
+  bg.setAttribute('rx','3');    bg.setAttribute('fill','rgba(238,242,247,0.92)');
+  svg.appendChild(bg);
+  const el = document.createElementNS(NS,'text');
+  el.setAttribute('x',x); el.setAttribute('y',y+1);
+  el.setAttribute('text-anchor','middle');
+  el.setAttribute('dominant-baseline','middle');
+  el.setAttribute('font-size','11'); el.setAttribute('font-weight','700');
+  el.setAttribute('font-family','Outfit,sans-serif');
+  el.setAttribute('fill', color||'#334155');
+  el.textContent = txt;
+  svg.appendChild(el);
+}
+
+function draw(){
+  svg.innerHTML = '';
+
+  const ST = box('t-students');
+  const IN = box('t-income');
+  const SP = box('t-spm');
+  const PJ = box('t-pajsk');
+  const IM = box('t-imk');
+  const SC = box('t-schol');
+  const MA = box('t-match');
+
+  /* ═══════════════════════════════════════════════════
+     SECTION A — Students (PK) to its child tables (FK)
+     All in col1-col2 gap
+  ═══════════════════════════════════════════════════ */
+
+  // 1. Students → SPM_Grades  (1:N, navy)
+  {
+    const x1=ST.r, y1=ST.t+55, x2=SP.l, y2=SP.t+48;
+    const mx=(x1+x2)/2;
+    mkPath(`M${x1},${y1} H${mx} V${y2} H${x2}`,'#1E3A5F');
+    dot(x1,y1,'#1E3A5F'); dot(x2,y2,'#1E3A5F');
+    lbl(x1+16,y1-12,'1','#1E3A5F');
+    lbl(x2-16,y2-12,'N','#1E3A5F');
+  }
+
+  // 2. Students → PAJSK_Data  (1:1, green)
+  {
+    const x1=ST.r, y1=ST.t+145, x2=PJ.l, y2=PJ.t+48;
+    const mx=(x1+x2)/2;
+    mkPath(`M${x1},${y1} H${mx} V${y2} H${x2}`,'#166534');
+    dot(x1,y1,'#166534'); dot(x2,y2,'#166534');
+    lbl(x1+16,y1-12,'1','#166534');
+    lbl(x2-16,y2-12,'1','#166534');
+  }
+
+  // 3. Students → Family_Income  (1:1, brown, vertical)
+  {
+    const x1=ST.l+70, y1=ST.b;
+    const x2=IN.l+70, y2=IN.t;
+    mkPath(`M${x1},${y1} V${y2}`,'#92400E');
+    dot(x1,y1,'#92400E'); dot(x2,y2,'#92400E');
+    lbl(x1+22,y1+13,'1','#92400E');
+    lbl(x2+22,y2-13,'1','#92400E');
+  }
+
+  // 4. Students → IMK_Psychometric  (1:1, purple)
+  //    Route: right side of STUDENTS → down past FAMILY_INCOME → right → IMK left
+  {
+    const x1=ST.l+145, y1=ST.b;
+    const x2=IM.l,     y2=IM.t+55;
+    const byY = IN.b + 12;
+    mkPath(`M${x1},${y1} V${byY} H${x2} V${y2}`,'#6D28D9');
+    dot(x1,y1,'#6D28D9'); dot(x2,y2,'#6D28D9');
+    lbl(x1+22,y1+13,'1','#6D28D9');
+    lbl(x2+22,y2-12,'1','#6D28D9');
+  }
+
+  /* ═══════════════════════════════════════════════════
+     SECTION B — ALL tables → Scholarship_Matches (HUB)
+     These lines travel through the col2-col3 gap (x≈480-510)
+  ═══════════════════════════════════════════════════ */
+
+  const gapX = MA.l - 14;   // col2-col3 gap x for routing
+  const hubY = MA.t + 50;   // entry point on left of MATCH (near student_id FK row)
+
+  // 5. Students → Scholarship_Matches  (student_id FK, 1:N, solid navy)
+  //    Route: right of Students → through gap → left of MATCH
+  {
+    const x1=ST.r,  y1=ST.t+220;
+    const x2=MA.l,  y2=MA.t+55;
+    const midY = PJ.b + 18;   // below PAJSK, above IMK
+    mkPath(`M${x1},${y1} H${gapX} V${midY} H${x2} V${y2}`,'#1E3A5F',false,2.5);
+    dot(x1,y1,'#1E3A5F'); dot(x2,y2,'#1E3A5F');
+    lbl(x1+16,y1-12,'1','#1E3A5F');
+    lbl(x2-16,y2-12,'N','#1E3A5F');
+  }
+
+  // 6. Scholarships → Scholarship_Matches  (scholarship_id FK, 1:N, dark red, vertical)
+  {
+    const x1=SC.l+100, y1=SC.b;
+    const x2=MA.l+100, y2=MA.t;
+    mkPath(`M${x1},${y1} V${y2}`,'#991B1B',false,2.5);
+    dot(x1,y1,'#991B1B'); dot(x2,y2,'#991B1B');
+    lbl(x1+20,y1+13,'1','#991B1B');
+    lbl(x2+20,y2-13,'N','#991B1B');
+  }
+
+  // 7. SPM_Grades → Scholarship_Matches  (academicScore data flow, dashed teal)
+  //    Route: right of SPM → gap → top area of MATCH (right side)
+  {
+    const x1=SP.r,  y1=SP.t+95;
+    const x2=MA.l,  y2=MA.t+100;
+    const rx = gapX + 8;
+    mkPath(`M${x1},${y1} H${rx} V${y2} H${x2}`,'#0D7377',true);
+    dot(x1,y1,'#0D7377'); dot(x2,y2,'#0D7377');
+    lbl(x2-18,y2-12,'N','#0D7377');
+  }
+
+  // 8. PAJSK_Data → Scholarship_Matches  (pajskScore data flow, dashed green)
+  {
+    const x1=PJ.r,  y1=PJ.t+95;
+    const x2=MA.l,  y2=MA.t+145;
+    const rx = gapX + 4;
+    mkPath(`M${x1},${y1} H${rx} V${y2} H${x2}`,'#166534',true);
+    dot(x1,y1,'#166534'); dot(x2,y2,'#166534');
+    lbl(x2-18,y2-12,'N','#166534');
+  }
+
+  // 9. IMK_Psychometric → Scholarship_Matches  (riasecScore data flow, dashed purple)
+  //    Route: right of IMK → gap → bottom of MATCH left side
+  {
+    const x1=IM.r,  y1=IM.t+55;
+    const x2=MA.l,  y2=MA.t+190;
+    const rx = gapX;
+    mkPath(`M${x1},${y1} H${rx} V${y2} H${x2}`,'#6D28D9',true);
+    dot(x1,y1,'#6D28D9'); dot(x2,y2,'#6D28D9');
+    lbl(x2-18,y2-12,'N','#6D28D9');
+  }
+
+  // 10. Family_Income → Scholarship_Matches  (incomeCategory data flow, dashed brown)
+  //     Route: right of Family_Income → gap → bottom-left of MATCH
+  {
+    const x1=IN.r,  y1=IN.t+55;
+    const x2=MA.l,  y2=MA.t+235;
+    const rx = gapX - 4;
+    mkPath(`M${x1},${y1} H${rx} V${y2} H${x2}`,'#92400E',true);
+    dot(x1,y1,'#92400E'); dot(x2,y2,'#92400E');
+    lbl(x2-18,y2-12,'N','#92400E');
+  }
+}
+
+window.addEventListener('load',  () => setTimeout(draw, 250));
+window.addEventListener('resize', () => setTimeout(draw,  80));
+</script>
+</body>
+</html>

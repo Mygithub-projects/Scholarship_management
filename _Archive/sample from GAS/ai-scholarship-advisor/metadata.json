@@ -1,0 +1,6 @@
+{
+  "name": "AI Scholarship Advisor",
+  "description": "An interactive, simulated Agentic AI-powered scholarship matching dashboard for SPM graduates, inspired by professional DELIMa styling.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

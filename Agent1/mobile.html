@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#0F172A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>DELIMa Mobile — Imbas SPM</title>
+<style>
+/* ── RESET & BASE ─────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#0F172A; --bg2:#1E293B;
+  --blue:#3B82F6; --blue-l:#60A5FA; --blue-d:#1D4ED8;
+  --gold:#F59E0B; --green:#10B981; --red:#EF4444;
+  --text:#F8FAFC; --muted:rgba(248,250,252,0.65);
+  --glass:rgba(255,255,255,0.07);
+  --glass-b:rgba(255,255,255,0.13);
+  --r:20px; --tr:all 0.32s cubic-bezier(.4,0,.2,1);
+}
+html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  -webkit-font-smoothing:antialiased;}
+
+/* ── SCREENS ─────────────────────────────────────── */
+.screen{
+  position:fixed;inset:0;
+  transform:translateX(100%);
+  transition:transform 0.35s cubic-bezier(.4,0,.2,1);
+  overflow-y:auto;overflow-x:hidden;
+  background:linear-gradient(145deg,#0F172A 0%,#1A2744 55%,#0F3060 100%);
+  padding-bottom:env(safe-area-inset-bottom,0);
+}
+.screen.active{transform:translateX(0);}
+.screen.leaving{transform:translateX(-100%);pointer-events:none;}
+#screen-camera{overflow:hidden;}
+
+/* ── GLASS ───────────────────────────────────────── */
+.glass{
+  background:var(--glass);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid var(--glass-b);border-radius:var(--r);
+}
+
+/* ── BUTTONS ─────────────────────────────────────── */
+.btn{
+  width:100%;padding:16px;border:none;cursor:pointer;
+  border-radius:50px;font-size:16px;font-weight:700;
+  letter-spacing:.3px;transition:var(--tr);
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.96);}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--blue-d));color:#fff;
+  box-shadow:0 4px 20px rgba(59,130,246,.4);}
+.btn-gold{background:linear-gradient(135deg,var(--gold),#D97706);color:#fff;
+  box-shadow:0 4px 20px rgba(245,158,11,.4);}
+.btn-ghost{background:var(--glass);border:1px solid var(--glass-b);color:var(--text);}
+.btn-sm{padding:11px 16px;font-size:14px;}
+
+/* ── INPUT ───────────────────────────────────────── */
+.inp-group{margin-bottom:16px;}
+.inp-group label{display:block;margin-bottom:6px;font-size:12px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:1px;}
+.inp-group input{
+  width:100%;padding:15px 16px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.11);
+  border-radius:14px;color:var(--text);font-size:16px;
+  outline:none;-webkit-appearance:none;transition:border-color .2s;
+}
+.inp-group input:focus{border-color:var(--blue);background:rgba(59,130,246,.08);}
+
+/* ── PROGRESS DOTS ───────────────────────────────── */
+.dots{display:flex;justify-content:center;gap:7px;margin-bottom:28px;}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.15);transition:background .3s;}
+.dot.done{background:var(--blue);}
+
+/* ══════════════════════════════════════════════════
+   SCREEN 1 — LOGIN
+══════════════════════════════════════════════════ */
+#screen-login .wrap{
+  min-height:100vh;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;padding:48px 24px;
+}
+.logo{text-align:center;margin-bottom:44px;}
+.logo-icon{font-size:62px;display:block;margin-bottom:10px;
+  filter:drop-shadow(0 0 24px rgba(59,130,246,.55));}
+.logo h1{font-size:34px;font-weight:800;letter-spacing:-1px;}
+.logo p{color:var(--muted);font-size:14px;margin-top:4px;}
+.login-card{width:100%;max-width:400px;padding:30px 24px;}
+.err{background:rgba(239,68,68,.13);border:1px solid rgba(239,68,68,.3);
+  color:#FCA5A5;padding:11px 15px;border-radius:12px;
+  font-size:14px;margin-bottom:14px;display:none;}
+.desktop-link{text-align:center;margin-top:20px;font-size:13px;color:var(--muted);}
+.desktop-link a{color:var(--blue-l);text-decoration:none;}
+
+/* ══════════════════════════════════════════════════
+   SCREEN 2 — SCANNER
+══════════════════════════════════════════════════ */
+#screen-scanner .wrap{padding:64px 24px 40px;}
+.welcome{text-align:center;margin-bottom:38px;}
+.welcome h2{font-size:22px;font-weight:700;}
+.welcome p{color:var(--muted);font-size:14px;margin-top:4px;}
+.scan-btn-wrap{display:flex;justify-content:center;margin-bottom:32px;}
+.btn-scan{
+  width:176px;height:176px;border-radius:50%;
+  background:linear-gradient(145deg,var(--blue),var(--blue-d));
+  border:none;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  box-shadow:0 0 0 0 rgba(59,130,246,.35);
+  animation:pulse 2.8s infinite;
+  -webkit-tap-highlight-color:transparent;transition:transform .15s;
+}
+.btn-scan:active{transform:scale(.91);}
+.btn-scan .s-icon{font-size:54px;}
+.btn-scan .s-lbl{color:#fff;font-size:13px;font-weight:700;margin-top:5px;letter-spacing:.3px;}
+@keyframes pulse{
+  0%  {box-shadow:0 0 0 0 rgba(59,130,246,.4);}
+  60% {box-shadow:0 0 0 22px rgba(59,130,246,0);}
+  100%{box-shadow:0 0 0 0 rgba(59,130,246,0);}
+}
+.divider{display:flex;align-items:center;gap:10px;margin:4px 0 16px;}
+.divider span{color:var(--muted);font-size:13px;white-space:nowrap;}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.1);}
+.info-row{display:flex;gap:10px;margin-top:20px;}
+.info-chip{flex:1;padding:10px 6px;border-radius:12px;text-align:center;
+  font-size:11px;color:var(--muted);}
+.info-chip span{font-size:20px;display:block;margin-bottom:3px;}
+
+/* ══════════════════════════════════════════════════
+   SCREEN 3 — CAMERA (fullscreen)
+══════════════════════════════════════════════════ */
+#screen-camera{background:#000;}
+#cam-video{width:100%;height:100%;object-fit:cover;display:block;}
+.cam-ui{position:absolute;inset:0;display:flex;flex-direction:column;
+  justify-content:space-between;
+  padding:calc(env(safe-area-inset-top,0) + 20px) 24px
+          calc(env(safe-area-inset-bottom,0) + 36px);}
+.cam-close{
+  align-self:flex-start;width:44px;height:44px;border-radius:50%;
+  background:rgba(0,0,0,.55);border:none;color:#fff;font-size:20px;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  -webkit-tap-highlight-color:transparent;
+}
+.cam-hint{
+  align-self:center;
+  background:rgba(0,0,0,.55);border-radius:50px;
+  padding:8px 18px;font-size:13px;color:#fff;
+}
+/* Corner guide brackets */
+.cam-frame{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-58%);
+  width:min(78vw,310px);height:min(52vw,206px);
+  pointer-events:none;
+}
+.cam-frame::before,.cam-frame::after,
+.cam-frame .c2::before,.cam-frame .c2::after{
+  content:'';position:absolute;width:26px;height:26px;
+  border-color:rgba(59,130,246,.9);border-style:solid;
+}
+.cam-frame::before{top:0;left:0;border-width:3px 0 0 3px;border-radius:6px 0 0 0;}
+.cam-frame::after {top:0;right:0;border-width:3px 3px 0 0;border-radius:0 6px 0 0;}
+.cam-frame .c2::before{bottom:0;left:0;border-width:0 0 3px 3px;border-radius:0 0 0 6px;}
+.cam-frame .c2::after {bottom:0;right:0;border-width:0 3px 3px 0;border-radius:0 0 6px 0;}
+.cam-capture{
+  align-self:center;
+  width:74px;height:74px;border-radius:50%;
+  background:#fff;border:5px solid rgba(255,255,255,.35);
+  cursor:pointer;-webkit-tap-highlight-color:transparent;
+  transition:transform .1s;
+}
+.cam-capture:active{transform:scale(.88);}
+
+/* ══════════════════════════════════════════════════
+   SCREEN 4 — OCR REVIEW
+══════════════════════════════════════════════════ */
+#screen-review .wrap{padding:60px 24px 100px;}
+.rev-hdr{margin-bottom:20px;}
+.rev-hdr h2{font-size:24px;font-weight:800;}
+.rev-hdr p{color:var(--muted);font-size:14px;margin-top:4px;}
+#rev-img{width:100%;max-height:170px;object-fit:cover;border-radius:14px;margin-bottom:18px;}
+.section-lbl{font-size:12px;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:1px;margin-bottom:9px;}
+.tbl-wrap{border-radius:14px;overflow:hidden;margin-bottom:10px;}
+.subj-tbl{width:100%;border-collapse:collapse;}
+.subj-tbl th{text-align:left;padding:9px 14px;font-size:11px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.5px;
+  border-bottom:1px solid rgba(255,255,255,.09);}
+.subj-tbl td{padding:8px 14px;border-bottom:1px solid rgba(255,255,255,.05);}
+.subj-tbl tr:last-child td{border-bottom:none;}
+.subj-inp{background:transparent;border:none;color:var(--text);font-size:14px;
+  width:100%;outline:none;padding:2px 4px;}
+.subj-inp:focus{background:rgba(255,255,255,.05);border-radius:5px;}
+.grade-sel{
+  background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3);
+  border-radius:8px;color:var(--text);font-size:14px;font-weight:700;
+  padding:4px 8px;cursor:pointer;-webkit-appearance:none;outline:none;
+}
+.sticky{
+  position:fixed;bottom:0;left:0;right:0;
+  padding:14px 24px calc(14px + env(safe-area-inset-bottom,0));
+  background:linear-gradient(to top,#0F172A 65%,transparent);
+}
+
+/* ══════════════════════════════════════════════════
+   SCREEN 5 — MATCHING PROGRESS
+══════════════════════════════════════════════════ */
+#screen-matching .wrap{
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;padding:40px 24px;
+}
+.match-title{text-align:center;margin-bottom:36px;}
+.match-title h2{font-size:26px;font-weight:800;}
+.match-title p{color:var(--muted);font-size:14px;margin-top:5px;}
+.spinner-ring{
+  width:96px;height:96px;margin:0 auto 36px;border-radius:50%;
+  background:conic-gradient(var(--blue) 0%,transparent 55%);
+  animation:spin 1.4s linear infinite;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 36px rgba(59,130,246,.3);
+}
+.spinner-inner{
+  width:72px;height:72px;border-radius:50%;
+  background:#0F172A;
+  display:flex;align-items:center;justify-content:center;
+  font-size:32px;
+  animation:counter-spin 1.4s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg);}}
+@keyframes counter-spin{to{transform:rotate(-360deg);}}
+.steps{width:100%;max-width:340px;}
+.step{display:flex;align-items:center;gap:13px;padding:12px 15px;
+  border-radius:13px;margin-bottom:7px;transition:var(--tr);font-size:14px;}
+.step.active{background:rgba(59,130,246,.13);border:1px solid rgba(59,130,246,.28);}
+.step.done  {background:rgba(16,185,129,.09); border:1px solid rgba(16,185,129,.18);color:var(--muted);}
+.step-ic{font-size:19px;width:26px;text-align:center;flex-shrink:0;}
+@keyframes spin2{to{transform:rotate(360deg);}}
+.rotating{display:inline-block;animation:spin2 1s linear infinite;}
+
+/* ══════════════════════════════════════════════════
+   SCREEN 6 — RESULTS
+══════════════════════════════════════════════════ */
+#screen-results .wrap{padding:60px 24px 40px;}
+.res-hdr{text-align:center;margin-bottom:20px;}
+.res-hdr h2{font-size:22px;font-weight:800;}
+.res-hdr p{color:var(--muted);font-size:13px;margin-top:3px;}
+/* Score ring */
+.ring-wrap{display:flex;justify-content:center;margin-bottom:22px;}
+.ring{
+  width:126px;height:126px;border-radius:50%;
+  background:conic-gradient(var(--blue) 0deg,rgba(59,130,246,.1) 0deg);
+  display:flex;align-items:center;justify-content:center;
+  transition:background 1.2s ease;
+  box-shadow:0 0 32px rgba(59,130,246,.2);
+}
+.ring-hole{
+  width:94px;height:94px;border-radius:50%;
+  background:#0F172A;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+}
+.ring-num{font-size:28px;font-weight:800;color:var(--blue-l);}
+.ring-lbl{font-size:10px;color:var(--muted);letter-spacing:1px;}
+/* Meta badges */
+.meta-row{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;margin-bottom:20px;}
+.mbadge{padding:5px 13px;border-radius:50px;font-size:12px;font-weight:600;}
+.mb-blue {background:rgba(59,130,246,.18);color:var(--blue-l);}
+.mb-gold {background:rgba(245,158,11,.18);color:#FCD34D;}
+.mb-green{background:rgba(16,185,129,.18);color:#6EE7B7;}
+/* AI box */
+.ai-box{background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.2);
+  border-radius:14px;padding:16px;margin-bottom:20px;}
+.ai-lbl{font-size:11px;font-weight:700;color:var(--blue-l);
+  text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+.ai-box p{font-size:14px;line-height:1.6;}
+/* Section heading */
+.sec-title{font-size:17px;font-weight:700;margin-bottom:13px;}
+/* Scholarship card */
+.sch-card{background:var(--glass);border:1px solid var(--glass-b);
+  border-radius:var(--r);padding:18px;margin-bottom:13px;transition:var(--tr);}
+.sch-card:active{transform:scale(.98);}
+.rank-badge{display:inline-flex;align-items:center;justify-content:center;
+  width:27px;height:27px;border-radius:50%;font-size:12px;font-weight:800;
+  margin-bottom:9px;}
+.r1{background:linear-gradient(135deg,#F59E0B,#D97706);color:#fff;}
+.r2{background:linear-gradient(135deg,#94A3B8,#64748B);color:#fff;}
+.r3{background:linear-gradient(135deg,#CD7C2F,#92400E);color:#fff;}
+.rn{background:rgba(255,255,255,.1);color:var(--muted);}
+.sch-name{font-size:15px;font-weight:700;margin-bottom:4px;line-height:1.3;}
+.sch-org {font-size:13px;color:var(--muted);margin-bottom:10px;}
+.score-row{display:flex;align-items:center;gap:9px;margin-bottom:8px;}
+.bar-bg{flex:1;height:7px;background:rgba(255,255,255,.08);border-radius:50px;overflow:hidden;}
+.bar-fg{height:100%;border-radius:50px;
+  background:linear-gradient(90deg,var(--blue),#06B6D4);
+  width:0%;transition:width 1s ease;}
+.score-pct{font-size:13px;font-weight:700;color:var(--blue-l);white-space:nowrap;}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0;}
+.tag{padding:3px 10px;border-radius:50px;font-size:11px;font-weight:600;}
+.t-full {background:rgba(16,185,129,.18);color:#6EE7B7;}
+.t-b40  {background:rgba(245,158,11,.18);color:#FCD34D;}
+.t-open {background:rgba(59,130,246,.18);color:var(--blue-l);}
+.sch-reason{font-size:13px;color:var(--muted);line-height:1.55;
+  border-top:1px solid rgba(255,255,255,.07);padding-top:9px;margin-top:7px;}
+.deadline{font-size:12px;color:#FCD34D;margin-top:5px;}
+
+/* ── LOADING OVERLAY ─────────────────────────────── */
+#overlay{
+  display:none;position:fixed;inset:0;z-index:200;
+  background:rgba(15,23,42,.88);backdrop-filter:blur(10px);
+  flex-direction:column;align-items:center;justify-content:center;gap:16px;
+}
+#overlay.on{display:flex;}
+.ov-spin{
+  width:52px;height:52px;
+  border:3px solid rgba(59,130,246,.2);border-top-color:var(--blue);
+  border-radius:50%;animation:spin 0.75s linear infinite;
+}
+.ov-txt{font-size:16px;font-weight:600;}
+.ov-sub{font-size:13px;color:var(--muted);}
+
+/* ── TOAST ───────────────────────────────────────── */
+#toast{
+  display:none;position:fixed;
+  bottom:calc(28px + env(safe-area-inset-bottom,0));
+  left:50%;transform:translateX(-50%);z-index:300;
+  white-space:nowrap;
+  background:rgba(15,23,42,.95);border:1px solid rgba(255,255,255,.14);
+  border-radius:50px;padding:11px 20px;font-size:14px;font-weight:500;
+}
+#toast.on{display:block;}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════
+     SCREEN 1 — LOGIN
+════════════════════════════════════════════════ -->
+<div id="screen-login" class="screen active">
+  <div class="wrap">
+    <div class="logo">
+      <span class="logo-icon">🎓</span>
+      <h1>DELIMa</h1>
+      <p>Sistem Padanan Biasiswa AI</p>
+    </div>
+    <div class="glass login-card">
+      <div id="login-err" class="err"></div>
+      <div class="inp-group">
+        <label>ID Pelajar</label>
+        <input id="inp-id" type="text" placeholder="cth: SBP5IK001"
+          autocomplete="username" autocapitalize="characters" spellcheck="false">
+      </div>
+      <div class="inp-group">
+        <label>Kata Laluan</label>
+        <input id="inp-pw" type="password" placeholder="Masukkan kata laluan"
+          autocomplete="current-password">
+      </div>
+      <button class="btn btn-primary" id="btn-login" onclick="doLogin()">Log Masuk</button>
+    </div>
+    <div class="desktop-link">
+      Versi desktop: <a href="/">Portal Utama DELIMa</a>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     SCREEN 2 — SCANNER HOME
+════════════════════════════════════════════════ -->
+<div id="screen-scanner" class="screen">
+  <div class="wrap">
+    <div class="dots" id="dots-scanner">
+      <div class="dot done"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+    <div class="welcome">
+      <h2 id="welcome-name">Selamat Datang</h2>
+      <p>Imbas slip keputusan SPM anda</p>
+    </div>
+    <div class="scan-btn-wrap">
+      <button class="btn-scan" onclick="openCamera()">
+        <span class="s-icon">📷</span>
+        <span class="s-lbl">Imbas Slip SPM</span>
+      </button>
+    </div>
+    <div class="divider"><span>atau</span></div>
+    <button class="btn btn-ghost" onclick="triggerGallery()" style="margin-bottom:10px">
+      🖼️ &nbsp;Muat Naik dari Galeri
+    </button>
+    <div class="info-row">
+      <div class="glass info-chip"><span>🔒</span>Data Selamat</div>
+      <div class="glass info-chip"><span>⚡</span>Analisis Pantas</div>
+      <div class="glass info-chip"><span>🎯</span>Padanan Tepat</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     SCREEN 3 — CAMERA
+════════════════════════════════════════════════ -->
+<div id="screen-camera" class="screen">
+  <video id="cam-video" playsinline autoplay muted></video>
+  <div class="cam-frame"><div class="c2"></div></div>
+  <div class="cam-ui">
+    <button class="cam-close" onclick="closeCamera()">✕</button>
+    <div class="cam-hint">📄 Letakkan slip SPM dalam bingkai</div>
+    <button class="cam-capture" id="btn-capture" onclick="capturePhoto()"></button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     SCREEN 4 — OCR REVIEW
+════════════════════════════════════════════════ -->
+<div id="screen-review" class="screen">
+  <div class="wrap">
+    <div class="dots">
+      <div class="dot done"></div><div class="dot done"></div>
+      <div class="dot"></div><div class="dot"></div>
+    </div>
+    <div class="rev-hdr">
+      <h2>Semak Keputusan</h2>
+      <p>AI telah mengimbas slip anda. Betulkan jika perlu.</p>
+    </div>
+    <img id="rev-img" src="" alt="Slip SPM">
+    <div class="section-lbl" style="margin-top:16px">Maklumat Pelajar</div>
+    <div class="inp-group" style="margin-bottom:10px">
+      <input id="ocr-name" type="text" placeholder="Nama penuh pelajar"
+        style="text-transform:uppercase">
+    </div>
+    <div class="inp-group" style="margin-bottom:18px">
+      <input id="ocr-ic" type="text" placeholder="No. IC (jika ada)">
+    </div>
+    <div class="section-lbl">Keputusan SPM</div>
+    <div class="glass tbl-wrap">
+      <table class="subj-tbl">
+        <thead>
+          <tr>
+            <th>Mata Pelajaran</th>
+            <th style="width:80px">Gred</th>
+          </tr>
+        </thead>
+        <tbody id="subj-body"></tbody>
+      </table>
+    </div>
+    <button class="btn btn-ghost btn-sm" onclick="addRow()" style="margin-bottom:8px">
+      + Tambah Subjek
+    </button>
+    <div style="height:90px"></div>
+  </div>
+  <div class="sticky">
+    <button class="btn btn-gold" id="btn-confirm" onclick="confirmMatch()">
+      🚀 &nbsp;Mula Padanan Biasiswa
+    </button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     SCREEN 5 — MATCHING
+════════════════════════════════════════════════ -->
+<div id="screen-matching" class="screen">
+  <div class="wrap">
+    <div class="dots">
+      <div class="dot done"></div><div class="dot done"></div>
+      <div class="dot done"></div><div class="dot" id="dot-match"></div>
+    </div>
+    <div class="match-title">
+      <h2>Sedang Menganalisis</h2>
+      <p>AI sedang memproses profil anda...</p>
+    </div>
+    <div class="spinner-ring">
+      <div class="spinner-inner">🧠</div>
+    </div>
+    <div class="steps" id="steps-list">
+      <div class="step active" id="step-1"><span class="step-ic"><span class="rotating">⟳</span></span><span>Profiling akademik SPM...</span></div>
+      <div class="step" id="step-2"><span class="step-ic">⏳</span><span>Menilai skor kokurikulum...</span></div>
+      <div class="step" id="step-3"><span class="step-ic">⏳</span><span>Mencari biasiswa yang sepadan...</span></div>
+      <div class="step" id="step-4"><span class="step-ic">⏳</span><span>Analisis kelayakan AI...</span></div>
+      <div class="step" id="step-5"><span class="step-ic">⏳</span><span>Menjana pengesyoran akhir...</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     SCREEN 6 — RESULTS
+════════════════════════════════════════════════ -->
+<div id="screen-results" class="screen">
+  <div class="wrap">
+    <div class="dots">
+      <div class="dot done"></div><div class="dot done"></div>
+      <div class="dot done"></div><div class="dot done"></div>
+    </div>
+    <div class="res-hdr">
+      <h2 id="res-name">Hasil Padanan</h2>
+      <p id="res-sub"></p>
+    </div>
+    <div class="ring-wrap">
+      <div class="ring" id="score-ring">
+        <div class="ring-hole">
+          <div class="ring-num" id="score-num">—</div>
+          <div class="ring-lbl">SKOR</div>
+        </div>
+      </div>
+    </div>
+    <div class="meta-row" id="meta-row"></div>
+    <div class="ai-box" id="ai-box" style="display:none">
+      <div class="ai-lbl">🧠 Analisis AI</div>
+      <p id="ai-text"></p>
+    </div>
+    <div class="sec-title">Biasiswa Terbaik Untuk Anda</div>
+    <div id="sch-cards"></div>
+    <button class="btn btn-ghost btn-sm" onclick="scanAgain()" style="margin-top:4px">
+      🔄 &nbsp;Imbas Semula
+    </button>
+    <div style="height:24px"></div>
+  </div>
+</div>
+
+<!-- Hidden file inputs -->
+<input type="file" id="file-camera"  accept="image/*" capture="environment" hidden>
+<input type="file" id="file-gallery" accept="image/*" hidden>
+
+<!-- Loading overlay -->
+<div id="overlay">
+  <div class="ov-spin"></div>
+  <div class="ov-txt" id="ov-txt">Sila tunggu...</div>
+  <div class="ov-sub" id="ov-sub"></div>
+</div>
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<script>
+'use strict';
+// ════════════════════════════════════════════════
+//  STATE
+// ════════════════════════════════════════════════
+const S = {
+  id: null, profile: null,
+  imgB64: null, imgDataUrl: null,
+  ocr: null,
+  result: null,
+  stream: null,
+  poll: null,
+  stepIdx: 0,
+};
+
+// ════════════════════════════════════════════════
+//  NAVIGATION
+// ════════════════════════════════════════════════
+function go(name) {
+  const curr = document.querySelector('.screen.active');
+  const next = document.getElementById('screen-' + name);
+  if (!next || next === curr) return;
+  if (curr) {
+    curr.classList.add('leaving');
+    curr.addEventListener('transitionend', () => curr.classList.remove('active','leaving'), { once: true });
+  }
+  next.classList.add('active');
+  next.scrollTop = 0;
+}
+
+// ════════════════════════════════════════════════
+//  LOADING & TOAST
+// ════════════════════════════════════════════════
+function showLoading(txt, sub) {
+  document.getElementById('ov-txt').textContent = txt || 'Sila tunggu...';
+  document.getElementById('ov-sub').textContent = sub || '';
+  document.getElementById('overlay').classList.add('on');
+}
+function hideLoading() { document.getElementById('overlay').classList.remove('on'); }
+
+let toastTimer;
+function toast(msg, ms = 3500) {
+  const el = document.getElementById('toast');
+  el.textContent = msg; el.classList.add('on');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('on'), ms);
+}
+
+// ════════════════════════════════════════════════
+//  SCREEN 1 — LOGIN
+// ════════════════════════════════════════════════
+async function doLogin() {
+  const id = document.getElementById('inp-id').value.trim().toUpperCase();
+  const pw = document.getElementById('inp-pw').value.trim();
+  if (!id || !pw) { loginErr('Sila masukkan ID dan kata laluan.'); return; }
+
+  const btn = document.getElementById('btn-login');
+  btn.textContent = 'Mengesahkan...'; btn.disabled = true;
+
+  try {
+    const r = await fetch('/login', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ id, password: pw }),
+    });
+    const d = await r.json();
+    if (!r.ok) { loginErr(d.error || 'Log masuk gagal.'); return; }
+    S.id = id; S.profile = d.profile;
+    document.getElementById('welcome-name').textContent =
+      'Salam, ' + (d.profile.name || id).split(' ')[0] + '!';
+    go('scanner');
+  } catch { loginErr('Gagal menghubungi pelayan. Cuba semula.'); }
+  finally { btn.textContent = 'Log Masuk'; btn.disabled = false; }
+}
+function loginErr(msg) {
+  const el = document.getElementById('login-err');
+  el.textContent = msg; el.style.display = 'block';
+}
+document.getElementById('inp-pw').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+
+// ════════════════════════════════════════════════
+//  SCREEN 2 — SCANNER
+// ════════════════════════════════════════════════
+async function openCamera() {
+  if (!navigator.mediaDevices?.getUserMedia) { document.getElementById('file-camera').click(); return; }
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: { ideal: 'environment' }, width: { ideal: 1920 }, height: { ideal: 1080 } }
+    });
+    S.stream = stream;
+    const vid = document.getElementById('cam-video');
+    vid.srcObject = stream;
+    await vid.play();
+    go('camera');
+  } catch { document.getElementById('file-camera').click(); }
+}
+function triggerGallery() { document.getElementById('file-gallery').click(); }
+
+// ════════════════════════════════════════════════
+//  SCREEN 3 — CAMERA
+// ════════════════════════════════════════════════
+function closeCamera() { stopStream(); go('scanner'); }
+function stopStream() {
+  S.stream?.getTracks().forEach(t => t.stop());
+  S.stream = null;
+}
+function capturePhoto() {
+  const vid = document.getElementById('cam-video');
+  const c = document.createElement('canvas');
+  c.width = vid.videoWidth || 1280; c.height = vid.videoHeight || 720;
+  c.getContext('2d').drawImage(vid, 0, 0);
+  stopStream();
+  processCanvas(c);
+}
+
+// File inputs
+function fileToCanvas(file, cb) {
+  const reader = new FileReader();
+  reader.onload = ev => {
+    const img = new Image();
+    img.onload = () => {
+      const c = document.createElement('canvas');
+      c.width = img.naturalWidth; c.height = img.naturalHeight;
+      c.getContext('2d').drawImage(img, 0, 0);
+      cb(c);
+    };
+    img.src = ev.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+document.getElementById('file-camera').addEventListener('change', function(e) {
+  const f = e.target.files[0]; if (!f) return;
+  fileToCanvas(f, processCanvas); this.value = '';
+});
+document.getElementById('file-gallery').addEventListener('change', function(e) {
+  const f = e.target.files[0]; if (!f) return;
+  fileToCanvas(f, processCanvas); this.value = '';
+});
+
+// Image preprocessing
+function clamp(v) { return Math.min(255, Math.max(0, Math.round(v))); }
+function processCanvas(canvas) {
+  const MAX = 1400;
+  let { width: w, height: h } = canvas;
+  if (w > MAX || h > MAX) {
+    const r = Math.min(MAX/w, MAX/h);
+    const c2 = document.createElement('canvas');
+    c2.width = Math.round(w * r); c2.height = Math.round(h * r);
+    c2.getContext('2d').drawImage(canvas, 0, 0, c2.width, c2.height);
+    canvas = c2;
+  }
+  // Enhance contrast & brightness for better OCR
+  const ctx = canvas.getContext('2d');
+  const id  = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const d   = id.data;
+  for (let i = 0; i < d.length; i += 4) {
+    d[i]   = clamp(1.18 * (d[i]   - 128) + 128 + 12);
+    d[i+1] = clamp(1.18 * (d[i+1] - 128) + 128 + 12);
+    d[i+2] = clamp(1.18 * (d[i+2] - 128) + 128 + 12);
+  }
+  ctx.putImageData(id, 0, 0);
+  S.imgDataUrl = canvas.toDataURL('image/jpeg', 0.83);
+  S.imgB64     = S.imgDataUrl.split(',')[1];
+  doOCR();
+}
+
+// ════════════════════════════════════════════════
+//  OCR
+// ════════════════════════════════════════════════
+const OCR_STEPS = [
+  'Memuat naik imej...','Membaca slip SPM...','Mengekstrak subjek & gred...',
+];
+async function doOCR() {
+  let si = 0;
+  showLoading(OCR_STEPS[0]);
+  const t = setInterval(() => { si = (si+1) % OCR_STEPS.length; document.getElementById('ov-txt').textContent = OCR_STEPS[si]; }, 1900);
+  try {
+    const r = await fetch('/ocr-spm', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ image: S.imgB64, mimeType:'image/jpeg', studentId: S.id }),
+    });
+    const d = await r.json();
+    if (!r.ok || !d.ok) throw new Error(d.error || 'OCR gagal.');
+    S.ocr = d.extracted;
+    showReview();
+  } catch(e) {
+    toast('❌ ' + e.message, 6000);
+    go('scanner');
+  } finally { clearInterval(t); hideLoading(); }
+}
+
+// ════════════════════════════════════════════════
+//  SCREEN 4 — OCR REVIEW
+// ════════════════════════════════════════════════
+const GRADES = ['A+','A','A-','B+','B','C+','C','D','E','G'];
+
+function showReview() {
+  document.getElementById('rev-img').src = S.imgDataUrl;
+  document.getElementById('ocr-name').value = (S.ocr.name || '').toUpperCase();
+  document.getElementById('ocr-ic').value   = S.ocr.ic || '';
+  const tbody = document.getElementById('subj-body');
+  tbody.innerHTML = '';
+  (S.ocr.subjects || []).forEach(s => addRow(s.subject, s.grade));
+  go('review');
+}
+function addRow(subj = '', grade = 'A') {
+  const tbody = document.getElementById('subj-body');
+  const tr = document.createElement('tr');
+  const opts = GRADES.map(g => `<option${g===grade?' selected':''}>${g}</option>`).join('');
+  tr.innerHTML = `<td><input class="subj-inp" type="text" value="${esc(subj)}" placeholder="Nama subjek"></td>
+    <td><select class="grade-sel">${opts}</select></td>`;
+  tbody.appendChild(tr);
+}
+function esc(s) { return (s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function getSubjects() {
+  return [...document.getElementById('subj-body').rows].map(r => ({
+    subject: r.querySelector('.subj-inp')?.value.trim(),
+    grade:   r.querySelector('.grade-sel')?.value,
+  })).filter(s => s.subject && s.grade);
+}
+
+// ════════════════════════════════════════════════
+//  MATCHING
+// ════════════════════════════════════════════════
+async function confirmMatch() {
+  const subjects = getSubjects();
+  if (subjects.length === 0) { toast('Sila masukkan sekurang-kurangnya 1 subjek.'); return; }
+  const btn = document.getElementById('btn-confirm');
+  btn.textContent = 'Memulakan...'; btn.disabled = true;
+  try {
+    await fetch('/start-match', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ id: S.id, spmSubjects: subjects }),
+    });
+    resetSteps();
+    go('matching');
+    startPoll();
+  } catch(e) {
+    toast('❌ Gagal memulakan: ' + e.message, 5000);
+    btn.textContent = '🚀  Mula Padanan Biasiswa'; btn.disabled = false;
+  }
+}
+
+const STEP_KW = [
+  ['profil','academic','spm','markah','grade'],
+  ['pajsk','kokurikulum','co-curr','cocurr'],
+  ['biasiswa','scholarship','match','padanan'],
+  ['kelayak','eligib','income','b40','analys'],
+  ['pengesyor','recommend','final','laporan','done'],
+];
+function startPoll() {
+  S.stepIdx = 0;
+  clearInterval(S.poll);
+  S.poll = setInterval(async () => {
+    try {
+      const r = await fetch(`/match-status?id=${S.id}`);
+      const d = await r.json();
+      advanceSteps(d.logs || [], d.status);
+      if (d.status === 'done') {
+        clearInterval(S.poll);
+        const res = await fetch(`/match-result?id=${S.id}`).then(r => r.json());
+        S.result = res;
+        document.getElementById('dot-match').classList.add('done');
+        // Finish all steps visually
+        for (let i = 1; i <= 5; i++) markStep(i, 'done');
+        setTimeout(showResults, 700);
+      } else if (d.status === 'error' || d.status === 'spm_required') {
+        clearInterval(S.poll);
+        toast('❌ Padanan gagal. Cuba semula.', 5000);
+        go('review');
+      }
+    } catch { /* retry */ }
+  }, 2500);
+}
+function advanceSteps(logs, status) {
+  const joined = logs.join(' ').toLowerCase();
+  for (let i = 0; i < STEP_KW.length; i++) {
+    const hit = STEP_KW[i].some(kw => joined.includes(kw));
+    if (hit && i >= S.stepIdx) {
+      for (let j = 0; j <= i; j++) markStep(j+1, 'done');
+      if (i + 1 < 5) markStep(i+2, 'active');
+      S.stepIdx = i + 1;
+    }
+  }
+}
+function markStep(n, state) {
+  const el = document.getElementById('step-' + n);
+  if (!el) return;
+  el.classList.remove('active','done');
+  if (state === 'done')   { el.classList.add('done');   el.querySelector('.step-ic').textContent = '✅'; }
+  if (state === 'active') { el.classList.add('active'); el.querySelector('.step-ic').innerHTML = '<span class="rotating">⟳</span>'; }
+}
+function resetSteps() {
+  for (let i = 1; i <= 5; i++) {
+    const el = document.getElementById('step-' + i);
+    if (!el) continue;
+    el.classList.remove('active','done');
+    el.querySelector('.step-ic').innerHTML = i === 1 ? '<span class="rotating">⟳</span>' : '⏳';
+    if (i === 1) el.classList.add('active');
+  }
+}
+
+// ════════════════════════════════════════════════
+//  SCREEN 6 — RESULTS
+// ════════════════════════════════════════════════
+function showResults() {
+  const r = S.result || {};
+  const ms = r.matches || [];
+  const p  = S.profile || {};
+
+  document.getElementById('res-name').textContent =
+    (p.name ? p.name.split(' ')[0] : 'Pelajar') + ' — Hasil Padanan';
+  document.getElementById('res-sub').textContent =
+    ms.length + ' biasiswa sesuai dijumpai';
+
+  // Score ring
+  const topScore = ms.length ? Math.round(Math.min(100, ms[0].totalScore || 0)) : 0;
+  animateRing(topScore);
+
+  // Meta badges
+  const meta = document.getElementById('meta-row');
+  meta.innerHTML = '';
+  if (p.parentCategory) meta.innerHTML += `<span class="mbadge ${p.parentCategory==='B40'?'mb-gold':'mb-blue'}">${p.parentCategory}</span>`;
+  if (p.hollandCode)    meta.innerHTML += `<span class="mbadge mb-blue">${p.hollandCode}</span>`;
+  const spmSum = spmSummary();
+  if (spmSum) meta.innerHTML += `<span class="mbadge mb-green">${spmSum}</span>`;
+
+  // AI reasoning
+  const reasoning = buildReasoning(ms, p);
+  if (reasoning) {
+    document.getElementById('ai-text').textContent = reasoning;
+    document.getElementById('ai-box').style.display = 'block';
+  }
+
+  // Cards
+  const cont = document.getElementById('sch-cards');
+  cont.innerHTML = '';
+  if (ms.length === 0) {
+    cont.innerHTML = '<div class="glass" style="padding:22px;text-align:center;color:var(--muted)">Tiada padanan ditemui.<br>Cuba semula dengan data SPM yang lebih lengkap.</div>';
+  } else {
+    ms.slice(0, 6).forEach((m, i) => cont.appendChild(makeCard(m, i)));
+  }
+
+  go('results');
+}
+
+function spmSummary() {
+  const s = S.ocr?.subjects || [];
+  if (!s.length) return null;
+  const aPlus = s.filter(x => x.grade === 'A+').length;
+  const aAll  = s.filter(x => ['A+','A','A-'].includes(x.grade)).length;
+  return aPlus > 0 ? `${aPlus}A+ ${aAll}A` : `${aAll}A`;
+}
+
+function buildReasoning(matches, profile) {
+  if (!matches.length) return null;
+  const top = matches[0];
+  if (top.reason || top.matchReason) return top.reason || top.matchReason;
+  const first = (profile.name || 'Anda').split(' ')[0];
+  const sum   = spmSummary();
+  const b40note = profile.parentCategory === 'B40'
+    ? ' Sebagai pelajar kategori B40, anda layak untuk biasiswa khas yang mengutamakan keluarga berpendapatan rendah.'
+    : '';
+  return `Berdasarkan keputusan SPM anda${sum ? ` (${sum})` : ''}, anda amat sesuai untuk pelbagai biasiswa dalam sistem DELIMa.${b40note} Padanan terbaik anda ialah "${top.scholarshipName || 'biasiswa pertama'}" dengan skor kesesuaian ${Math.round(Math.min(100, top.totalScore || 0))}%.`;
+}
+
+function makeCard(m, i) {
+  const card  = document.createElement('div');
+  card.className = 'sch-card glass';
+  const rc    = ['r1','r2','r3','rn'][Math.min(i,3)];
+  const score = Math.round(Math.min(100, m.totalScore || 0));
+  const tags  = [];
+  if (m.tajaan_penuh || m.tajana_penuh) tags.push('<span class="tag t-full">Tajaan Penuh</span>');
+  if (m.b40Only || String(m.eligibility||'').toLowerCase().includes('b40')) tags.push('<span class="tag t-b40">B40</span>');
+  const deadlineHtml = m.deadline ? `<div class="deadline">⏰ ${esc(m.deadline)}</div>` : '';
+  const reason = m.reason || m.matchReason || '';
+  card.innerHTML = `
+    <span class="rank-badge ${rc}">${i+1}</span>
+    <div class="sch-name">${esc(m.scholarshipName || m.nama_biasiswa || '—')}</div>
+    <div class="sch-org">${esc(m.penganjur || m.organiser || '')}</div>
+    ${tags.length ? `<div class="tags">${tags.join('')}</div>` : ''}
+    <div class="score-row">
+      <div class="bar-bg"><div class="bar-fg" data-w="${score}%"></div></div>
+      <span class="score-pct">${score}%</span>
+    </div>
+    ${deadlineHtml}
+    ${reason ? `<div class="sch-reason">💡 ${esc(reason)}</div>` : ''}
+  `;
+  setTimeout(() => {
+    const bar = card.querySelector('.bar-fg');
+    if (bar) bar.style.width = bar.dataset.w;
+  }, 80 + i * 130);
+  return card;
+}
+
+function animateRing(pct) {
+  const ring   = document.getElementById('score-ring');
+  const numEl  = document.getElementById('score-num');
+  const deg    = Math.round((pct / 100) * 360);
+  ring.style.background = `conic-gradient(var(--blue) ${deg}deg, rgba(59,130,246,.1) ${deg}deg)`;
+  let n = 0;
+  const inc = Math.ceil(pct / 45);
+  const t = setInterval(() => {
+    n = Math.min(n + inc, pct);
+    numEl.textContent = n + '%';
+    if (n >= pct) clearInterval(t);
+  }, 28);
+}
+
+function scanAgain() {
+  S.imgB64 = null; S.imgDataUrl = null; S.ocr = null; S.result = null; S.stepIdx = 0;
+  document.getElementById('ai-box').style.display = 'none';
+  resetSteps();
+  go('scanner');
+}
+
+// ════════════════════════════════════════════════
+//  INIT
+// ════════════════════════════════════════════════
+window.addEventListener('load', () => { setTimeout(() => document.getElementById('inp-id').focus(), 300); });
+</script>
+</body>
+</html>
