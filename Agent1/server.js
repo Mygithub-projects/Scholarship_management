@@ -95,6 +95,7 @@ const db = new Pool({
   database: process.env.PG_DATABASE || 'sekolah_5ik',
   user:     process.env.PG_USER     || 'postgres',
   password: process.env.PG_PASSWORD || '',
+  options:  process.env.PG_SCHEMA ? `--search_path=${process.env.PG_SCHEMA}` : undefined,
 });
 db.connect()
   .then(async () => {
