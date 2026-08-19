@@ -44,7 +44,8 @@ ENV PATH="/opt/venv/bin:$PATH"
 COPY Agent1/ ./Agent1/
 COPY Agent2/ ./Agent2/
 COPY Agent3/ ./Agent3/
-COPY scrape_scholarships.py ./
+COPY Agent1/scrape_scholarships.py ./Agent1/
+# COPY scrape_scholarships.py ./
 
 # ------------------------------------------------------------
 # Application port
