@@ -1,20 +1,57 @@
-# DELIMa Scholarship Matching System
-FROM node:18-alpine
+# ============================================================
+# Scholarship Management — Node.js + Python
+# ============================================================
 
-# Set working directory
+FROM node:18-bookworm-slim
+
 WORKDIR /app
 
-# Copy package files
-COPY Agent1/package*.json ./
+# ------------------------------------------------------------
+# Install Python
+# ------------------------------------------------------------
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+       python3 \
+       python3-pip \
+       python3-venv \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install dependencies
-RUN npm install --production
+# ------------------------------------------------------------
+# Node.js dependencies
+# ------------------------------------------------------------
+COPY Agent1/package*.json ./Agent1/
 
-# Copy application files
-COPY Agent1/ .
+WORKDIR /app/Agent1
+RUN npm ci --omit=dev
 
-# Expose port
+# ------------------------------------------------------------
+# Python dependencies
+# ------------------------------------------------------------
+WORKDIR /app
+
+COPY requirements-python.txt ./
+
+RUN python3 -m venv /opt/venv \
+    && /opt/venv/bin/pip install --no-cache-dir --upgrade pip \
+    && /opt/venv/bin/pip install --no-cache-dir -r requirements-python.txt
+
+# Make the Python virtual environment available as `python`
+ENV PATH="/opt/venv/bin:$PATH"
+
+# ------------------------------------------------------------
+# Application source
+# ------------------------------------------------------------
+COPY Agent1/ ./Agent1/
+COPY Agent2/ ./Agent2/
+COPY Agent3/ ./Agent3/
+COPY scrape_scholarships.py ./
+
+# ------------------------------------------------------------
+# Application port
+# ------------------------------------------------------------
 EXPOSE 3333
 
-# Start the server
-CMD ["node", "server.js"]
+# ------------------------------------------------------------
+# Start Node.js application
+# ------------------------------------------------------------
+CMD ["node", "Agent1/server.js"]
