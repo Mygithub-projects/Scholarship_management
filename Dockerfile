@@ -22,7 +22,8 @@ RUN apt-get update \
 COPY Agent1/package*.json ./Agent1/
 
 WORKDIR /app/Agent1
-RUN npm ci --omit=dev
+RUN npm install --omit=dev
+# RUN npm ci --omit=dev
 
 # ------------------------------------------------------------
 # Python dependencies
