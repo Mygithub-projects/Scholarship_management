@@ -100,18 +100,7 @@ const db = new Pool({
 db.connect()
   .then(async () => {
     console.log('✅ PostgreSQL connected');
-    await db.query(`
-      CREATE TABLE IF NOT EXISTS activity_log (
-        id          SERIAL PRIMARY KEY,
-        ts          TIMESTAMPTZ DEFAULT NOW(),
-        student_id  VARCHAR(20),
-        action      VARCHAR(50) NOT NULL,
-        detail      TEXT,
-        ip          VARCHAR(45),
-        status      VARCHAR(20) DEFAULT 'ok'
-      )
-    `);
-    console.log('✅ activity_log table ready');
+    
   })
   .catch(e => console.log('❌ PostgreSQL error:', e.message));
 
