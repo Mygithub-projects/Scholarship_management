@@ -1,17 +1,31 @@
-# Environment
+# ============================================================
+# Environment / Secrets
+# ============================================================
 .env
+.env.local
+.env.docker
 
-# Node
+# ============================================================
+# Node.js
+# ============================================================
 Agent1/node_modules/
-Agent1/package-lock.json
 
+# Keep package-lock.json in GitHub
+# Docker build uses npm ci and requires package-lock.json
+
+# ============================================================
 # Python
+# ============================================================
 __pycache__/
 *.pyc
 *.pyo
 .python-version
+.venv/
+venv/
 
-# Generated files (created at runtime)
+# ============================================================
+# Generated files — created at runtime
+# ============================================================
 Agent2/matches_*.json
 Agent2/spm_override_*.json
 Agent2/interest_*.json
@@ -19,18 +33,25 @@ Agent2/matches.json
 Agent3/report_*.pdf
 Agent3/report_*.json
 
+# ============================================================
 # Logs
-*.txt
+# ============================================================
 *.log
 
-# Student data (PDPA — never push)
+# ============================================================
+# Student data — PDPA / sensitive data
+# ============================================================
 Data/
 All Scholarship/**/*.xlsx
 All Scholarship/**/*.xls
 
+# ============================================================
 # OS
+# ============================================================
 .DS_Store
 Thumbs.db
 
+# ============================================================
 # Claude
+# ============================================================
 .claude/
