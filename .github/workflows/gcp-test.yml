@@ -1,0 +1,70 @@
+name: Deploy scholarship_management
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v3
+        with:
+          project_id: prestij-mohye-delimanextgen
+          workload_identity_provider: projects/4415568906/locations/global/workloadIdentityPools/github-actions-pool/providers/github
+          service_account: github-actions@prestij-mohye-delimanextgen.iam.gserviceaccount.com
+
+      - name: Set up gcloud
+        uses: google-github-actions/setup-gcloud@v3
+
+      - name: Authenticate Docker to Artifact Registry
+        run: |
+          gcloud auth configure-docker asia-southeast1-docker.pkg.dev --quiet
+
+      - name: Build Docker image
+        run: |
+          docker build \
+            -t asia-southeast1-docker.pkg.dev/prestij-mohye-delimanextgen/scholarship-management/scholarship-management:${{ github.sha }} \
+            .
+
+      - name: Push Docker image
+        run: |
+          docker push \
+            asia-southeast1-docker.pkg.dev/prestij-mohye-delimanextgen/scholarship-management/scholarship-management:${{ github.sha }}
+
+      - name: Deploy to deployment-server
+        run: |
+          gcloud compute ssh jothikannan2009@deployment-server \
+            --zone=asia-southeast1-b \
+            --tunnel-through-iap \
+            --command="
+              docker pull asia-southeast1-docker.pkg.dev/prestij-mohye-delimanextgen/scholarship-management/scholarship-management:${{ github.sha }};
+              docker stop scholarship_management || true;
+              docker rm scholarship_management || true;
+              docker run -d \
+                --name scholarship_management \
+                -p 3333:3333 \
+                --env-file /opt/scholarship_management/.env.docker \
+                asia-southeast1-docker.pkg.dev/prestij-mohye-delimanextgen/scholarship-management/scholarship-management:${{ github.sha }}
+            "
+
+      - name: Verify deployment
+        run: |
+          gcloud compute ssh jothikannan2009@deployment-server \
+            --zone=asia-southeast1-b \
+            --tunnel-through-iap \
+            --command="
+              docker ps --filter name=scholarship_management;
+              docker logs --tail 50 scholarship_management
+            "
