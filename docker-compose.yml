@@ -1,0 +1,15 @@
+services:
+  scholarship:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: scholarship-management
+
+    ports:
+      - "3333:3333"
+
+    env_file:
+      - .env.docker
+
+    restart: unless-stopped
