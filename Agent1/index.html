@@ -457,6 +457,21 @@ body{font-family:'Inter',Helvetica,Arial,sans-serif;background:var(--bg);min-hei
 .spm-count-input:focus{border-color:var(--primary)}
 .spm-jana-btn{padding:9px 24px;background:var(--primary);color:#fff;border:none;border-radius:10px;font-family:inherit;font-size:.875rem;font-weight:600;cursor:pointer;transition:background .2s;box-shadow:0 4px 12px rgba(114,57,234,.25)}
 .spm-jana-btn:hover{background:var(--primary-dark)}
+.spm-scan-btn{padding:9px 20px;background:#fff;color:var(--primary);border:2px solid var(--primary);border-radius:10px;font-family:inherit;font-size:.875rem;font-weight:600;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:8px}
+.spm-scan-btn:hover{background:var(--primary-light)}
+/* Camera modal */
+#scan-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:9999;align-items:center;justify-content:center}
+#scan-modal.open{display:flex}
+.scan-modal-box{background:#fff;border-radius:20px;padding:24px;width:90%;max-width:500px;text-align:center}
+.scan-modal-title{font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:16px}
+#scan-video{width:100%;border-radius:12px;background:#000;max-height:300px}
+#scan-canvas{display:none}
+.scan-btn-row{display:flex;gap:12px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+.scan-snap-btn{padding:10px 28px;background:var(--primary);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer;font-size:.95rem}
+.scan-close-btn{padding:10px 20px;background:#f3f4f6;color:var(--body-color);border:none;border-radius:10px;font-weight:600;cursor:pointer;font-size:.95rem}
+.scan-status{margin-top:12px;font-size:.85rem;color:var(--secondary);min-height:20px}
+#scan-preview{width:100%;border-radius:12px;margin-top:12px;display:none}
+.scan-upload-btn{padding:10px 20px;background:#f3f4f6;color:var(--body-color);border:none;border-radius:10px;font-weight:600;cursor:pointer;font-size:.875rem}
 .spm-table-wrap{overflow-x:auto;margin-bottom:28px}
 .spm-table{width:100%;border-collapse:collapse;font-size:.86rem}
 .spm-table th{background:var(--navy);color:#fff;padding:10px 12px;text-align:left;font-weight:600;letter-spacing:.03em}
@@ -638,7 +653,7 @@ body{font-family:'Inter',Helvetica,Arial,sans-serif;background:var(--bg);min-hei
       <div class="gnav-lang-opt" id="btn-lang-en" onclick="setLang('en')">🇬🇧 Bahasa Inggeris</div>
     </div>
   </div>
-  <button class="gnav-login-btn" id="gnav-login-btn" onclick="showEmailModal()">
+  <button class="gnav-login-btn" id="gnav-login-btn" onclick="showEmailModal()" style="display:none">
     <span class="g-icon">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -790,6 +805,22 @@ body{font-family:'Inter',Helvetica,Arial,sans-serif;background:var(--bg);min-hei
       <button class="txt-btn" onclick="">Forgot password?</button>
       <button class="next-btn" onclick="doLogin()">Next</button>
     </div>
+  </div>
+</div>
+
+<!-- ════════════════════ SCAN MODAL ════════════════════ -->
+<div id="scan-modal">
+  <div class="scan-modal-box">
+    <div class="scan-modal-title">📷 Scan Slip Peperiksaan</div>
+    <video id="scan-video" autoplay playsinline></video>
+    <img id="scan-preview" alt="Preview">
+    <canvas id="scan-canvas"></canvas>
+    <div class="scan-btn-row">
+      <button class="scan-snap-btn" id="scan-snap-btn" onclick="snapPhoto()">📸 Ambil Gambar</button>
+      <label class="scan-upload-btn" style="cursor:pointer">📁 Muat Naik<input type="file" accept="image/*" style="display:none" onchange="uploadPhoto(this)"></label>
+      <button class="scan-close-btn" onclick="closeScanModal()">Batal</button>
+    </div>
+    <div class="scan-status" id="scan-status"></div>
   </div>
 </div>
 
@@ -1187,6 +1218,8 @@ let _lang = 'ms';
 // ─── Language switcher ───
 const TRANS = {
   'delima-subtitle':     {ms:'Menjadikan Pembelajaran Digital Lebih Peribadi', en:'Making Digital Learning Personal'},
+  'landing-h1':          {ms:'Peneraju generasi digital\nuntuk pendidikan berkualiti', en:'Leading the digital generation\nfor quality education'},
+  'landing-p':           {ms:'Digital Education Learning Initiative Malaysia (DELIMa) adalah platform pembelajaran digital rasmi Kementerian Pendidikan yang dibangunkan khusus untuk merevolusi pendidikan berteraskan teknologi AI.', en:'Digital Education Learning Initiative Malaysia (DELIMa) is the official digital learning platform of the Ministry of Education, built specifically to revolutionise AI-powered education.'},
   'delima-login-btn':    {ms:'Klik di sini untuk log masuk', en:'Click here to login'},
   'delima-agree-lbl':    {ms:'Saya Bersetuju dengan <a>terma dan syarat</a>', en:'I Agree to the <a>term and conditions</a>'},
   'delima-guardian-lbl': {ms:'Ibu bapa &amp; Penjaga: Sila <a>Klik Di Sini</a>', en:'Parents &amp; Guardians: Please <a>Click Here</a>'},
@@ -1247,6 +1280,8 @@ function setLang(lang){
     const el = document.getElementById(id);
     if(!el) continue;
     if(id==='delima-agree-lbl'||id==='delima-guardian-lbl'||id==='delima-footer-txt') el.innerHTML = map[lang];
+    else if(id==='landing-h1') el.innerHTML = map[lang].replace('\n','<br>');
+    else if(id==='landing-p') el.textContent = map[lang];
     else el.textContent = map[lang];
   }
 }
@@ -1509,6 +1544,79 @@ function submitSpm() {
   showDashboard(_spmProfile);
 }
 
+// ─── Scan Slip Exam (OCR via Gemini) ───
+let scanStream = null;
+
+async function openScanModal() {
+  const modal = document.getElementById('scan-modal');
+  modal.classList.add('open');
+  document.getElementById('scan-status').textContent = '';
+  document.getElementById('scan-preview').style.display = 'none';
+  document.getElementById('scan-video').style.display = 'block';
+  document.getElementById('scan-snap-btn').style.display = 'inline-block';
+  try {
+    scanStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+    document.getElementById('scan-video').srcObject = scanStream;
+  } catch(e) {
+    document.getElementById('scan-status').textContent = '⚠️ Kamera tidak dapat diakses. Sila guna muat naik gambar.';
+    document.getElementById('scan-video').style.display = 'none';
+    document.getElementById('scan-snap-btn').style.display = 'none';
+  }
+}
+
+function closeScanModal() {
+  if (scanStream) { scanStream.getTracks().forEach(t => t.stop()); scanStream = null; }
+  document.getElementById('scan-modal').classList.remove('open');
+}
+
+function snapPhoto() {
+  const video = document.getElementById('scan-video');
+  const canvas = document.getElementById('scan-canvas');
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  canvas.getContext('2d').drawImage(video, 0, 0);
+  const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+  showPreviewAndProcess(dataUrl);
+}
+
+function uploadPhoto(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => showPreviewAndProcess(e.target.result);
+  reader.readAsDataURL(file);
+}
+
+async function showPreviewAndProcess(dataUrl) {
+  if (scanStream) { scanStream.getTracks().forEach(t => t.stop()); scanStream = null; }
+  document.getElementById('scan-video').style.display = 'none';
+  document.getElementById('scan-snap-btn').style.display = 'none';
+  const preview = document.getElementById('scan-preview');
+  preview.src = dataUrl;
+  preview.style.display = 'block';
+  document.getElementById('scan-status').textContent = '🔍 Menganalisis gambar...';
+  try {
+    const base64 = dataUrl.split(',')[1];
+    const res = await fetch('/scan-slip', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ image: base64 })
+    });
+    const data = await res.json();
+    if (data.subjects && data.subjects.length > 0) {
+      document.getElementById('scan-status').textContent = `✅ Berjaya! ${data.subjects.length} subjek dikesan. Mengisi jadual...`;
+      setTimeout(() => {
+        closeScanModal();
+        prefillSpm(data.subjects);
+      }, 1000);
+    } else {
+      document.getElementById('scan-status').textContent = '⚠️ Tiada subjek dikesan. Cuba gambar yang lebih jelas.';
+    }
+  } catch(e) {
+    document.getElementById('scan-status').textContent = '❌ Ralat: ' + e.message;
+  }
+}
+
 // ─── Logout ───
 function doLogout(){
   clearInterval(matchPollTimer);
@@ -1556,14 +1664,16 @@ async function pollMatch(id) {
     const match = last.match(/^\[(\d+)\/(\d+)\]\s*Scoring:\s*(.+)/);
     if (match) {
       document.getElementById('match-loading-sub').textContent =
-        `Menilai ${match[1]} daripada ${match[2]} biasiswa...`;
+        _lang==='en'
+          ? `Evaluating ${match[1]} of ${match[2]} scholarships...`
+          : `Menilai ${match[1]} daripada ${match[2]} biasiswa...`;
     }
   }
 
   if (data.status === 'done') {
     clearInterval(matchPollTimer);
     document.getElementById('match-loading').style.display = 'none';
-    document.getElementById('match-sub').textContent = 'Padanan biasiswa berjaya dijalankan';
+    document.getElementById('match-sub').textContent = _lang==='en' ? 'Scholarship matching completed successfully' : 'Padanan biasiswa berjaya dijalankan';
     loadMatchResult(id);
   } else if (data.status === 'spm_required') {
     clearInterval(matchPollTimer);
@@ -1571,12 +1681,12 @@ async function pollMatch(id) {
     document.getElementById('match-results-area').innerHTML =
       '<div style="background:#FEF9C3;border:1px solid #FDE047;border-radius:10px;padding:20px;text-align:center;color:#854D0E">' +
       '<div style="font-size:22px;margin-bottom:8px">⚠️</div>' +
-      '<div style="font-weight:600;margin-bottom:6px">Keputusan SPM belum dimasukkan</div>' +
-      '<div style="font-size:13px">Sila pergi ke tab <b>Keputusan SPM</b> dan masukkan keputusan SPM anda terlebih dahulu sebelum menjalankan padanan biasiswa.</div>' +
+      `<div style="font-weight:600;margin-bottom:6px">${_lang==='en'?'SPM results not yet entered':'Keputusan SPM belum dimasukkan'}</div>` +
+      `<div style="font-size:13px">${_lang==='en'?'Please go to the <b>SPM Results</b> tab and enter your SPM results before running the scholarship match.':'Sila pergi ke tab <b>Keputusan SPM</b> dan masukkan keputusan SPM anda terlebih dahulu sebelum menjalankan padanan biasiswa.'}</div>` +
       '</div>';
   } else if (data.status === 'error') {
     clearInterval(matchPollTimer);
-    document.getElementById('match-loading-text').textContent = 'Ralat semasa padanan. Sila hubungi pentadbir.';
+    document.getElementById('match-loading-text').textContent = _lang==='en' ? 'Error during matching. Please contact the administrator.' : 'Ralat semasa padanan. Sila hubungi pentadbir.';
     document.getElementById('match-loading-sub').textContent = '';
   }
 }
@@ -1593,8 +1703,8 @@ async function loadMatchResult(id) {
     document.getElementById('match-result-section').innerHTML = `
       <div style="text-align:center;padding:48px 24px">
         <div style="font-size:48px;margin-bottom:16px">😔</div>
-        <div style="font-size:18px;font-weight:700;color:#0F2057;margin-bottom:8px">Tiada Padanan Biasiswa Yang Layak</div>
-        <div style="font-size:14px;color:#6B7280;max-width:420px;margin:0 auto">Berdasarkan profil semasa anda, tiada biasiswa dalam sistem yang memenuhi semua syarat kelayakan. Tingkatkan pencapaian akademik atau aktiviti kokurikulum untuk meningkatkan peluang.</div>
+        <div style="font-size:18px;font-weight:700;color:#0F2057;margin-bottom:8px">${_lang==='en'?'No Eligible Scholarship Matches Found':'Tiada Padanan Biasiswa Yang Layak'}</div>
+        <div style="font-size:14px;color:#6B7280;max-width:420px;margin:0 auto">${_lang==='en'?'Based on your current profile, no scholarships in the system meet all eligibility criteria. Improve your academic achievements or co-curricular activities to increase your chances.':'Berdasarkan profil semasa anda, tiada biasiswa dalam sistem yang memenuhi semua syarat kelayakan. Tingkatkan pencapaian akademik atau aktiviti kokurikulum untuk meningkatkan peluang.'}</div>
       </div>`;
     return;
   }
@@ -1616,14 +1726,14 @@ async function loadMatchResult(id) {
         <div class="sc-bar-wrap"><div class="sc-bar" style="width:${Math.round(m.totalScore)}%"></div></div>
       </td>
       <td>${m.eligible
-        ? '<span class="elig-yes">&#10003; Layak</span>'
-        : '<span class="elig-no">Tidak layak</span>'}</td>
+        ? `<span class="elig-yes">&#10003; ${_lang==='en'?'Eligible':'Layak'}</span>`
+        : `<span class="elig-no">${_lang==='en'?'Not eligible':'Tidak layak'}</span>`}</td>
       <td>
-        <span class="fc fc-a">Gred A: ${bd.countA ?? '?'}/${bd.minA ?? '?'}</span>
+        <span class="fc fc-a">${_lang==='en'?'Grade A':'Gred A'}: ${bd.countA ?? '?'}/${bd.minA ?? '?'}</span>
         <span class="fc fc-p">PAJSK: ${bd.pajsk ?? '—'}</span>
         ${hollandBadge}
       </td>
-      <td>${m.url ? `<a href="${m.url}" target="_blank" style="color:#1A56DB;font-size:12px">Mohon &#8599;</a>` : '—'}</td>
+      <td>${m.url ? `<a href="${m.url}" target="_blank" style="color:#1A56DB;font-size:12px">${_lang==='en'?'Apply':'Mohon'} &#8599;</a>` : '—'}</td>
     </tr>`;
   }).join('');
 
@@ -1648,7 +1758,7 @@ async function loadMatchResult(id) {
                <div style="font-size:11px;color:#6B7280">${esc(s.provider||'')}</div>
              </div>`
           ).join('')
-        : '<span style="font-size:12px;color:#9CA3AF">Tiada biasiswa sepadan</span>';
+        : `<span style="font-size:12px;color:#9CA3AF">${_lang==='en'?'No matching scholarships':'Tiada biasiswa sepadan'}</span>`;
       return `<tr>
         <td style="font-weight:700;color:#0F2057;vertical-align:top">${i+1}</td>
         <td style="vertical-align:top">
@@ -1665,7 +1775,7 @@ async function loadMatchResult(id) {
       <div class="match-table-wrap">
         <table class="match-table">
           <thead><tr>
-            <th>#</th><th>Kos / Program</th><th>IPT yang Sesuai</th><th>Biasiswa Berkaitan</th>
+            <th>#</th><th>${_lang==='en'?'Course / Programme':'Kos / Program'}</th><th>${_lang==='en'?'Suitable Universities':'IPT yang Sesuai'}</th><th>${_lang==='en'?'Related Scholarships':'Biasiswa Berkaitan'}</th>
           </tr></thead>
           <tbody>${planRows}</tbody>
         </table>
@@ -1674,14 +1784,14 @@ async function loadMatchResult(id) {
 
   if (hollandPlan.length) {
     document.getElementById('match-results-area').innerHTML =
-      buildPlanTable(hollandPlan, '📚 Kos, IPT &amp; Biasiswa Berdasarkan Profil Psikometri Anda');
+      buildPlanTable(hollandPlan, _lang==='en' ? '📚 Courses, Universities &amp; Scholarships Based on Your Psychometric Profile' : '📚 Kos, IPT &amp; Biasiswa Berdasarkan Profil Psikometri Anda');
     startReport(id);
     return;
   }
 
   if (kosPlan.length) {
     document.getElementById('match-results-area').innerHTML =
-      buildPlanTable(kosPlan, '📋 Kos, IPT &amp; Biasiswa Berdasarkan Kos yang Diminati');
+      buildPlanTable(kosPlan, _lang==='en' ? '📋 Courses, Universities &amp; Scholarships Based on Chosen Field' : '📋 Kos, IPT &amp; Biasiswa Berdasarkan Kos yang Diminati');
     startReport(id);
     return;
   }
@@ -1691,8 +1801,8 @@ async function loadMatchResult(id) {
     <div class="match-table-wrap">
       <table class="match-table">
         <thead><tr>
-          <th>#</th><th>Biasiswa</th><th>Skor /100</th>
-          <th>Kelayakan</th><th>Pecahan Faktor</th><th>Pautan</th>
+          <th>#</th><th>${_lang==='en'?'Scholarship':'Biasiswa'}</th><th>${_lang==='en'?'Score /100':'Skor /100'}</th>
+          <th>${_lang==='en'?'Eligibility':'Kelayakan'}</th><th>${_lang==='en'?'Factor Breakdown':'Pecahan Faktor'}</th><th>${_lang==='en'?'Link':'Pautan'}</th>
         </tr></thead>
         <tbody>${rows}</tbody>
       </table>
