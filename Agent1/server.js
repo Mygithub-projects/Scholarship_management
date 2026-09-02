@@ -175,6 +175,8 @@ async function loadStudentsFromDB() {
         parentCategory:  row.kategori_pendapatan || 'M40',
         hollandCode:     row.kod_holland || '',
         fieldOfInterest: row.bidang_1 || '',
+        fieldOfInterest2:row.bidang_2 || '',
+        fieldOfInterest3:row.bidang_3 || '',
         dreamCareer:     row.tafsiran_utama || '',
       };
     });
@@ -622,6 +624,46 @@ const server = http.createServer(async (req, res) => {
       writeLog('IPT_SEARCH', { studentId: studentId || null, detail: `IPT: ${ipt}`, ip: clientIp(req) });
       return json(res, 200, { ipt, scholarships: result.rows });
     } catch(e) { return json(res, 500, { error: e.message }); }
+  }
+
+  // POST /scan-slip — OCR exam slip via Gemini Vision
+  if (req.method === 'POST' && req.url === '/scan-slip') {
+    try {
+      const body = await parseBody(req);
+      const base64Image = body.image;
+      if (!base64Image) return json(res, 400, { error: 'No image provided' });
+
+      const geminiKey = process.env.GEMINI_API_KEY;
+      const prompt = `Ini adalah gambar slip peperiksaan SPM Malaysia. Sila ekstrak semua mata pelajaran (subjek) dan gred yang tertera.
+
+Kembalikan dalam format JSON sahaja seperti ini:
+{"subjects": [{"subject": "Bahasa Melayu", "grade": "A+"}, {"subject": "Matematik", "grade": "A"}, ...]}
+
+Gred yang sah: A+, A, A-, B+, B, C+, C, D, E, G
+Jika tiada slip peperiksaan yang jelas, kembalikan {"subjects": []}`;
+
+      const geminiRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiKey}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{
+            parts: [
+              { text: prompt },
+              { inline_data: { mime_type: 'image/jpeg', data: base64Image } }
+            ]
+          }]
+        })
+      });
+
+      const geminiData = await geminiRes.json();
+      const text = geminiData?.candidates?.[0]?.content?.parts?.[0]?.text || '';
+      const match = text.match(/\{[\s\S]*\}/);
+      if (!match) return json(res, 200, { subjects: [] });
+      const result = JSON.parse(match[0]);
+      return json(res, 200, result);
+    } catch(e) {
+      return json(res, 500, { error: e.message });
+    }
   }
 
   // GET /admin/logs — admin-only activity log viewer
