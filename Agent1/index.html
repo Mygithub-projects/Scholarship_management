@@ -1929,18 +1929,55 @@ function buildContent(p){
     }).join('');
   }
 
-  // Bidang minat badges (replacing old RIASEC 6-box grid)
-  const bidangList = [p.fieldOfInterest, p.fieldOfInterest2, p.fieldOfInterest3].filter(Boolean);
-  const bidangColors = ['#7239EA','#1A56DB','#0E9F6E'];
-  const bidangBgColors = ['#F3EEFF','#EFF6FF','#ECFDF5'];
-  const bidangBadges = bidangList.length
-    ? bidangList.map((b,i)=>`
-        <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;
-                    background:${bidangBgColors[i]};border-radius:10px;margin-bottom:8px">
-          <span style="width:32px;height:32px;border-radius:50%;background:${bidangColors[i]};
+  // Top-5 kos berdasarkan Holland Code
+  const _hollandKos = {
+    R: {
+      ms: ['Kejuruteraan Awam','Kejuruteraan Elektrik','Seni Bina','Teknologi Maklumat','Kejuruteraan Mekanikal'],
+      en: ['Civil Engineering','Electrical Engineering','Architecture','Information Technology','Mechanical Engineering']
+    },
+    I: {
+      ms: ['Perubatan','Farmasi','Fizik','Sains Bioperubatan','Bioteknologi'],
+      en: ['Medicine','Pharmacy','Physics','Biomedical Science','Biotechnology']
+    },
+    A: {
+      ms: ['Reka Bentuk Grafik','Seni Visual','Komunikasi & Media','Seni Bina Landskap','Seni Persembahan'],
+      en: ['Graphic Design','Visual Arts','Media Communication','Landscape Architecture','Performing Arts']
+    },
+    S: {
+      ms: ['Pendidikan','Psikologi','Kaunseling','Kerja Sosial','Kesihatan Awam'],
+      en: ['Education','Psychology','Counselling','Social Work','Public Health']
+    },
+    E: {
+      ms: ['Pengurusan Perniagaan','Undang-undang','Pemasaran','Keusahawanan','Komunikasi Korporat'],
+      en: ['Business Management','Law','Marketing','Entrepreneurship','Corporate Communication']
+    },
+    K: {
+      ms: ['Perakaunan','Kewangan','Pentadbiran Perniagaan','Actuarial Science','Sistem Maklumat'],
+      en: ['Accounting','Finance','Business Administration','Actuarial Science','Information Systems']
+    }
+  };
+  // Build top-5 from Holland Code letters (e.g. "RIE")
+  const _hCodes = (p.hollandCode||'').split('').filter(c => _hollandKos[c]);
+  const _top5 = [];
+  let _ci = 0;
+  while (_top5.length < 5 && _ci < 20) {
+    _hCodes.forEach(c => {
+      const list = _lang==='en' ? _hollandKos[c].en : _hollandKos[c].ms;
+      const idx = Math.floor(_ci / _hCodes.length);
+      if (list[idx] && _top5.length < 5) _top5.push(list[idx]);
+    });
+    _ci++;
+  }
+  const _badgeColors = ['#7239EA','#1A56DB','#0E9F6E','#D97706','#DC2626'];
+  const _badgeBg     = ['#F3EEFF','#EFF6FF','#ECFDF5','#FFFBEB','#FEF2F2'];
+  const bidangBadges = _top5.length
+    ? _top5.map((kos,i)=>`
+        <div style="display:flex;align-items:center;gap:10px;padding:11px 14px;
+                    background:${_badgeBg[i]};border-radius:10px;margin-bottom:7px">
+          <span style="width:28px;height:28px;border-radius:50%;background:${_badgeColors[i]};
                        display:flex;align-items:center;justify-content:center;
-                       color:#fff;font-weight:700;font-size:13px;flex-shrink:0">${i+1}</span>
-          <span style="font-weight:600;color:#0F2057;font-size:13px">${esc(b)}</span>
+                       color:#fff;font-weight:700;font-size:12px;flex-shrink:0">${i+1}</span>
+          <span style="font-weight:600;color:#0F2057;font-size:13px">${esc(kos)}</span>
         </div>`).join('')
     : `<div style="color:#9CA3AF;font-size:13px;padding:8px 0">${_lang==='en'?'Psychometric data not yet available':'Data psikometrik belum dimasukkan'}</div>`;
 
@@ -2004,12 +2041,12 @@ function buildContent(p){
       </div>
       <div>
         <div class="card-title">${_lang==='en'?'RIASEC Profile (Psychometric)':'Profil RIASEC (Psikometrik)'}</div>
-        <div class="card-sub">${_lang==='en'?'Suitable fields based on Holland Code':'Bidang sesuai berdasarkan Kod Holland'}: <strong>${p.hollandCode||'—'}</strong>${p.dreamCareer?` — ${esc(p.dreamCareer)}`:''}</div>
+        <div class="card-sub">${_lang==='en'?'Top 5 recommended courses based on Holland Code':'5 kos pilihan berdasarkan Kod Holland'}: <strong>${p.hollandCode||'—'}</strong></div>
       </div>
     </div>
     <div style="margin-top:4px">
       <div style="font-size:11px;font-weight:600;color:#9CA3AF;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">
-        ${_lang==='en'?'📚 Recommended Courses / Fields':'📚 Kos / Bidang Yang Sesuai'}
+        ${_lang==='en'?'📚 Recommended Courses':'📚 Kos Yang Disyorkan'}
       </div>
       ${bidangBadges}
     </div>
