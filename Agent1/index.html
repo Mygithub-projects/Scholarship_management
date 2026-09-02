@@ -1956,17 +1956,19 @@ function buildContent(p){
       en: ['Accounting','Finance','Business Administration','Actuarial Science','Information Systems']
     }
   };
-  // Build top-5 from Holland Code letters (e.g. "RIE")
+  // Build top-5 from Holland Code letters — interleave, no repeats
   const _hCodes = (p.hollandCode||'').split('').filter(c => _hollandKos[c]);
   const _top5 = [];
-  let _ci = 0;
-  while (_top5.length < 5 && _ci < 20) {
-    _hCodes.forEach(c => {
+  const _ptr = {};
+  _hCodes.forEach(c => _ptr[c] = 0);
+  let _round = 0;
+  while (_top5.length < 5 && _round < 10) {
+    for (const c of _hCodes) {
+      if (_top5.length >= 5) break;
       const list = _lang==='en' ? _hollandKos[c].en : _hollandKos[c].ms;
-      const idx = Math.floor(_ci / _hCodes.length);
-      if (list[idx] && _top5.length < 5) _top5.push(list[idx]);
-    });
-    _ci++;
+      if (_ptr[c] < list.length) { _top5.push(list[_ptr[c]]); _ptr[c]++; }
+    }
+    _round++;
   }
   const _badgeColors = ['#7239EA','#1A56DB','#0E9F6E','#D97706','#DC2626'];
   const _badgeBg     = ['#F3EEFF','#EFF6FF','#ECFDF5','#FFFBEB','#FEF2F2'];
