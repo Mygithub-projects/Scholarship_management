@@ -2160,7 +2160,7 @@ function submitBelumKos() {
   }
   document.getElementById('belum-kos-input').style.borderColor = '#D1D5DB';
   const msg = document.getElementById('status-save-msg');
-  msg.textContent = '⏳ AI sedang menganalisis kos anda...';
+  msg.textContent = _lang==='en' ? '⏳ AI is analysing your course...' : '⏳ AI sedang menganalisis kos anda...';
   msg.style.display = 'block';
   startMatching(currentStudentId, _spmProfile.spmSubjects, '', '', '', kos, false);
 }
@@ -2180,7 +2180,7 @@ function submitYaSudah() {
   }
   document.getElementById('ya-kos-input').style.borderColor = '#D1D5DB';
   const msg = document.getElementById('status-save-msg');
-  msg.textContent = '⏳ AI sedang menganalisis kos anda...';
+  msg.textContent = _lang==='en' ? '⏳ AI is analysing your course...' : '⏳ AI sedang menganalisis kos anda...';
   msg.style.display = 'block';
   startMatching(currentStudentId, _spmProfile.spmSubjects, '', iptKat, iptNama, kos, false);
 }
