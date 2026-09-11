@@ -802,7 +802,7 @@ body{font-family:'Inter',Helvetica,Arial,sans-serif;background:var(--bg);min-hei
     </div>
     <div id="delima-pw-error" style="display:none;font-size:13px;color:#D93025;margin-top:6px"></div>
     <div class="delima-modal-actions">
-      <button class="txt-btn" onclick="">Forgot password?</button>
+      <button class="txt-btn" onclick="backToEmail()">← Back</button>
       <button class="next-btn" onclick="doLogin()">Next</button>
     </div>
   </div>
@@ -1307,6 +1307,14 @@ function closeModals(){
   document.getElementById('delima-pw-error').style.display='none';
   document.getElementById('modal-email-inp').value='';
   document.getElementById('modal-pw-inp').value='';
+}
+
+function backToEmail(){
+  document.getElementById('modal-password').classList.remove('show');
+  document.getElementById('delima-pw-error').style.display='none';
+  document.getElementById('modal-pw-inp').value='';
+  document.getElementById('modal-email').classList.add('show');
+  setTimeout(()=>document.getElementById('modal-email-inp').focus(), 100);
 }
 
 // ─── Modal 1 Next → show password modal ───
